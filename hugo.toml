@@ -1,11 +1,28 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = "ananke"
+baseURL = '/'
+languageCode = 'fr-fr'
+title = 'Recettes de Cuisine Optimisées'
+theme = 'recettes'
+
+# Configuration propre à Hugo
+defaultContentLanguage = "fr"
+enableRobotsTXT = true
+
+# Nouvelle syntaxe pour la pagination (CORRIGÉ)
+[pagination]
+  pagerSize = 10 
+# RETRAIT de l'ancienne ligne : paginate = 10
+
+# Taxonomies Personnalisées
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  plat = "plats"
+
+# Configuration du Menu
 [menu]
   [[menu.main]]
-    name = "Accueil"
-    url = "/"
+    name = "Recettes"
+    url = "/categories/"
     weight = 10
   [[menu.main]]
     name = "À Propos"

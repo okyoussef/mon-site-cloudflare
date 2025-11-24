@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Recettes de Cuisine Optimisées</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Recettes de Cuisine Optimisées</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>fr-fr</language>
     <lastBuildDate>Mon, 24 Nov 2025 20:41:00 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>À Propos de Nous</title>
-      <link>http://localhost:1313/about/</link>
+      <link>//localhost:1313/about/</link>
       <pubDate>Mon, 24 Nov 2025 20:41:00 +0100</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>//localhost:1313/about/</guid>
       <description>&lt;h2 id=&#34;notre-histoire&#34;&gt;Notre Histoire&lt;/h2&gt;&#xA;&lt;p&gt;Bienvenue sur notre site ! Nous sommes une équipe passionnée par la création de contenu.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
+      <link>//localhost:1313/contact/</link>
       <pubDate>Mon, 24 Nov 2025 20:41:00 +0100</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
+      <guid>//localhost:1313/contact/</guid>
       <description>&lt;h2 id=&#34;contactez-nous&#34;&gt;Contactez-nous&lt;/h2&gt;&#xA;&lt;p&gt;Vous pouvez nous joindre à l&amp;rsquo;adresse email : &lt;a href=&#34;mailto:contact@monsite.com&#34;&gt;contact@monsite.com&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>

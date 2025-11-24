@@ -11,13 +11,54 @@
     <loc>//localhost:1313/</loc>
     <lastmod>2025-11-24T20:41:00+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
-    <lastmod>2025-11-24T17:25:20+01:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/categories/</loc>
+    <lastmod>2025-11-24T11:45:00+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/plats/</loc>
+    <loc>//localhost:1313/categories/dessert/</loc>
+    <lastmod>2025-11-24T11:45:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/recettes/recette-test-simple/</loc>
+    <lastmod>2025-11-24T11:45:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/recettes/</loc>
+    <lastmod>2025-11-24T11:45:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/v%C3%A9g%C3%A9tarien/</loc>
+    <lastmod>2025-11-24T11:45:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/citron-confit/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/cuisine-du-monde/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/gouter/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/recettes/le-banana-bread-ultra-moelleux/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/marocain/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/marocain/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/plat-mijot%C3%A9/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/plats-principaux/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/poulet/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/recettes/tajine-de-poulet-aux-citrons-confits-et-olives/</loc>
+    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/plats/</loc>
   </url>
 </urlset>

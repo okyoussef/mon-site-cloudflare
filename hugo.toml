@@ -7,23 +7,33 @@ theme = 'recettes'
 defaultContentLanguage = "fr"
 enableRobotsTXT = true
 
-# Nouvelle syntaxe pour la pagination (CORRIGÉ)
+# CORRECTION CRITIQUE 1 : Permalinks (Pour résoudre le 404)
+# Ceci force Hugo à construire les URLs de la section "recettes" en utilisant le chemin /recettes/
+[permalinks]
+  recettes = "/recettes/:slug/"
+
+# Correction de la syntaxe pour la pagination
 [pagination]
   pagerSize = 10 
-# RETRAIT de l'ancienne ligne : paginate = 10
 
-# Taxonomies Personnalisées
+# Taxonomies Personnalisées pour les recettes
 [taxonomies]
   category = "categories"
   tag = "tags"
   plat = "plats"
 
-# Configuration du Menu
+# CORRECTION CRITIQUE 2 : Configuration du Menu (Pour plus de clarté)
 [menu]
+  # Ce lien pointe maintenant vers l'index des recettes (/recettes/)
   [[menu.main]]
-    name = "Recettes"
-    url = "/categories/"
+    name = "Toutes les Recettes"
+    url = "/recettes/"
     weight = 10
+  # On ajoute un lien vers l'index des Catégories
+  [[menu.main]]
+    name = "Catégories"
+    url = "/categories/"
+    weight = 11
   [[menu.main]]
     name = "À Propos"
     url = "/about/"
@@ -32,3 +42,9 @@ enableRobotsTXT = true
     name = "Contact"
     url = "/contact/"
     weight = 30
+
+[build]
+  writeStats = true
+
+  [markup.goldmark.renderer]
+  unsafe = true

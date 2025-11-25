@@ -77,3 +77,4 @@ Ajoutez le beurre fondu, le sucre et les œufs. Mélangez bien. Ajoutez ensuite 
 
 ### 3. Cuisson
 Versez dans un moule beurré. Enfournez pour 55 minutes.
+valeur nutritionnelles

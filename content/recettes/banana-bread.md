@@ -21,6 +21,8 @@ ingredients:
   - 250g de farine
   - 100g de pépites de chocolat
 
+
+video: "https://www.youtube.com/watch?v=9Hy-qz2N4Ok" # LIGNE AJOUTÉE (Donnée SEO)
 categories: ["Dessert", "Gouter"]
 ---
 
@@ -37,6 +39,7 @@ C'est simple, rapide et **délicieux**. La texture est incroyable grâce aux ban
 Voici la vidéo explicative pour réussir votre Banana Bread à coup sûr :
 
 {{< youtube 9Hy-qz2N4Ok >}}
+
 
 ---
 

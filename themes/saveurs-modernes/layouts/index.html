@@ -1,0 +1,50 @@
+
+
+```html
+{{ define "main" }}
+
+  
+    {{ .Site.Title }}
+    {{ .Site.Params.description }}
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+  
+
+
+
+  Dernières Recettes
+  
+  
+    {{ range first 12 (where .Site.RegularPages "Type" "recipes") }}
+      {{ partial "recipe-card.html" . }}
+    {{ end }}
+  
+  
+  
+    Voir toutes les recettes
+  
+
+
+
+  Explorer par Catégorie
+  
+  
+    {{ range .Site.Taxonomies.categories }}
+      
+        🍳
+        {{ .Page.Title }}
+        {{ len .Pages }} recettes
+      
+    {{ end }}
+  
+
+{{ end }}
+```

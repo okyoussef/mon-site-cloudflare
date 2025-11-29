@@ -29,7 +29,7 @@ categories: ["Plats Principaux", "Marocain", "Cuisine du Monde"]
 tags: ["poulet", "citron confit", "marocain", "plat mijoté"]
 ---
 
-![Tajine Traditionnel](https://placehold.co/1000x500/D97706/FFFFFF?text=Tajine+Traditionnel)
+![Tajine Traditionnel](/static/recette tagine au poulet)
 
 ## Pourquoi cette recette est un succès ?
 

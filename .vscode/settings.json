@@ -1,0 +1,14 @@
+{
+    "frontMatter.content.pageFolders": [
+        {
+            "path": "[[workspace]]/node_modules/string-width",
+            "title": "string-width"
+        },
+        {
+            "path": "[[workspace]]/node_modules/source-map-js"
+        },
+        {
+            "path": "[[workspace]]/node_modules/string-width"
+        }
+    ]
+}

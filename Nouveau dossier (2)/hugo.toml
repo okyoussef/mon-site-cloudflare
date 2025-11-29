@@ -1,0 +1,14 @@
+baseURL = "/"
+languageCode = "fr-fr"
+title = "Mon Site Cloudflare Pages"
+theme = "recettes"
+defaultContentLanguage = "fr"
+
+[params]
+  description = "Description de votre site de recettes."
+  # Ajoutez ici d'autres paramètres globaux si nécessaire
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

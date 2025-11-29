@@ -1,0 +1,57 @@
+// ========================================
+// ========================================
+// SCHEMA.ORG RECIPE MARKUP
+// Fichier: layouts/partials/schema-recipe.html
+// ========================================
+// ========================================
+
+/*
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Recipe",
+  "name": "{{ .Title }}",
+  "image": [
+    "{{ with .Params.featured_image }}{{ . | absURL }}{{ end }}"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  },
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "description": "{{ .Params.description }}",
+  "prepTime": "{{ with .Params.prep_time }}PT{{ . }}{{ end }}",
+  "cookTime": "{{ with .Params.cook_time }}PT{{ . }}{{ end }}",
+  "totalTime": "{{ with .Params.total_time }}PT{{ . }}{{ end }}",
+  "recipeYield": "{{ .Params.servings }} portions",
+  "recipeCategory": "{{ delimit .Params.categories ", " }}",
+  "recipeCuisine": "{{ delimit .Params.cuisines ", " }}",
+  "keywords": "{{ delimit .Params.tags ", " }}",
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "{{ .Params.calories }} calories"
+  },
+  "recipeIngredient": [
+    {{ range $index, $ingredient := .Params.ingredients }}
+    {{ if $index }},{{ end }}
+    "{{ $ingredient }}"
+    {{ end }}
+  ],
+  "recipeInstructions": [
+    {{ range $index, $step := .Params.instructions }}
+    {{ if $index }},{{ end }}
+    {
+      "@type": "HowToStep",
+      "text": "{{ $step }}",
+      "position": {{ add $index 1 }}
+    }
+    {{ end }}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+}
+</script>
+*/

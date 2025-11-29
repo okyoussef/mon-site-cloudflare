@@ -1,0 +1,46 @@
+{{- if eq .Kind "page" -}}
+{{- if eq .Type "recette" -}}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": "{{ .Title }}",
+    "description": "{{ .Description }}",
+    "image": [
+        {{ with .Params.image }}
+        "{{ . | absURL }}"
+        {{ else }}
+        "{{ .Site.BaseURL }}images/default-recipe.jpg" {{/* A remplacer par votre image par defaut */}}
+        {{ end }}
+    ],
+    "author": {
+        "@type": "Person",
+        "name": "{{ .Site.Params.Author }}"
+    },
+    "datePublished": "{{ .Date.Format "2006-01-02" }}",
+    "prepTime": "PT{{ .Params.preparation_time | replaceRE "[^0-9]" "" }}M",
+    "cookTime": "PT{{ .Params.cooking_time | replaceRE "[^0-9]" "" }}M",
+    "recipeYield": "{{ .Params.servings }}",
+    "recipeIngredient": [
+        {{ range $i, $e := .Params.ingredients }}
+        "{{ . }}"{{ if ne (len $.Params.ingredients) (add $i 1) }},{{ end }}
+        {{ end }}
+    ],
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ .Params.rating }}",
+        "reviewCount": "{{ .Params.vote_count }}"
+    }
+    {{ with .Params.video }}
+    ,"video": {
+        "@type": "VideoObject",
+        "name": "{{ $.Title }} Vidéo",
+        "description": "{{ $.Description }}",
+        "uploadDate": "{{ $.Date.Format "2006-01-02" }}",
+        "contentUrl": "{{ . }}" 
+    }
+    {{ end }}
+}
+</script>
+{{- end -}}
+{{- end -}}

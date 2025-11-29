@@ -1,0 +1,57 @@
+// ========================================
+// ========================================
+// SIDEBAR PARTIAL
+// Fichier: layouts/partials/sidebar.html
+// ========================================
+// ========================================
+
+/*
+<div class="sidebar-section">
+  <h3>📝 Dernières Recettes</h3>
+  <ul class="sidebar-list">
+    {{ range first 5 (where .Site.RegularPages "Type" "recipes") }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+
+<div class="sidebar-section">
+  <h3>🗂️ Catégories</h3>
+  <ul class="sidebar-list">
+    {{ range .Site.Taxonomies.categories }}
+    <li>
+      <a href="{{ .Page.Permalink }}">
+        {{ .Page.Title }}
+        <span class="recipe-count">{{ len .Pages }}</span>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+
+<div class="sidebar-section">
+  <h3>🏷️ Tags Populaires</h3>
+  <div class="tag-cloud">
+    {{ range first 20 .Site.Taxonomies.tags.ByCount }}
+    <a href="{{ .Page.Permalink }}" class="tag" style="font-size: {{ mul 0.8 (add 1 (div (len .Pages) 3)) }}rem">
+      {{ .Page.Title }}
+    </a>
+    {{ end }}
+  </div>
+</div>
+
+<div class="sidebar-section">
+  <h3>🔍 Recherche</h3>
+  <form class="sidebar-search" action="/search/" method="get">
+    <input type="search" name="q" placeholder="Rechercher..." aria-label="Rechercher">
+    <button type="submit" aria-label="Rechercher">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+    </button>
+  </form>
+</div>
+*/

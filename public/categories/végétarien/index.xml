@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Végétarien on Recettes de Cuisine Optimisées</title>
-    <link>//localhost:1313/categories/v%C3%A9g%C3%A9tarien/</link>
-    <description>Recent content in Végétarien on Recettes de Cuisine Optimisées</description>
+    <title>Végétarien on Banana Bead</title>
+    <link>//localhost:21003/categories/v%C3%A9g%C3%A9tarien/</link>
+    <description>Recent content in Végétarien on Banana Bead</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Mon, 24 Nov 2025 11:45:00 +0100</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/v%C3%A9g%C3%A9tarien/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:21003/categories/v%C3%A9g%C3%A9tarien/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Recette Test Simple</title>
-      <link>//localhost:1313/recettes/recette-test-simple/</link>
+      <link>//localhost:21003/recettes/test-recette/</link>
       <pubDate>Mon, 24 Nov 2025 11:45:00 +0100</pubDate>
-      <guid>//localhost:1313/recettes/recette-test-simple/</guid>
+      <guid>//localhost:21003/recettes/test-recette/</guid>
       <description>&lt;p&gt;Ceci est le contenu de la recette de test.&lt;/p&gt;</description>
     </item>
   </channel>

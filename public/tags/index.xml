@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Recettes de Cuisine Optimisées</title>
-    <link>//localhost:1313/tags/</link>
-    <description>Recent content in Tags on Recettes de Cuisine Optimisées</description>
+    <title>Tags on Banana Bead</title>
+    <link>//localhost:21003/tags/</link>
+    <description>Recent content in Tags on Banana Bead</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 24 Nov 2024 12:00:00 +0100</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:21003/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Citron Confit</title>
-      <link>//localhost:1313/tags/citron-confit/</link>
+      <link>//localhost:21003/tags/citron-confit/</link>
       <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/citron-confit/</guid>
+      <guid>//localhost:21003/tags/citron-confit/</guid>
       <description></description>
     </item>
     <item>
       <title>Marocain</title>
-      <link>//localhost:1313/tags/marocain/</link>
+      <link>//localhost:21003/tags/marocain/</link>
       <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/marocain/</guid>
+      <guid>//localhost:21003/tags/marocain/</guid>
       <description></description>
     </item>
     <item>
       <title>Plat Mijoté</title>
-      <link>//localhost:1313/tags/plat-mijot%C3%A9/</link>
+      <link>//localhost:21003/tags/plat-mijot%C3%A9/</link>
       <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/plat-mijot%C3%A9/</guid>
+      <guid>//localhost:21003/tags/plat-mijot%C3%A9/</guid>
       <description></description>
     </item>
     <item>
       <title>Poulet</title>
-      <link>//localhost:1313/tags/poulet/</link>
+      <link>//localhost:21003/tags/poulet/</link>
       <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/poulet/</guid>
+      <guid>//localhost:21003/tags/poulet/</guid>
       <description></description>
     </item>
   </channel>

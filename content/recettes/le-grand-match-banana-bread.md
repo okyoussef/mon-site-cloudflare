@@ -140,8 +140,4 @@ Cette recette combine les meilleures techniques des géants du web avec l'expert
 
 ***
 
-### 🔑 Balisage JSON-LD Final (Pour le Template)
 
-Ce bloc doit être géré par le **template `layouts/recette/single.html`** via la ligne `{{ partial "schema/recipe.html" . }}` ou similaire que j'ai vue dans votre code. Si vous insérez le JSON-LD directement dans le corps de votre article, **il doit être laissé en tant que code HTML brut** (ce que nous gérons avec le `RawContent`).
-
-```html

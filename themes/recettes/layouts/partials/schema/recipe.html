@@ -1,29 +1,36 @@
 {{- if eq .Kind "page" -}}
 {{- if eq .Type "recette" -}}
+
+{{/* --- BLOQUE 1 : SCHEMA RECETTE --- */}}
 <script type="application/ld+json">
 {
     "@context": "https://schema.org/",
     "@type": "Recipe",
-    "name": "{{ .Title }}",
-    "description": "{{ .Description }}",
+    "name": "{{ with .Params.h1_override }}{{ . }}{{ else }}{{ .Title }}{{ end }}",
+    "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}",
     "image": [
-        {{ with .Params.image }}
+        {{ with .Params.recipe_image }}
         "{{ . | absURL }}"
         {{ else }}
-        "{{ .Site.BaseURL }}images/default-recipe.jpg" {{/* A remplacer par votre image par defaut */}}
+        "{{ .Site.BaseURL }}images/default-recipe.jpg"
         {{ end }}
     ],
     "author": {
         "@type": "Person",
-        "name": "{{ .Site.Params.Author }}"
+        "name": "{{ with .Params.schema_recipe_author }}{{ . }}{{ else }}{{ .Site.Params.Author }}{{ end }}"
     },
     "datePublished": "{{ .Date.Format "2006-01-02" }}",
-    "prepTime": "PT{{ .Params.preparation_time | replaceRE "[^0-9]" "" }}M",
-    "cookTime": "PT{{ .Params.cooking_time | replaceRE "[^0-9]" "" }}M",
+    "prepTime": "PT{{ .Params.prep_time | replaceRE "[^0-9]" "" }}M",
+    "cookTime": "PT{{ .Params.cook_time | replaceRE "[^0-9]" "" }}M",
     "recipeYield": "{{ .Params.servings }}",
     "recipeIngredient": [
         {{ range $i, $e := .Params.ingredients }}
         "{{ . }}"{{ if ne (len $.Params.ingredients) (add $i 1) }},{{ end }}
+        {{ end }}
+    ],
+    "recipeCategory": [
+        {{ range $i, $e := .Params.categories }}
+        "{{ . }}"{{ if ne (len $.Params.categories) (add $i 1) }},{{ end }}
         {{ end }}
     ],
     "aggregateRating": {
@@ -40,7 +47,31 @@
         "contentUrl": "{{ . }}" 
     }
     {{ end }}
+    {{/* Ajout des instructions structurées si nécessaire plus tard */}}
 }
 </script>
+
+{{/* --- BLOQUE 2 : SCHEMA FAQ (Basé sur le Front Matter) --- */}}
+{{- if .Params.faq -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $item := .Params.faq }}
+    {
+      "@type": "Question",
+      "name": "{{ $item.question }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ $item.answer }}"
+      }
+    }{{ if ne (add $i 1) (len $.Params.faq) }},{{ end }}
+    {{ end }}
+  ]
+}
+</script>
+{{- end -}}
+
 {{- end -}}
 {{- end -}}

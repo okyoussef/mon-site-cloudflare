@@ -33,6 +33,17 @@ ingredients:
   - "150g de sucre cassonade"
   - "50ml de crème fraîche ou yaourt nature (pour l'humidité)"
 
+  # ... (après ingredients)
+
+# FAQ pour le Schema (Copié du texte visible)
+faq:
+  - question: "Pourquoi mon Banana Bread est-il trop dense et sec ?"
+    answer: "Cela est souvent dû à un excès de farine ou à un mélange trop prolongé. Notre recette utilise la crème fraîche pour l'humidité."
+  - question: "Combien de temps puis-je conserver le Banana Bread ?"
+    answer: "Jusqu'à 4 jours à température ambiante, bien emballé. Le frigo le dessèche."
+  - question: "Pourquoi mon Banana Bread s'affaisse-t-il au milieu ?"
+    answer: "Souvent dû à une cuisson insuffisante. Baissez la température et prolongez la cuisson de 10 min."
+
 ---
 
 ## 🍌 Introduction : Le Match des Géants

@@ -4,9 +4,10 @@
         {{ .Title }}
     </h1>
 
-    <div class="text-gray-700 leading-relaxed">
-        {{ .Content }}
-    </div>
+
+    <div class="prose prose-lg prose-blue max-w-none text-gray-700">
+    {{ .Content }}
+</div>
 
     {{ if .Params.date }}
         <p class="mt-4 text-sm text-gray-500">
@@ -14,4 +15,10 @@
         </p>
     {{ end }}
 </article>
+
+...
+{{ partial "schema/recipe.html" . }}
+
+
+
 {{ end }}

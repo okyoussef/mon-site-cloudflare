@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Banana Bread on Banana Bead</title>
+    <link>//localhost:1313/tags/banana-bread/</link>
+    <description>Recent content in Banana Bread on Banana Bead</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 30 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/banana-bread/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recette Banana Bread Ultime : Comparatif Sally&#39;s, Allrecipes &amp; Simply Recipes | Chef Galno</title>
+      <link>//localhost:1313/recettes/le-grand-match-banana-bread/</link>
+      <pubDate>Sun, 30 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/recettes/le-grand-match-banana-bread/</guid>
+      <description>&lt;h1 id=&#34;-paramsh1_override-&#34;&gt;{{ .Params.h1_override }}&lt;/h1&gt;&#xA;&lt;p class=&#34;lead&#34;&gt;&#xD;&#xA;    Bienvenue chez Chef Galno ! Vous êtes à la recherche de LA **recette de Banana Bread** qui combine **moelleux, densité et simplicité** ? Nous avons mis à l&#39;épreuve les quatre géants du web : **Sally&#39;s Baking Addiction, Allrecipes, Simply Recipes** et la très populaire recette de **Natasha&#39;s Kitchen**. Notre analyse expert décortique leurs ratios d&#39;ingrédients pour vous révéler les secrets de la texture parfaite.&#xD;&#xA;&lt;/p&gt;&#xD;&#xA;&lt;h2 id=&#34;-le-grand-tableau-comparatif--lanalyse-des-ratios-dexpert&#34;&gt;⚔️ Le Grand Tableau Comparatif : L&amp;rsquo;Analyse des Ratios d&amp;rsquo;Expert&lt;/h2&gt;&#xA;&lt;p&gt;Nous avons non seulement testé chaque recette trois fois, mais nous avons surtout analysé leur &lt;strong&gt;chimie interne&lt;/strong&gt;. L&amp;rsquo;expertise de Chef Galno réside dans la compréhension des &lt;strong&gt;ratios d&amp;rsquo;humidité, de gras et de levée&lt;/strong&gt;. Voici les différences fondamentales entre ces mastodontes :&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

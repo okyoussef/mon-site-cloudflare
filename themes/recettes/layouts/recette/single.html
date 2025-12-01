@@ -7,12 +7,16 @@
             {{ end }}
         </div>
 
-        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">{{ .Title }}</h1>
-        <p class="text-xl text-gray-500 italic mb-4">{{ .Description }}</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            {{ if .Params.h1_override }}
+                {{ .Params.h1_override }}
+            {{ else }}
+                {{ .Title }}
+            {{ end }}
+        </h1>
+        <p class="text-xl text-gray-500 italic mb-4">{{ .Description | default .Params.description }}</p>
 
         <div class="flex flex-wrap gap-4 text-sm font-medium text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-100">
-            
-           
             
             {{ with .Params.preparation_time }}
                 <div class="flex items-center"><span class="mr-2">⏱️</span> Prép : {{ . }}</div>
@@ -23,8 +27,8 @@
             {{ with .Params.servings }}
                 <div class="flex items-center"><span class="mr-2">🍽️</span> {{ . }}</div>
             {{ end }}
-
-             {{ if .Params.rating }}
+            
+            {{ if .Params.rating }}
             <div class="flex items-center mr-4">
                 <div class="flex text-yellow-500">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
@@ -44,7 +48,7 @@
         <section class="lg:col-span-2">
             <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Instructions</h2>
             <div class="prose prose-lg prose-blue max-w-none text-gray-700">
-                {{ .Content }}
+            {{ .Content }}
             </div>
         </section>
 

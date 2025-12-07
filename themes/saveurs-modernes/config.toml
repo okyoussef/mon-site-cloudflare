@@ -1,7 +1,7 @@
 baseURL = "https://votresite.com/"
 languageCode = "fr-fr"
-title = "Saveurs Modernes"
-theme = "Saveurs Modernes"
+title = "saveurs-modernes"
+theme = "saveurs-modernes"
 
 [params]
   description = "Blog de recettes modernes et savoureuses"

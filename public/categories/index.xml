@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Banana Bead</title>
+    <link>//localhost:1313/categories/</link>
+    <description>Recent content in Categories on Banana Bead</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 07 Dec 2025 20:40:55 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dessert</title>
+      <link>//localhost:1313/categories/dessert/</link>
+      <pubDate>Sun, 30 Nov 2025 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/categories/dessert/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gouter</title>
+      <link>//localhost:1313/categories/gouter/</link>
+      <pubDate>Sun, 30 Nov 2025 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/categories/gouter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cuisine Du Monde</title>
+      <link>//localhost:1313/categories/cuisine-du-monde/</link>
+      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/categories/cuisine-du-monde/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Marocain</title>
+      <link>//localhost:1313/categories/marocain/</link>
+      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/categories/marocain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Plats Principaux</title>
+      <link>//localhost:1313/categories/plats-principaux/</link>
+      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/categories/plats-principaux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Holiday</title>
+      <link>//localhost:1313/categories/holiday/</link>
+      <pubDate>Fri, 01 Dec 2023 12:29:09 +0100</pubDate>
+      <guid>//localhost:1313/categories/holiday/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

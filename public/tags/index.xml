@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Banana Bead</title>
+    <link>//localhost:1313/tags/</link>
+    <description>Recent content in Tags on Banana Bead</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 07 Dec 2025 20:40:55 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Allrecipes</title>
+      <link>//localhost:1313/tags/allrecipes/</link>
+      <pubDate>Sun, 30 Nov 2025 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/allrecipes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Banana Bread</title>
+      <link>//localhost:1313/tags/banana-bread/</link>
+      <pubDate>Sun, 30 Nov 2025 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/banana-bread/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Natashas Kitchen</title>
+      <link>//localhost:1313/tags/natashas-kitchen/</link>
+      <pubDate>Sun, 30 Nov 2025 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/natashas-kitchen/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recette Moelleux</title>
+      <link>//localhost:1313/tags/recette-moelleux/</link>
+      <pubDate>Sun, 30 Nov 2025 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/recette-moelleux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sallys Baking Addiction</title>
+      <link>//localhost:1313/tags/sallys-baking-addiction/</link>
+      <pubDate>Sun, 30 Nov 2025 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/sallys-baking-addiction/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Simply Recipes</title>
+      <link>//localhost:1313/tags/simply-recipes/</link>
+      <pubDate>Sun, 30 Nov 2025 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/simply-recipes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Citron Confit</title>
+      <link>//localhost:1313/tags/citron-confit/</link>
+      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/citron-confit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Marocain</title>
+      <link>//localhost:1313/tags/marocain/</link>
+      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/marocain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Plat Mijoté</title>
+      <link>//localhost:1313/tags/plat-mijot%C3%A9/</link>
+      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/plat-mijot%C3%A9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Poulet</title>
+      <link>//localhost:1313/tags/poulet/</link>
+      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/poulet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chewy</title>
+      <link>//localhost:1313/tags/chewy/</link>
+      <pubDate>Fri, 01 Dec 2023 12:29:09 +0100</pubDate>
+      <guid>//localhost:1313/tags/chewy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Christmas</title>
+      <link>//localhost:1313/tags/christmas/</link>
+      <pubDate>Fri, 01 Dec 2023 12:29:09 +0100</pubDate>
+      <guid>//localhost:1313/tags/christmas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cookies</title>
+      <link>//localhost:1313/tags/cookies/</link>
+      <pubDate>Fri, 01 Dec 2023 12:29:09 +0100</pubDate>
+      <guid>//localhost:1313/tags/cookies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gingerbread</title>
+      <link>//localhost:1313/tags/gingerbread/</link>
+      <pubDate>Fri, 01 Dec 2023 12:29:09 +0100</pubDate>
+      <guid>//localhost:1313/tags/gingerbread/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spices</title>
+      <link>//localhost:1313/tags/spices/</link>
+      <pubDate>Fri, 01 Dec 2023 12:29:09 +0100</pubDate>
+      <guid>//localhost:1313/tags/spices/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

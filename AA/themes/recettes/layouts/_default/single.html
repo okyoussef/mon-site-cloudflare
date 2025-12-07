@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="prose max-w-none">
+    <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">
+        {{ .Title }}
+    </h1>
+
+
+    <div class="prose prose-lg prose-blue max-w-none text-gray-700">
+    {{ .Content }}
+</div>
+
+    {{ if .Params.date }}
+        <p class="mt-4 text-sm text-gray-500">
+            Dernière mise à jour : {{ .Date.Format "02 January 2006" }}
+        </p>
+    {{ end }}
+</article>
+
+...
+{{ partial "schema/recipe.html" . }}
+
+
+
+{{ end }}

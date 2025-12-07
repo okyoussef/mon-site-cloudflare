@@ -1,0 +1,212 @@
+
+
+```html
+{{ define "main" }}
+
+  
+  
+    {{ with .Params.featured_image }}
+      
+    {{ end }}
+  
+  
+  
+  
+    {{ .Title }}
+    
+    
+      
+        {{ .Date.Format "2 January 2006" }}
+      
+      
+      
+        
+          
+            
+            
+            
+            
+            
+          
+          Partager
+        
+        
+        
+          
+            
+            
+            
+          
+          Imprimer
+        
+      
+    
+    
+    {{ .Params.description }}
+  
+  
+  
+  
+    {{ with .Params.prep_time }}
+    
+      
+        
+      
+      
+        Préparation
+        {{ . }}
+      
+    
+    {{ end }}
+    
+    {{ with .Params.cook_time }}
+    
+      
+        
+        
+      
+      
+        Cuisson
+        {{ . }}
+      
+    
+    {{ end }}
+    
+    {{ with .Params.total_time }}
+    
+      
+        
+        
+      
+      
+        Total
+        {{ . }}
+      
+    
+    {{ end }}
+    
+    {{ with .Params.servings }}
+    
+      
+        
+        
+        
+        
+      
+      
+        Portions
+        {{ . }}
+      
+    
+    {{ end }}
+    
+    {{ with .Params.difficulty }}
+    
+      
+        
+      
+      
+        Difficulté
+        {{ . }}
+      
+    
+    {{ end }}
+    
+    {{ with .Params.calories }}
+    
+      
+        
+      
+      
+        Calories
+        
+          {{ . }}
+        
+      
+    
+    {{ end }}
+  
+  
+  
+  
+    
+    
+      Ingrédients
+      
+        {{ range .Params.ingredients }}
+          
+            
+            {{ . | markdownify }}
+          
+        {{ end }}
+      
+    
+    
+    
+    
+      Instructions
+      
+        {{ range $index, $step := .Params.instructions }}
+          
+            
+            {{ add $index 1 }}
+            {{ $step | markdownify }}
+          
+        {{ end }}
+      
+    
+  
+  
+  
+  {{ with .Params.notes }}
+  
+    Notes & Astuces
+    
+      {{ . | markdownify }}
+    
+  
+  {{ end }}
+  
+  
+  
+    {{ .Content }}
+  
+  
+  
+  {{ if or .Params.categories .Params.tags }}
+  
+    {{ with .Params.categories }}
+    
+      Catégories:
+      {{ range . }}
+        <a href="{{ "categories" | absLangURL }}/{{ . | urlize }}" class="taxonomy-tag">{{ . }}
+      {{ end }}
+    
+    {{ end }}
+    
+    {{ with .Params.tags }}
+    
+      Tags:
+      {{ range . }}
+        <a href="{{ "tags" | absLangURL }}/{{ . | urlize }}" class="taxonomy-tag">{{ . }}
+      {{ end }}
+    
+    {{ end }}
+  
+  {{ end }}
+  
+  
+  {{ $related := .Site.RegularPages.Related . | first 3 }}
+  {{ with $related }}
+  
+    Recettes Similaires
+    
+      {{ range . }}
+        {{ partial "recipe-card.html" . }}
+      {{ end }}
+    
+  
+  {{ end }}
+
+{{ end }}
+```

@@ -1,0 +1,8 @@
+# theme.toml dans themes/saveurs-modernes/
+
+name = "Saveurs Modernes"
+license = "MIT"
+description = "Thème de recettes moderne."
+
+# If you have an exampleSite, it should be listed here
+# min_version = "0.90.0"

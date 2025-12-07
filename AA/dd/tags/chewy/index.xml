@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chewy on Banana Bead</title>
+    <link>//localhost:1313/tags/chewy/</link>
+    <description>Recent content in Chewy on Banana Bead</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Fri, 01 Dec 2023 12:29:09 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/chewy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Classic Chewy Gingerbread Cookies - A Holiday Must-Have</title>
+      <link>//localhost:1313/recettes/classic-chewy-gingerbread-cookies/</link>
+      <pubDate>Fri, 01 Dec 2023 12:29:09 +0100</pubDate>
+      <guid>//localhost:1313/recettes/classic-chewy-gingerbread-cookies/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;//localhost:1313/Classic-Chewy-Gingerbread-Cookies-A-Holiday-Must-Have.png&#34; alt=&#34;Un chef qui prépare la pâte&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;-introduction-the-scent-of-the-holidays&#34;&gt;🎄 Introduction: The Scent of the Holidays&lt;/h2&gt;&#xA;&lt;p&gt;Welcome to Chef Galno&amp;rsquo;s kitchen, where holiday traditions come alive ! As December unfolds, nothing captures the spirit of Christmas quite like the warm, spicy aroma of freshly baked gingerbread. These &lt;strong&gt;Classic Chewy Gingerbread Cookies&lt;/strong&gt; are an absolute must-have for your festive celebrations. Perfect for decorating with the family, gifting to friends, or simply enjoying with a cup of hot cocoa, our recipe guarantees a delightful balance of robust spice and a wonderfully soft, chewy texture. Forget brittle, dry gingerbread; prepare for a batch of pure holiday joy that will become a cherished tradition.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

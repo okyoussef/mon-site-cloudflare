@@ -1,0 +1,6 @@
+<li class="ingredient-item">
+  <input type="checkbox" id="ingredient-{{ now.Unix }}-{{ .Ordinal }}" class="ingredient-checkbox">
+  <label for="ingredient-{{ now.Unix }}-{{ .Ordinal }}">
+    {{ .Inner | markdownify }}
+  </label>
+</li>

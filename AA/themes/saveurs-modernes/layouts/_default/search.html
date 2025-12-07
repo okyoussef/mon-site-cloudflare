@@ -1,0 +1,255 @@
+
+<!-- ========================================
+     PAGE DE RECHERCHE
+     Fichier: layouts/_default/search.html
+     ======================================== -->
+
+{{ define "main" }}
+<div class="search-page">
+  <header class="search-header">
+    <h1>Recherche</h1>
+    
+    <form class="search-form-main" role="search">
+      <input 
+        type="search" 
+        id="search-input" 
+        placeholder="Rechercher une recette, un ingrédient..." 
+        aria-label="Rechercher"
+        value="{{ .Params.q }}"
+      >
+      <button type="submit" aria-label="Rechercher">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+    </form>
+  </header>
+  
+  <div id="search-results">
+    <p class="search-info">Entrez votre recherche ci-dessus</p>
+  </div>
+</div>
+
+<style>
+  .search-page {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .search-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .search-form-main {
+    max-width: 600px;
+    margin: var(--spacing-xl) auto;
+    position: relative;
+  }
+  
+  .search-form-main input {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    padding-right: 60px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-size: 1.1rem;
+    transition: all var(--transition-fast);
+  }
+  
+  .search-form-main input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+  }
+  
+  .search-form-main button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-info {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+  }
+  
+  .search-result {
+    background-color: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+  }
+  
+  .search-result:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .search-result h3 {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .search-result h3 a {
+    color: var(--color-text);
+  }
+  
+  .search-result-meta {
+    display: flex;
+    gap: var(--spacing-md);
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .search-result-summary {
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+  
+  .search-highlight {
+    background-color: var(--color-accent);
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  
+  .no-results {
+    text-align: center;
+    padding: var(--spacing-2xl);
+  }
+  
+  .no-results-icon {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.3;
+  }
+</style>
+
+<script>
+  // Recherche simple côté client
+  let searchIndex = [];
+  
+  // Charger l'index JSON
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      searchIndex = data;
+      // Si query param existe, effectuer la recherche
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('q');
+      if (query) {
+        document.getElementById('search-input').value = query;
+        performSearch(query);
+      }
+    })
+    .catch(error => console.error('Erreur chargement index:', error));
+  
+  // Fonction de recherche
+  function performSearch(query) {
+    if (!query || query.length < 2) {
+      document.getElementById('search-results').innerHTML = 
+        '<p class="search-info">Entrez au moins 2 caractères</p>';
+      return;
+    }
+    
+    const lowerQuery = query.toLowerCase();
+    const results = searchIndex.filter(item => {
+      return item.title.toLowerCase().includes(lowerQuery) ||
+             item.content.toLowerCase().includes(lowerQuery) ||
+             (item.categories && item.categories.some(cat => 
+               cat.toLowerCase().includes(lowerQuery))) ||
+             (item.tags && item.tags.some(tag => 
+               tag.toLowerCase().includes(lowerQuery)));
+    });
+    
+    displayResults(results, query);
+  }
+  
+  // Afficher les résultats
+  function displayResults(results, query) {
+    const container = document.getElementById('search-results');
+    
+    if (results.length === 0) {
+      container.innerHTML = `
+        <div class="no-results">
+          <div class="no-results-icon">🔍</div>
+          <h2>Aucun résultat trouvé</h2>
+          <p>Essayez avec d'autres mots-clés</p>
+        </div>
+      `;
+      return;
+    }
+    
+    const resultsHTML = `
+      <p class="search-info">${results.length} résultat(s) pour "${query}"</p>
+      ${results.map(result => `
+        <article class="search-result">
+          <h3><a href="${result.permalink}">${highlightText(result.title, query)}</a></h3>
+          <div class="search-result-meta">
+            ${result.prep_time ? `<span>⏱️ ${result.prep_time}</span>` : ''}
+            ${result.difficulty ? `<span>📊 ${result.difficulty}</span>` : ''}
+            ${result.servings ? `<span>👥 ${result.servings} portions</span>` : ''}
+          </div>
+          <p class="search-result-summary">
+            ${highlightText(truncate(result.summary || result.content, 200), query)}
+          </p>
+          ${result.categories ? `
+            <div class="card-tags">
+              ${result.categories.map(cat => `<span class="tag">${cat}</span>`).join('')}
+            </div>
+          ` : ''}
+        </article>
+      `).join('')}
+    `;
+    
+    container.innerHTML = resultsHTML;
+  }
+  
+  // Surligner les termes de recherche
+  function highlightText(text, query) {
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<mark class="search-highlight">$1</mark>');
+  }
+  
+  // Tronquer le texte
+  function truncate(text, length) {
+    if (text.length <= length) return text;
+    return text.substr(0, length) + '...';
+  }
+  
+  // Écouter le formulaire
+  document.querySelector('.search-form-main').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const query = document.getElementById('search-input').value;
+    performSearch(query);
+    
+    // Mettre à jour l'URL
+    const newUrl = `${window.location.pathname}?q=${encodeURIComponent(query)}`;
+    window.history.pushState({}, '', newUrl);
+  });
+  
+  // Recherche en temps réel (optionnel)
+  let searchTimeout;
+  document.getElementById('search-input').addEventListener('input', (e) => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      performSearch(e.target.value);
+    }, 300);
+  });
+</script>
+{{ end }}

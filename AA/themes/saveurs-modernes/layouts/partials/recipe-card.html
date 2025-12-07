@@ -1,0 +1,57 @@
+
+
+```html
+
+  
+    
+      {{ with .Params.featured_image }}
+        
+      {{ else }}
+        
+      {{ end }}
+      
+      
+        {{ if .Params.difficulty }}
+          {{ .Params.difficulty }}
+        {{ end }}
+      
+    
+    
+    
+      {{ .Title }}
+      
+      
+        {{ with .Params.total_time }}
+          
+            
+              
+              
+            
+            {{ . }}
+          
+        {{ end }}
+        
+        {{ with .Params.servings }}
+          
+            
+              
+              
+              
+              
+            
+            {{ . }} portions
+          
+        {{ end }}
+      
+      
+      {{ with .Params.categories }}
+        
+          {{ range first 2 . }}
+            {{ . }}
+          {{ end }}
+        
+      {{ end }}
+    
+  
+
+```

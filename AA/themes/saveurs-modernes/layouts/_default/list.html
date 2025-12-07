@@ -1,0 +1,246 @@
+<!-- ========================================
+     PAGE DE LISTE (Catégories/Tags)
+     Fichier: layouts/_default/list.html
+     ======================================== -->
+
+{{ define "main" }}
+<div class="archive-page">
+  <header class="archive-header">
+    <h1>{{ .Title }}</h1>
+    
+    {{ with .Description }}
+      <p class="archive-description">{{ . }}</p>
+    {{ end }}
+    
+    <p class="archive-count">
+      {{ len .Pages }} recette{{ if gt (len .Pages) 1 }}s{{ end }}
+    </p>
+  </header>
+  
+  <!-- Filtres de tri -->
+  <div class="archive-filters">
+    <div class="filter-group">
+      <label for="sort">Trier par:</label>
+      <select id="sort" class="filter-select">
+        <option value="date-desc">Plus récent</option>
+        <option value="date-asc">Plus ancien</option>
+        <option value="title-asc">Nom (A-Z)</option>
+        <option value="title-desc">Nom (Z-A)</option>
+      </select>
+    </div>
+    
+    {{ if eq .Type "categories" }}
+    <div class="filter-group">
+      <label for="difficulty">Difficulté:</label>
+      <select id="difficulty" class="filter-select">
+        <option value="all">Toutes</option>
+        <option value="facile">Facile</option>
+        <option value="moyen">Moyen</option>
+        <option value="difficile">Difficile</option>
+      </select>
+    </div>
+    {{ end }}
+  </div>
+  
+  <!-- Grille de recettes -->
+  <div class="recipe-cards" id="recipes-grid">
+    {{ range .Pages }}
+      {{ partial "recipe-card.html" . }}
+    {{ end }}
+  </div>
+  
+  <!-- Pagination -->
+  {{ if gt .Paginator.TotalPages 1 }}
+  <nav class="pagination" aria-label="Pagination">
+    <ul class="pagination-list">
+      {{ if .Paginator.HasPrev }}
+        <li>
+          <a href="{{ .Paginator.Prev.URL }}" class="pagination-link" aria-label="Page précédente">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            Précédent
+          </a>
+        </li>
+      {{ end }}
+      
+      {{ range .Paginator.Pagers }}
+        <li>
+          <a href="{{ .URL }}" class="pagination-link {{ if eq . $.Paginator }}active{{ end }}" aria-label="Page {{ .PageNumber }}">
+            {{ .PageNumber }}
+          </a>
+        </li>
+      {{ end }}
+      
+      {{ if .Paginator.HasNext }}
+        <li>
+          <a href="{{ .Paginator.Next.URL }}" class="pagination-link" aria-label="Page suivante">
+            Suivant
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+  {{ end }}
+</div>
+
+<style>
+  .archive-page {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .archive-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: var(--radius-xl);
+    color: white;
+  }
+  
+  .archive-header h1 {
+    color: white;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .archive-description {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .archive-count {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  .archive-filters {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .filter-select {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .filter-select:hover {
+    border-color: var(--color-primary);
+  }
+  
+  .filter-select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+  }
+  
+  .pagination {
+    margin-top: var(--spacing-2xl);
+  }
+  
+  .pagination-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+    list-style: none;
+  }
+  
+  .pagination-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+    min-width: 44px;
+    justify-content: center;
+  }
+  
+  .pagination-link:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  .pagination-link.active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .archive-filters {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .filter-group {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .filter-select {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  // Tri dynamique
+  document.getElementById('sort')?.addEventListener('change', (e) => {
+    const grid = document.getElementById('recipes-grid');
+    const cards = Array.from(grid.children);
+    const sortBy = e.target.value;
+    
+    cards.sort((a, b) => {
+      const titleA = a.querySelector('.card-title').textContent;
+      const titleB = b.querySelector('.card-title').textContent;
+      const dateA = a.dataset.date || '';
+      const dateB = b.dataset.date || '';
+      
+      switch(sortBy) {
+        case 'date-desc': return dateB.localeCompare(dateA);
+        case 'date-asc': return dateA.localeCompare(dateB);
+        case 'title-asc': return titleA.localeCompare(titleB);
+        case 'title-desc': return titleB.localeCompare(titleA);
+        default: return 0;
+      }
+    });
+    
+    cards.forEach(card => grid.appendChild(card));
+  });
+  
+  // Filtre par difficulté
+  document.getElementById('difficulty')?.addEventListener('change', (e) => {
+    const filter = e.target.value.toLowerCase();
+    const cards = document.querySelectorAll('.recipe-card');
+    
+    cards.forEach(card => {
+      const difficulty = (card.dataset.difficulty || '').toLowerCase();
+      card.style.display = (filter === 'all' || difficulty === filter) ? 'block' : 'none';
+    });
+  });
+</script>
+{{ end }}

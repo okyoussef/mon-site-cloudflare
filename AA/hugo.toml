@@ -1,0 +1,52 @@
+baseURL = "/"
+languageCode = "fr-fr"
+title = "Banana Bead"
+theme = "recettes" # Assurez-vous que c'est le bon nom de votre thème
+
+# Par défaut, Hugo désactive les brouillons et les futurs posts lors de la build
+# Si vous voulez une table des matières automatique :
+enableGitInfo = true
+
+
+# ==================================
+# DÉFINITION DES TAXONOMIES
+# ==================================
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  # Taxonomie personnalisée (utilisée pour le schéma Recipe)
+  plat = "plats" 
+
+
+# ==================================
+# DÉFINITION DES PARAMÈTRES (PARAMÈTRES GLOBALS DU SITE)
+# ==================================
+[params]
+  description = "Toutes les meilleures recettes analysées et optimisées par Chef Galno."
+  Author = "Chef Galno" # Auteur par défaut pour le schéma
+
+
+# ==================================
+# DÉFINITION DU MENU DE NAVIGATION
+# ==================================
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Accueil"
+    url = "/"
+    weight = 10 
+  [[menu.main]]
+    identifier = "categories"
+    name = "Catégories"
+    url = "/categories/"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    name = "À Propos"
+    url = "/about/"
+    weight = 30
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 40

@@ -1,0 +1,88 @@
+<!-- ========================================
+     404 PAGE
+     Fichier: layouts/404.html
+     ======================================== -->
+
+{{ define "main" }}
+<div class="error-404">
+  <div class="error-content">
+    <div class="error-icon">🍳</div>
+    <h1>404</h1>
+    <h2>Oups ! Cette recette n'existe pas</h2>
+    <p>La page que vous recherchez semble avoir été mangée... ou n'a jamais existé !</p>
+    
+    <div class="error-actions">
+      <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+      <a href="/recipes/" class="btn btn-secondary">Voir toutes les recettes</a>
+    </div>
+    
+    <div class="error-suggestions">
+      <h3>Recettes populaires</h3>
+      <div class="recipe-cards">
+        {{ range first 3 (where .Site.RegularPages "Type" "recipes") }}
+          {{ partial "recipe-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .error-404 {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .error-content {
+    max-width: 800px;
+    padding: var(--spacing-xl);
+  }
+  
+  .error-icon {
+    font-size: 6rem;
+    margin-bottom: var(--spacing-md);
+    animation: bounce 2s infinite;
+  }
+  
+  .error-404 h1 {
+    font-size: 8rem;
+    color: var(--color-primary);
+    margin: 0;
+    line-height: 1;
+  }
+  
+  .error-404 h2 {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .error-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin: var(--spacing-xl) 0;
+    flex-wrap: wrap;
+  }
+  
+  .btn-secondary {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--color-secondary);
+    color: white;
+  }
+  
+  .error-suggestions {
+    margin-top: var(--spacing-2xl);
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+</style>
+{{ end }}

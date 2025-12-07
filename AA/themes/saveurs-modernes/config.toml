@@ -1,0 +1,45 @@
+baseURL = "https://votresite.com/"
+languageCode = "fr-fr"
+title = "Saveurs Modernes"
+theme = "Saveurs Modernes"
+
+[params]
+  description = "Blog de recettes modernes et savoureuses"
+  author = "Votre Nom"
+  
+  # Réseaux sociaux
+  twitter = "@votrecompte"
+  facebook = "votrecompte"
+  instagram = "@votrecompte"
+  
+  # Options du thème
+  showRecipeCount = true
+  recipesPerPage = 12
+  enableDarkMode = true
+
+[menu]
+  [[menu.main]]
+    name = "Accueil"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Recettes"
+    url = "/recipes/"
+    weight = 2
+  [[menu.main]]
+    name = "Catégories"
+    url = "/categories/"
+    weight = 3
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  cuisine = "cuisines"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

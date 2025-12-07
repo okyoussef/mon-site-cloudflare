@@ -1,0 +1,18 @@
+{{ define "main" }}
+    <h1 class="text-4xl font-extrabold text-blue-700 mb-8">
+        {{ .Title }}
+    </h1>
+
+    <div class="space-y-6">
+    {{ range .Pages }}
+        <a href="{{ .Permalink }}" class="block p-5 border rounded-lg shadow-sm bg-white hover:shadow-md transition-shadow">
+            <h2 class="text-xl font-bold text-gray-800">{{ .Title }}</h2>
+            <p class="text-sm text-gray-500 mt-1">
+                {{ if .Date }}Publié le : {{ .Date.Format "02 January 2006" }} | {{ end }}
+                {{ .Summary | safeHTML | truncate 150 }}
+            </p>
+        </a>
+    {{ end }}
+    </div>
+
+{{ end }}

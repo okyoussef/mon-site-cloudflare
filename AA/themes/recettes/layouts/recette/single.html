@@ -1,0 +1,74 @@
+{{ define "main" }}
+<article class="bg-white p-6 md:p-10 shadow-xl rounded-xl">
+    <header class="border-b pb-4 mb-6">
+        <div class="mb-2">
+            {{ range .Params.categories }}
+                <span class="text-blue-600 font-bold uppercase text-xs tracking-wide mr-2">{{ . }}</span>
+            {{ end }}
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            {{ if .Params.h1_override }}
+                {{ .Params.h1_override }}
+            {{ else }}
+                {{ .Title }}
+            {{ end }}
+        </h1>
+        <p class="text-xl text-gray-500 italic mb-4">{{ .Description | default .Params.description }}</p>
+
+        <div class="flex flex-wrap gap-4 text-sm font-medium text-gray-700 bg-gray-50 p-4 rounded-lg border border-gray-100">
+            
+            {{ with .Params.preparation_time }}
+                <div class="flex items-center"><span class="mr-2">⏱️</span> Prép : {{ . }}</div>
+            {{ end }}
+            {{ with .Params.cooking_time }}
+                <div class="flex items-center"><span class="mr-2">🔥</span> Cuisson : {{ . }}</div>
+            {{ end }}
+            {{ with .Params.servings }}
+                <div class="flex items-center"><span class="mr-2">🍽️</span> {{ . }}</div>
+            {{ end }}
+            
+            {{ if .Params.rating }}
+            <div class="flex items-center mr-4">
+                <div class="flex text-yellow-500">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <span class="ml-1 mr-1 font-bold text-gray-800">{{ .Params.rating }}/5</span>
+                <span class="text-gray-500">({{ .Params.vote_count }} avis)</span>
+            </div>
+            {{ end }}
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <section class="lg:col-span-2">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Instructions</h2>
+          
+            <div class="prose prose-lg prose-blue max-w-none text-gray-700">
+    {{ .Content }}
+</div>
+        </section>
+
+        <aside class="lg:col-span-1">
+            <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 sticky top-4">
+                <h2 class="text-2xl font-bold text-blue-900 mb-4">Ingrédients</h2>
+                <ul class="space-y-3">
+                    {{ range .Params.ingredients }}
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 mt-1">✔</span>
+                            <span class="text-gray-800">{{ . }}</span>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </aside>
+    </div>
+</article>
+
+{{ partial "schema/recipe.html" . }}
+
+{{ end }}

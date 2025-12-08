@@ -1,6 +1,6 @@
 baseURL = '/'
 languageCode = 'fr-fr'
-title = 'Banana-Braed : Recettes de Cuisine facile'
+title = 'Banana-Braed : Recettes de Cuisine'
 theme = 'recettes'
 
 # Configuration propre à Hugo

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gouter on Recettes de Cuisine Optimisées</title>
+    <title>Gouter on Banana-Braed : Recettes de Cuisine</title>
     <link>//localhost:1313/categories/gouter/</link>
-    <description>Recent content in Gouter on Recettes de Cuisine Optimisées</description>
+    <description>Recent content in Gouter on Banana-Braed : Recettes de Cuisine</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 24 Nov 2024 12:00:00 +0100</lastBuildDate>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recette Rapide on Banana-Braed : Recettes de Cuisine</title>
+    <link>//localhost:1313/tags/recette-rapide/</link>
+    <description>Recent content in Recette Rapide on Banana-Braed : Recettes de Cuisine</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Wed, 01 Jan 2025 10:00:00 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/recette-rapide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recette du Gâteau au Chocolat Ultra Moelleux et Intense</title>
+      <link>//localhost:1313/recettes/recette-du-g%C3%A2teau-au-chocolat-ultra-moelleux-et-intense/</link>
+      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
+      <guid>//localhost:1313/recettes/recette-du-g%C3%A2teau-au-chocolat-ultra-moelleux-et-intense/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;recette-gateaux-chocolat-moelleurx.png.jpg&#34; alt=&#34;Gâteau au chocolat ultra moelleux avec glaçage&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;pourquoi-ce-gâteau-au-chocolat-est-incontournable-&#34;&gt;Pourquoi ce Gâteau au Chocolat est Incontournable ?&lt;/h2&gt;&#xA;&lt;p&gt;Découvrez la recette du gâteau au chocolat le plus &lt;strong&gt;moelleux&lt;/strong&gt; et le plus &lt;strong&gt;savoureux&lt;/strong&gt; que vous ayez jamais goûté. Ce classique intemporel est sublimé par une texture fondante et un goût intense de chocolat, parfait pour les amateurs de douceurs cacaotées. Que ce soit pour un anniversaire, un goûter ou simplement pour le plaisir, cette recette simple et rapide vous garantit un succès à chaque fois.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

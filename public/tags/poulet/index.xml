@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Poulet on Recettes de Cuisine Optimisées</title>
+    <title>Poulet on Banana-Braed : Recettes de Cuisine</title>
     <link>//localhost:1313/tags/poulet/</link>
-    <description>Recent content in Poulet on Recettes de Cuisine Optimisées</description>
+    <description>Recent content in Poulet on Banana-Braed : Recettes de Cuisine</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 24 Nov 2024 12:00:00 +0100</lastBuildDate>
     <atom:link href="//localhost:1313/tags/poulet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>montagine de viande d&#39;hachée avec sauce tomate</title>
+      <link>//localhost:1313/recettes/montagine-de-viande-dhach%C3%A9e-avec-sauce-tomate/</link>
+      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/recettes/montagine-de-viande-dhach%C3%A9e-avec-sauce-tomate/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://placehold.co/1000x500/D97706/FFFFFF?text=Tajine+Traditionnel&#34; alt=&#34;Tajine Traditionnel&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;pourquoi-cette-recette-est-un-succès-&#34;&gt;Pourquoi cette recette est un succès ?&lt;/h2&gt;&#xA;&lt;p&gt;C&amp;rsquo;est l&amp;rsquo;équilibre parfait entre l&amp;rsquo;acidité du citron confit, la richesse des épices (safran, gingembre) et le fondant du poulet mijoté. Le plat se cuisine tout seul, et la sauce onctueuse est idéale pour être trempée avec du pain. Un véritable voyage culinaire, simple et authentique.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Tajine de Poulet aux Citrons Confits et Olives</title>
       <link>//localhost:1313/recettes/tajine-de-poulet-aux-citrons-confits-et-olives/</link>

@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Recettes de Cuisine Optimisées</title>
+    <title>Tags on Banana-Braed : Recettes de Cuisine</title>
     <link>//localhost:1313/tags/</link>
-    <description>Recent content in Tags on Recettes de Cuisine Optimisées</description>
+    <description>Recent content in Tags on Banana-Braed : Recettes de Cuisine</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sun, 24 Nov 2024 12:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jan 2025 10:00:00 +0100</lastBuildDate>
     <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chocolat</title>
+      <link>//localhost:1313/tags/chocolat/</link>
+      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/chocolat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gâteau</title>
+      <link>//localhost:1313/tags/g%C3%A2teau/</link>
+      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/g%C3%A2teau/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Moelleux</title>
+      <link>//localhost:1313/tags/moelleux/</link>
+      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/moelleux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recette Rapide</title>
+      <link>//localhost:1313/tags/recette-rapide/</link>
+      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
+      <guid>//localhost:1313/tags/recette-rapide/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Citron Confit</title>
       <link>//localhost:1313/tags/citron-confit/</link>

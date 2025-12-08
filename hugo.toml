@@ -1,101 +1,45 @@
-{{- if eq .Kind "page" -}}
-{{- if eq .Type "recette" -}}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Recipe",
-  "name": "{{ .Title }}",
-  "description": "{{ .Description }}",
-  "image": [
-    "{{ with .Params.image }}{{ . | absURL }}{{ else }}{{ .Site.BaseURL }}images/{{ .File.TranslationBaseName }}.jpg{{ end }}"
-  ],
-  "author": {
-    "@type": "Person",
-    "name": "{{ .Site.Params.author | default "Chef Cuisine" }}"
-  },
-  "datePublished": "{{ .Date.Format "2006-01-02" }}",
-  
-  <!-- CORRECTION DU TEMPS DE CUISSON -->
-  "prepTime": "PT{{ .Params.preparation_time | replaceRE "[^0-9]" "" | default "15" }}M",
-  "cookTime": "{{ with .Params.cooking_time }}{{ if findRE "h|H" . }}{{ $hours := replaceRE ".*?([0-9]+).*" "$1" . }}{{ $minutes := replaceRE ".*?([0-9]+).*" "$1" (replaceRE ".*h.*" "" .) }}PT{{ $hours }}H{{ $minutes }}M{{ else }}PT{{ replaceRE "[^0-9]" "" . }}M{{ end }}{{ else }}PT30M{{ end }}",
-  "totalTime": "{{ $prep := .Params.preparation_time | replaceRE "[^0-9]" "" | default "15" | int }}{{ $cook := .Params.cooking_time }}{{ $cookHours := 0 }}{{ $cookMinutes := 0 }}{{ if findRE "h|H" $cook }}{{ $cookHours = replaceRE ".*?([0-9]+).*" "$1" $cook | int }}{{ $cookMinutes = replaceRE ".*?([0-9]+).*" "$1" (replaceRE ".*h.*" "" $cook) | default "0" | int }}{{ else }}{{ $cookMinutes = replaceRE "[^0-9]" "" $cook | default "30" | int }}{{ end }}{{ $totalMinutes := add $prep (add (mul $cookHours 60) $cookMinutes) }}PT{{ $totalMinutes }}M",
-  
-  "recipeYield": "{{ .Params.servings }}",
-  "recipeCategory": "{{ with .Params.categories }}{{ index . 0 }}{{ else }}Recette{{ end }}",
-  "recipeCuisine": "{{ if in .Params.categories "Marocain" }}Moroccan{{ else if in .Params.categories "Italien" }}Italian{{ else if in .Params.categories "Français" }}French{{ else if in .Params.categories "Méditerranéen" }}Mediterranean{{ else }}International{{ end }}",
-  "keywords": "{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}{{ delimit .Params.categories ", " }}{{ end }}",
-  "recipeIngredient": [
-    {{ range $i, $e := .Params.ingredients }}
-    "{{ . }}"{{ if ne (len $.Params.ingredients) (add $i 1) }},{{ end }}
-    {{ end }}
-  ],
-  
-  <!-- AMÉLIORATION DES INSTRUCTIONS -->
-  "recipeInstructions": [
-    {{/* STRUCTURE SIMPLIFIÉE MAIS COMPLÈTE */}}
-    {{ $content := .Content | plainify | replaceRE "\\n+" " " }}
-    {{ $steps := findRE `Étape\s+\d+\s*:?\s*[^\.]+\.` $content }}
-    {{ if $steps }}
-      {{ range $index, $step := $steps }}
-      {
-        "@type": "HowToStep",
-        "name": "{{ replace (index (findRE `Étape\s+\d+\s*:?\s*[^\.]+` $step) 0) "Étape " "" }}",
-        "text": "{{ replace $step "\"" "'" | trim }}",
-        "url": "{{ $.Permalink }}#etape-{{ add $index 1 }}"
-      }{{ if not (eq $index (sub (len $steps) 1)) }},{{ end }}
-      {{ end }}
-    {{ else }}
-      {{ $sentences := split $content ". " }}
-      {{ range $index, $sentence := first 5 $sentences }}
-      {
-        "@type": "HowToStep",
-        "name": "Étape {{ add $index 1 }}",
-        "text": "{{ replace $sentence "\"" "'" }}.",
-        "url": "{{ $.Permalink }}#etape-{{ add $index 1 }}"
-      }{{ if not (eq $index (sub (len (first 5 $sentences)) 1)) }},{{ end }}
-      {{ end }}
-    {{ end }}
-  ],
-  
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "{{ .Params.rating }}",
-    "ratingCount": "{{ .Params.vote_count }}",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  
-  <!-- AJOUT DES CALORIES -->
-  "nutrition": {
-    "@type": "NutritionInformation"
-    {{ with .Params.calories }}
-    ,"calories": "{{ . }} kcal"
-    {{ else }}
-    ,"calories": "{{ if in .Params.categories "Plats Principaux" }}400-600 kcal{{ else if in .Params.categories "Desserts" }}300-500 kcal{{ else }}350 kcal{{ end }}"
-    {{ end }}
-    {{ with .Params.carbs }}
-    ,"carbohydrateContent": "{{ . }}"
-    {{ end }}
-    {{ with .Params.protein }}
-    ,"proteinContent": "{{ . }}"
-    {{ end }}
-    {{ with .Params.fat }}
-    ,"fatContent": "{{ . }}"
-    {{ end }}
-  }
-  
-  {{ with .Params.video }}
-  ,"video": {
-    "@type": "VideoObject",
-    "name": "{{ $.Title }}",
-    "description": "{{ $.Description }}",
-    "thumbnailUrl": "{{ $.Params.video_thumbnail | default (print $.Site.BaseURL "images/video-thumb.jpg") }}",
-    "contentUrl": "{{ . }}",
-    "uploadDate": "{{ $.Date.Format "2006-01-02" }}",
-    "duration": "PT5M"
-  }
-  {{ end }}
-}
-</script>
-{{- end -}}
-{{- end -}}
+baseURL = '/'
+languageCode = 'fr-fr'
+title = 'Banana-Braed : Recettes de Cuisine'
+theme = 'recettes'
+
+defaultContentLanguage = "fr"
+enableRobotsTXT = true
+
+[permalinks]
+  recettes = "/recettes/:slug/"
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  plat = "plats"
+
+[menu]
+  [[menu.main]]
+    name = "Toutes les Recettes"
+    url = "/recettes/"
+    weight = 10
+  [[menu.main]]
+    name = "Catégories"
+    url = "/categories/"
+    weight = 11
+  [[menu.main]]
+    name = "À Propos"
+    url = "/about/"
+    weight = 20
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 30
+
+[build]
+  writeStats = true
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[params]
+  author = "Chef Galot"

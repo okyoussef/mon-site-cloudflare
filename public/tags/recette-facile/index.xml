@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recette Facile on Banana-Braed : Recettes de Cuisine</title>
+    <link>//localhost:1313/tags/recette-facile/</link>
+    <description>Recent content in Recette Facile on Banana-Braed : Recettes de Cuisine</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 24 Nov 2024 12:00:00 +0100</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/recette-facile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tajine de poulet aux citrons confits et olives</title>
+      <link>//localhost:1313/recettes/tajine-de-poulet-aux-citrons-confits-et-olives/</link>
+      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
+      <guid>//localhost:1313/recettes/tajine-de-poulet-aux-citrons-confits-et-olives/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;//localhost:1313/images/tajine-poulet.jpg&#34; alt=&#34;Tajine de poulet marocain aux citrons confits et olives&#34; title=&#34;Tajine de poulet traditionnel - Recette marocaine&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;pourquoi-cette-recette-est-un-incontournable-&#34;&gt;Pourquoi cette recette est un incontournable ?&lt;/h2&gt;&#xA;&lt;p&gt;Le tajine de poulet aux citrons confits et olives est un plat emblématique de la cuisine marocaine. L&amp;rsquo;équilibre parfait entre l&amp;rsquo;acidité du citron confit, la richesse des épices orientales (safran, gingembre, curcuma) et le fondant du poulet mijoté en fait un véritable voyage culinaire. Ce plat se prépare facilement et cuit tout seul, pour un résultat toujours impressionnant.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

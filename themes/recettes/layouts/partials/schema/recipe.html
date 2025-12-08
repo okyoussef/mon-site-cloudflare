@@ -10,7 +10,7 @@
     {{ with .Params.image }}
     "{{ . | absURL }}"
     {{ else }}
-    "{{ .Site.BaseURL }}images/{{ .File.TranslationBaseName }}.jpg" {{/* Nom basé sur le fichier */}}
+    "{{ .Site.BaseURL }}images/{{ .File.TranslationBaseName }}.jpg"
     {{ end }}
   ],
   "author": {
@@ -18,9 +18,25 @@
     "name": "{{ .Site.Params.author | default "Chef Cuisine" }}"
   },
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
-  "prepTime": "PT{{ .Params.preparation_time | replaceRE "[^0-9]" "" | default "15" }}M",
-  "cookTime": "{{ with .Params.cooking_time }}{{ if findRE "h" . }}PT{{ replaceRE "[^0-9]" "" . | replace "h" "H" }}{{ else }}PT{{ replaceRE "[^0-9]" "" . }}M{{ end }}{{ else }}PT30M{{ end }}",
-  "totalTime": "{{ $prep := .Params.preparation_time | replaceRE "[^0-9]" "" | default "15" | int }}{{ $cook := .Params.cooking_time | replaceRE "[^0-9]" "" | default "30" | int }}{{ $total := add $prep $cook }}PT{{ $total }}M",
+  "prepTime": "PT{{ .Params.preparation_time | replaceRE `[^0-9]` "" | default "15" }}M",
+  {{/* CORRECTION DU FORMAT cookTime */}}
+  "cookTime": "{{ with .Params.cooking_time }}{{ if findRE `h` . }}{{ $parts := split . "h" }}{{ $hours := index $parts 0 | replaceRE `[^0-9]` "" }}{{ $minutes := index $parts 1 | replaceRE `[^0-9]` "" | default "0" }}PT{{ $hours }}H{{ if ne $minutes "0" }}{{ $minutes }}M{{ end }}{{ else }}PT{{ replaceRE `[^0-9]` "" . }}M{{ end }}{{ else }}PT30M{{ end }}",
+  {{/* CALCUL CORRECT DU totalTime */}}
+  {{ $prepMinutes := .Params.preparation_time | replaceRE `[^0-9]` "" | default "15" | int }}
+  {{ $cookTime := .Params.cooking_time | default "30 min" }}
+  {{ $cookMinutes := 0 }}
+  {{ if findRE `h` $cookTime }}
+    {{ $parts := split $cookTime "h" }}
+    {{ $hours := index $parts 0 | replaceRE `[^0-9]` "" | int }}
+    {{ $mins := index $parts 1 | replaceRE `[^0-9]` "" | default "0" | int }}
+    {{ $cookMinutes = add (mul $hours 60) $mins }}
+  {{ else }}
+    {{ $cookMinutes = $cookTime | replaceRE `[^0-9]` "" | int }}
+  {{ end }}
+  {{ $totalMinutes := add $prepMinutes $cookMinutes }}
+  {{ $totalHours := div $totalMinutes 60 }}
+  {{ $remainingMinutes := mod $totalMinutes 60 }}
+  "totalTime": "PT{{ if gt $totalHours 0 }}{{ $totalHours }}H{{ end }}{{ if gt $remainingMinutes 0 }}{{ $remainingMinutes }}M{{ end }}",
   "recipeYield": "{{ .Params.servings }}",
   "recipeCategory": "{{ with .Params.categories }}{{ index . 0 }}{{ else }}Recette{{ end }}",
   "recipeCuisine": "{{ if in .Params.categories "Marocain" }}Moroccan{{ else if in .Params.categories "Italien" }}Italian{{ else if in .Params.categories "Français" }}French{{ else if in .Params.categories "Méditerranéen" }}Mediterranean{{ else }}International{{ end }}",
@@ -30,24 +46,40 @@
     "{{ . }}"{{ if ne (len $.Params.ingredients) (add $i 1) }},{{ end }}
     {{ end }}
   ],
+  {{/* AMÉLIORATION DES INSTRUCTIONS AVEC name POUR CHAQUE ÉTAPE */}}
   "recipeInstructions": [
-    {{/* EXTRACTION SIMPLE DES ÉTAPES */}}
     {{ $content := .Content | plainify }}
-    {{ $steps := findRE `\d+\.\s+[^\.]+\.` $content }}
+    {{/* Extraction des étapes avec "Étape X :" */}}
+    {{ $steps := findRE `Étape \d+ : [^:]+` $content }}
     {{ if $steps }}
-      {{ range $index, $step := first 5 $steps }}
+      {{ range $index, $step := $steps }}
       {
         "@type": "HowToStep",
-        "text": "{{ replace $step "\"" "'" }}"
-      }{{ if not (eq $index (sub (len (first 5 $steps)) 1)) }},{{ end }}
+        "name": "{{ $step }}",
+        "text": "{{ $step }}"
+      }{{ if not (eq $index (sub (len $steps) 1)) }},{{ end }}
       {{ end }}
     {{ else }}
-      {{ $paragraphs := split (.Content | plainify) ". " }}
-      {{ range $index, $para := first 3 $paragraphs }}
-      {
-        "@type": "HowToStep",
-        "text": "{{ replace $para "\"" "'" }}."
-      }{{ if not (eq $index (sub (len (first 3 $paragraphs)) 1)) }},{{ end }}
+      {{/* Fallback : extraction des phrases numérotées */}}
+      {{ $fallbackSteps := findRE `\d+\.\s+[^\.]+\.` $content }}
+      {{ if $fallbackSteps }}
+        {{ range $index, $step := first 6 $fallbackSteps }}
+        {
+          "@type": "HowToStep",
+          "name": "Étape {{ add $index 1 }}",
+          "text": "{{ replace $step "\"" "'" }}"
+        }{{ if not (eq $index (sub (len (first 6 $fallbackSteps)) 1)) }},{{ end }}
+        {{ end }}
+      {{ else }}
+        {{/* Dernier recours : premières phrases */}}
+        {{ $paragraphs := split (.Content | plainify) ". " }}
+        {{ range $index, $para := first 3 $paragraphs }}
+        {
+          "@type": "HowToStep",
+          "name": "Étape {{ add $index 1 }}",
+          "text": "{{ replace $para "\"" "'" }}."
+        }{{ if not (eq $index (sub (len (first 3 $paragraphs)) 1)) }},{{ end }}
+        {{ end }}
       {{ end }}
     {{ end }}
   ],
@@ -61,7 +93,16 @@
   "nutrition": {
     "@type": "NutritionInformation"
     {{ with .Params.calories }}
-    ,"calories": "{{ . }} kcal"
+    ,"calories": "{{ . }}"
+    {{ end }}
+    {{ with .Params.carbs }}
+    ,"carbohydrateContent": "{{ . }}"
+    {{ end }}
+    {{ with .Params.protein }}
+    ,"proteinContent": "{{ . }}"
+    {{ end }}
+    {{ with .Params.fat }}
+    ,"fatContent": "{{ . }}"
     {{ end }}
   }
   {{ with .Params.video }}
@@ -69,7 +110,9 @@
     "@type": "VideoObject",
     "name": "{{ $.Title }}",
     "description": "{{ $.Description }}",
-    "contentUrl": "{{ . }}"
+    "contentUrl": "{{ . }}",
+    "thumbnailUrl": "{{ $.Params.video_thumbnail | default $.Params.image | absURL }}",
+    "uploadDate": "{{ $.Date.Format "2006-01-02" }}"
   }
   {{ end }}
 }

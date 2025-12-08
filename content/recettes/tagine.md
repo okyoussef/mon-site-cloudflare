@@ -111,14 +111,41 @@ Juste avant de servir, hachez la coriandre et le persil et saupoudrez-les sur le
 
 ## 📊 Valeurs nutritionnelles (pour 1 portion)
 <div class="nutrition-table">
-| Nutriments | Quantité |
-|------------|----------|
-| Calories | 450 kcal |
-| Protéines | 35g |
-| Glucides | 15g |
-| Lipides | 25g |
-| Fibres | 4g |
-| Sel | 1,2g |
+<!-- Par : -->
+<table class="w-full border-collapse border border-gray-300 mt-4">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="border border-gray-300 p-2 text-left">Nutriments</th>
+      <th class="border border-gray-300 p-2 text-left">Quantité</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border border-gray-300 p-2 font-medium">Calories</td>
+      <td class="border border-gray-300 p-2">450 kcal</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-2 font-medium">Protéines</td>
+      <td class="border border-gray-300 p-2">35g</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-2 font-medium">Glucides</td>
+      <td class="border border-gray-300 p-2">15g</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-2 font-medium">Lipides</td>
+      <td class="border border-gray-300 p-2">25g</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-2 font-medium">Fibres</td>
+      <td class="border border-gray-300 p-2">4g</td>
+    </tr>
+    <tr>
+      <td class="border border-gray-300 p-2 font-medium">Sel</td>
+      <td class="border border-gray-300 p-2">1,2g</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 *Note : Valeurs approximatives, peuvent varier selon les ingrédients.*

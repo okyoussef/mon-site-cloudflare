@@ -43,14 +43,17 @@
     "classes": [
       "bg-blue-50",
       "bg-blue-600",
+      "bg-gray-100",
       "bg-gray-50",
       "bg-white",
       "block",
       "border",
       "border-b",
       "border-blue-100",
+      "border-collapse",
       "border-gray-100",
       "border-gray-200",
+      "border-gray-300",
       "border-t",
       "category",
       "cuisine",
@@ -155,7 +158,8 @@
       "transition-colors",
       "transition-shadow",
       "uppercase",
-      "w-4"
+      "w-4",
+      "w-full"
     ],
     "ids": [
       "-accompagnements-recommandés",

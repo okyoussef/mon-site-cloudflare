@@ -161,9 +161,6 @@ Le tajine est un plat traditionnel d'Afrique du Nord, nommé d'après le plat de
 
 ---
 
-*Posté le 24 novembre 2024 • Dernière mise à jour : 8 décembre 2024*  
-*Recette testée et approuvée par notre équipe culinaire.*
-
 <div class="recipe-meta">
 <span class="category">Catégorie : <strong>Plats Principaux</strong></span> |
 <span class="cuisine">Cuisine : <strong>Marocaine</strong></span> |

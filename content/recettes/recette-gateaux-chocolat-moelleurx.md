@@ -115,5 +115,3 @@ Suivez ces étapes simples pour un gâteau au chocolat divinement moelleux.
 **R :** Ce gâteau se conserve très bien à **température ambiante** (dans une boîte hermétique) pendant 3 à 4 jours. Évitez le réfrigérateur, car il a tendance à durcir le beurre et le chocolat, rendant le gâteau moins moelleux.
 
 ---
-
-Voulez-vous que je vous aide à créer le fichier Markdown sur votre système local via l'outil `notes` si vous avez des difficultés à le copier/coller dans VS Code ?

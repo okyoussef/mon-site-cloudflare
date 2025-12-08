@@ -10,31 +10,46 @@
     {{ with .Params.image }}
     "{{ . | absURL }}"
     {{ else }}
-    "{{ .Site.BaseURL }}images/default-recipe.jpg"
+    "{{ .Site.BaseURL }}images/{{ .File.TranslationBaseName }}.jpg" {{/* Nom basé sur le fichier */}}
     {{ end }}
   ],
   "author": {
     "@type": "Person",
-    "name": "{{ .Site.Params.Author }}"
+    "name": "{{ .Site.Params.author | default "Chef Cuisine" }}"
   },
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
-  "prepTime": "PT{{ .Params.preparation_time | replaceRE "[^0-9]" "" }}M",
-  "cookTime": "PT{{ .Params.cooking_time | replaceRE "[^0-9]" "" }}M",
-  "totalTime": "PT{{ add (.Params.preparation_time | replaceRE "[^0-9]" "" | int) (.Params.cooking_time | replaceRE "[^0-9]" "" | int) }}M",
+  "prepTime": "PT{{ .Params.preparation_time | replaceRE "[^0-9]" "" | default "15" }}M",
+  "cookTime": "{{ with .Params.cooking_time }}{{ if findRE "h" . }}PT{{ replaceRE "[^0-9]" "" . | replace "h" "H" }}{{ else }}PT{{ replaceRE "[^0-9]" "" . }}M{{ end }}{{ else }}PT30M{{ end }}",
+  "totalTime": "{{ $prep := .Params.preparation_time | replaceRE "[^0-9]" "" | default "15" | int }}{{ $cook := .Params.cooking_time | replaceRE "[^0-9]" "" | default "30" | int }}{{ $total := add $prep $cook }}PT{{ $total }}M",
   "recipeYield": "{{ .Params.servings }}",
   "recipeCategory": "{{ with .Params.categories }}{{ index . 0 }}{{ else }}Recette{{ end }}",
-  "recipeCuisine": "{{ if in .Params.categories "Marocain" }}Moroccan{{ else if in .Params.categories "Italien" }}Italian{{ else if in .Params.categories "Français" }}French{{ else }}International{{ end }}",
-  "keywords": "{{ with .Params.tags }}{{ delimit . ", " }}{{ end }}",
+  "recipeCuisine": "{{ if in .Params.categories "Marocain" }}Moroccan{{ else if in .Params.categories "Italien" }}Italian{{ else if in .Params.categories "Français" }}French{{ else if in .Params.categories "Méditerranéen" }}Mediterranean{{ else }}International{{ end }}",
+  "keywords": "{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}{{ delimit .Params.categories ", " }}{{ end }}",
   "recipeIngredient": [
     {{ range $i, $e := .Params.ingredients }}
     "{{ . }}"{{ if ne (len $.Params.ingredients) (add $i 1) }},{{ end }}
     {{ end }}
   ],
   "recipeInstructions": [
-    {
-      "@type": "HowToStep",
-      "text": "{{ replace (.Description | default .Title) "\"" "'" }}"
-    }
+    {{/* EXTRACTION SIMPLE DES ÉTAPES */}}
+    {{ $content := .Content | plainify }}
+    {{ $steps := findRE `\d+\.\s+[^\.]+\.` $content }}
+    {{ if $steps }}
+      {{ range $index, $step := first 5 $steps }}
+      {
+        "@type": "HowToStep",
+        "text": "{{ replace $step "\"" "'" }}"
+      }{{ if not (eq $index (sub (len (first 5 $steps)) 1)) }},{{ end }}
+      {{ end }}
+    {{ else }}
+      {{ $paragraphs := split (.Content | plainify) ". " }}
+      {{ range $index, $para := first 3 $paragraphs }}
+      {
+        "@type": "HowToStep",
+        "text": "{{ replace $para "\"" "'" }}."
+      }{{ if not (eq $index (sub (len (first 3 $paragraphs)) 1)) }},{{ end }}
+      {{ end }}
+    {{ end }}
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -42,14 +57,19 @@
     "ratingCount": "{{ .Params.vote_count }}",
     "bestRating": "5",
     "worstRating": "1"
+  },
+  "nutrition": {
+    "@type": "NutritionInformation"
+    {{ with .Params.calories }}
+    ,"calories": "{{ . }} kcal"
+    {{ end }}
   }
   {{ with .Params.video }}
   ,"video": {
     "@type": "VideoObject",
-    "name": "{{ $.Title }} - Tutoriel Vidéo",
+    "name": "{{ $.Title }}",
     "description": "{{ $.Description }}",
-    "contentUrl": "{{ . }}",
-    "uploadDate": "{{ $.Date.Format "2006-01-02" }}"
+    "contentUrl": "{{ . }}"
   }
   {{ end }}
 }

@@ -3,6 +3,9 @@ languageCode = 'fr-fr'
 title = 'Banana-Braed : Recettes de Cuisine'
 theme = 'recettes'
 
+[params]
+  author = "Chef Galot"
+
 # Configuration propre à Hugo
 defaultContentLanguage = "fr"
 enableRobotsTXT = true

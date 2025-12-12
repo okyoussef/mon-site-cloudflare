@@ -1,0 +1,46 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+<title>{{ if .IsHome }}{{ .Site.Title }} - {{ .Site.Params.description }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+<!-- SEO Description -->
+<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+
+<!-- Canonical Link (Vital pour éviter le Duplicate Content) -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:image" content="{{ if .Params.image }}{{ .Params.image | absURL }}{{ else }}{{ .Site.Params.default_image | absURL }}{{ end }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="twitter:image" content="{{ if .Params.image }}{{ .Params.image | absURL }}{{ else }}{{ .Site.Params.default_image | absURL }}{{ end }}">
+
+<!-- Tailwind CSS (CDN pour démarrage rapide et sans bug) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Configuration Tailwind pour le style "Pro" -->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: '#d9534f', /* Une couleur "Cuisine" (Rouge/Orange) */
+          dark: '#2c3e50',
+        },
+        fontFamily: {
+          sans: ['Inter', 'sans-serif'],
+          serif: ['Merriweather', 'serif'], /* Pour le texte de recette, style Sally's */
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Google Fonts (Inter + Merriweather pour le style "Simply Recipes") -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">

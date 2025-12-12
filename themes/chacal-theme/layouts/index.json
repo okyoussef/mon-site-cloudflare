@@ -1,0 +1,11 @@
+[
+    {{ range $index, $e := where .Site.RegularPages "Type" "recette" }}
+    {{ if $index }}, {{ end }}
+    {
+        "title": "{{ .Title }}",
+        "url": "{{ .Permalink }}",
+        "image": "{{ .Params.image }}",
+        "category": "{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}Recette{{ end }}"
+    }
+    {{ end }}
+]

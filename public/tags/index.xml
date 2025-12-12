@@ -6,8 +6,113 @@
     <description>Recent content in Tags on Banana-Braed : Recettes de Cuisine</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Wed, 01 Jan 2025 10:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 08 Dec 2025 05:04:07 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cannelle</title>
+      <link>//localhost:1313/tags/cannelle/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/tags/cannelle/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dessert Français</title>
+      <link>//localhost:1313/tags/dessert-fran%C3%A7ais/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/tags/dessert-fran%C3%A7ais/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fait Maison</title>
+      <link>//localhost:1313/tags/fait-maison/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/tags/fait-maison/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pâte Brisée</title>
+      <link>//localhost:1313/tags/p%C3%A2te-bris%C3%A9e/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/tags/p%C3%A2te-bris%C3%A9e/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pommes</title>
+      <link>//localhost:1313/tags/pommes/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/tags/pommes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recette Familiale</title>
+      <link>//localhost:1313/tags/recette-familiale/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/tags/recette-familiale/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tarte Aux Pommes</title>
+      <link>//localhost:1313/tags/tarte-aux-pommes/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/tags/tarte-aux-pommes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Traditionnel</title>
+      <link>//localhost:1313/tags/traditionnel/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/tags/traditionnel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Butternut</title>
+      <link>//localhost:1313/tags/butternut/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/butternut/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chèvre</title>
+      <link>//localhost:1313/tags/ch%C3%A8vre/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ch%C3%A8vre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cuisine Provençale</title>
+      <link>//localhost:1313/tags/cuisine-proven%C3%A7ale/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/cuisine-proven%C3%A7ale/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Entrée Facile</title>
+      <link>//localhost:1313/tags/entr%C3%A9e-facile/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/entr%C3%A9e-facile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Feuilletage</title>
+      <link>//localhost:1313/tags/feuilletage/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/feuilletage/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Miel</title>
+      <link>//localhost:1313/tags/miel/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/miel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tartelette Salée</title>
+      <link>//localhost:1313/tags/tartelette-sal%C3%A9e/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/tartelette-sal%C3%A9e/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Chocolat</title>
       <link>//localhost:1313/tags/chocolat/</link>
@@ -83,6 +188,48 @@
       <link>//localhost:1313/tags/tajine/</link>
       <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
       <guid>//localhost:1313/tags/tajine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Air Fryer</title>
+      <link>//localhost:1313/tags/air-fryer/</link>
+      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
+      <guid>//localhost:1313/tags/air-fryer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cuisine Française</title>
+      <link>//localhost:1313/tags/cuisine-fran%C3%A7aise/</link>
+      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
+      <guid>//localhost:1313/tags/cuisine-fran%C3%A7aise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Protéiné</title>
+      <link>//localhost:1313/tags/prot%C3%A9in%C3%A9/</link>
+      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
+      <guid>//localhost:1313/tags/prot%C3%A9in%C3%A9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rapide</title>
+      <link>//localhost:1313/tags/rapide/</link>
+      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
+      <guid>//localhost:1313/tags/rapide/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Soufflé</title>
+      <link>//localhost:1313/tags/souffl%C3%A9/</link>
+      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
+      <guid>//localhost:1313/tags/souffl%C3%A9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Volaille</title>
+      <link>//localhost:1313/tags/volaille/</link>
+      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
+      <guid>//localhost:1313/tags/volaille/</guid>
       <description></description>
     </item>
   </channel>

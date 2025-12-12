@@ -1,0 +1,26 @@
+baseURL = '/'
+languageCode = 'fr-fr'
+title = 'CourirenBretagne' # Ou le nom de ton site cuisine
+theme = 'chacal-theme' # C'est ICI qu'on active ton nouveau thème
+
+# Configuration SEO Globale
+[params]
+  description = "Le guide ultime pour..."
+  author = "Chef Galot"
+  # Image par défaut pour le partage social (à mettre dans static/images/)
+  default_image = "/images/og-default.jpg" 
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"] # Pour la recherche future
+
+[menu]
+  [[menu.main]]
+    identifier = "accueil"
+    name = "Accueil"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "recettes"
+    name = "Toutes les Recettes"
+    url = "/recettes/"
+    weight = 2

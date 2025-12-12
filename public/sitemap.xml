@@ -2,25 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/about/</loc>
-    <lastmod>2025-11-24T20:41:00+01:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/cannelle/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/dessert-fran%C3%A7ais/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/desserts-traditionnels/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/fait-maison/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/fran%C3%A7aise/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/p%C3%A2te-bris%C3%A9e/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/plats-principaux/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/pommes/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/recette-familiale/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/recettes/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/tarte-aux-pommes/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/recettes/tarte-aux-pommes-de-ma-grand-m%C3%A8re/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/traditionnel/</loc>
+    <lastmod>2025-12-08T05:04:07+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/butternut/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/ch%C3%A8vre/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/cuisine-proven%C3%A7ale/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/entr%C3%A9e-facile/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/entr%C3%A9es/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/feuilletage/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/l%C3%A9gumes-dautomne/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/miel/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/tartelette-sal%C3%A9e/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/recettes/tartelettes-croquantes-de-butternut-chevre-frais-miel-de-lavande/</loc>
+    <lastmod>2025-12-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/about/</loc>
     <lastmod>2025-11-24T20:41:00+01:00</lastmod>
   </url><url>
     <loc>//localhost:1313/contact/</loc>
     <lastmod>2025-11-24T20:41:00+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
-    <lastmod>2025-11-24T11:45:00+01:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/categories/dessert/</loc>
     <lastmod>2025-11-24T11:45:00+01:00</lastmod>
   </url><url>
     <loc>//localhost:1313/recettes/recette-test-simple/</loc>
-    <lastmod>2025-11-24T11:45:00+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/recettes/</loc>
     <lastmod>2025-11-24T11:45:00+01:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/v%C3%A9g%C3%A9tarien/</loc>
@@ -45,9 +114,6 @@
     <lastmod>2025-01-01T10:00:00+01:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/recette-rapide/</loc>
-    <lastmod>2025-01-01T10:00:00+01:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/tags/</loc>
     <lastmod>2025-01-01T10:00:00+01:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/citron-confit/</loc>
@@ -77,9 +143,6 @@
     <loc>//localhost:1313/tags/plat-mijot%C3%A9/</loc>
     <lastmod>2024-11-24T12:00:00+01:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/plats-principaux/</loc>
-    <lastmod>2024-11-24T12:00:00+01:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/tags/poulet/</loc>
     <lastmod>2024-11-24T12:00:00+01:00</lastmod>
   </url><url>
@@ -91,6 +154,33 @@
   </url><url>
     <loc>//localhost:1313/recettes/tajine-de-poulet-aux-citrons-confits-et-olives/</loc>
     <lastmod>2024-11-24T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/air-fryer/</loc>
+    <lastmod>2024-05-18T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/cuisine-fran%C3%A7aise/</loc>
+    <lastmod>2024-05-18T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/prot%C3%A9in%C3%A9/</loc>
+    <lastmod>2024-05-18T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/rapide/</loc>
+    <lastmod>2024-05-18T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/souffl%C3%A9/</loc>
+    <lastmod>2024-05-18T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/volaille/</loc>
+    <lastmod>2024-05-18T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/recettes/volaille-souffl%C3%A9e-express-lart-du-croustillant-l%C3%A9ger-%C3%A0-lair-fryer/</loc>
+    <lastmod>2024-05-18T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/recettes/</loc>
+  </url><url>
+    <loc>//localhost:1313/recettes/</loc>
+  </url><url>
+    <loc>//localhost:1313/recettes/</loc>
   </url><url>
     <loc>//localhost:1313/plats/</loc>
   </url>

@@ -6,8 +6,43 @@
     <description>Recent content in Categories on Banana-Braed : Recettes de Cuisine</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Mon, 24 Nov 2025 11:45:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 08 Dec 2025 05:04:07 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Desserts Traditionnels</title>
+      <link>//localhost:1313/categories/desserts-traditionnels/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/categories/desserts-traditionnels/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Française</title>
+      <link>//localhost:1313/categories/fran%C3%A7aise/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/categories/fran%C3%A7aise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Plats Principaux</title>
+      <link>//localhost:1313/categories/plats-principaux/</link>
+      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
+      <guid>//localhost:1313/categories/plats-principaux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Entrées</title>
+      <link>//localhost:1313/categories/entr%C3%A9es/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/entr%C3%A9es/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Légumes D&#39;Automne</title>
+      <link>//localhost:1313/categories/l%C3%A9gumes-dautomne/</link>
+      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/categories/l%C3%A9gumes-dautomne/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Dessert</title>
       <link>//localhost:1313/categories/dessert/</link>
@@ -55,13 +90,6 @@
       <link>//localhost:1313/categories/marocain/</link>
       <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
       <guid>//localhost:1313/categories/marocain/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Plats Principaux</title>
-      <link>//localhost:1313/categories/plats-principaux/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/categories/plats-principaux/</guid>
       <description></description>
     </item>
   </channel>

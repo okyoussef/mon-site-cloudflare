@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>anan on Banana Bread Recipes</title>
+    <link>http://localhost:1313/recipes/anan/</link>
+    <description>Recent content in anan on Banana Bread Recipes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© 2002-2025 Sarah Baker - The Banana Bread Authority</copyright>
+    <atom:link href="http://localhost:1313/recipes/anan/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

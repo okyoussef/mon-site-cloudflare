@@ -1,0 +1,58 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ site.Title }} - {{ site.Params.description }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end
+    }}</title>
+
+{{/* Canonical URL */}}
+<link rel="canonical" href="{{ .Permalink }}" />
+
+{{/* Google Fonts */}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet">
+
+{{/* Styles */}}
+{{ $style := resources.Get "css/main.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+
+{{/* SEO / Meta */}}
+<meta name="description"
+    content="{{ if .IsHome }}{{ site.Params.description }}{{ else }}{{ .Summary | default site.Params.description }}{{ end }}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{ .Permalink }}" />
+
+{{/* Open Graph */}}
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description"
+    content="{{ if .IsHome }}{{ site.Params.description }}{{ else }}{{ .Summary | default site.Params.description }}{{ end }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:site_name" content="{{ site.Title }}" />
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}" />
+{{ else }}
+{{ with site.Params.social.image }}
+<meta property="og:image" content="{{ . | absURL }}" />
+{{ end }}
+{{ end }}
+
+{{/* Twitter Card */}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description"
+    content="{{ if .IsHome }}{{ site.Params.description }}{{ else }}{{ .Summary | default site.Params.description }}{{ end }}">
+{{ with .Params.image }}
+<meta name="twitter:image" content="{{ . | absURL }}">
+{{ else }}
+{{ with site.Params.social.image }}
+<meta name="twitter:image" content="{{ . | absURL }}">
+{{ end }}
+{{ end }}
+
+{{/* Favicon */}}
+<link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍌</text></svg>">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">

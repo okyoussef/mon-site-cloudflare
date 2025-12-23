@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gouter on Banana-Braed : Recettes de Cuisine</title>
-    <link>//localhost:1313/categories/gouter/</link>
-    <description>Recent content in Gouter on Banana-Braed : Recettes de Cuisine</description>
+    <title>Goûter on Banana Bread Recipes</title>
+    <link>http://localhost:1313/categories/gouter/</link>
+    <description>Recent content in Goûter on Banana Bread Recipes</description>
     <generator>Hugo</generator>
-    <language>fr-fr</language>
-    <lastBuildDate>Sun, 24 Nov 2024 12:00:00 +0100</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/gouter/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>© 2002-2025 Sarah Baker - The Banana Bread Authority</copyright>
+    <lastBuildDate>Sat, 20 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/gouter/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Le Banana Bread Ultra Moelleux</title>
-      <link>//localhost:1313/recettes/le-banana-bread-ultra-moelleux/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/recettes/le-banana-bread-ultra-moelleux/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;//localhost:1313/banana-mix.jpg&#34; alt=&#34;Banana Bread&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;pourquoi-cette-recette-est-un-succès-&#34;&gt;Pourquoi cette recette est un succès ?&lt;/h2&gt;&#xA;&lt;p&gt;C&amp;rsquo;est simple, rapide et &lt;strong&gt;délicieux&lt;/strong&gt;. La texture est incroyable grâce aux bananes bien mûres.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-la-recette-en-vidéo&#34;&gt;📹 La Recette en Vidéo&lt;/h2&gt;&#xA;&lt;p&gt;Voici la vidéo explicative pour réussir votre Banana Bread à coup sûr :&lt;/p&gt;&#xA;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/9Hy-qz2N4Ok?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;&#xA;    &lt;/div&gt;&#xA;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-valeurs-nutritionnelles&#34;&gt;📊 Valeurs Nutritionnelles&lt;/h2&gt;&#xA;&lt;div class=&#34;overflow-hidden border border-gray-200 rounded-lg shadow-sm my-8&#34;&gt;&#xD;&#xA;  &lt;table class=&#34;min-w-full bg-white text-left text-sm text-gray-500&#34;&gt;&#xD;&#xA;    &lt;thead class=&#34;bg-blue-50 text-blue-900&#34;&gt;&#xD;&#xA;      &lt;tr&gt;&#xD;&#xA;        &lt;th class=&#34;px-6 py-4 font-bold text-base&#34;&gt;Nutriment&lt;/th&gt;&#xD;&#xA;        &lt;th class=&#34;px-6 py-4 font-bold text-base&#34;&gt;Quantité&lt;/th&gt;&#xD;&#xA;      &lt;/tr&gt;&#xD;&#xA;    &lt;/thead&gt;&#xD;&#xA;    &lt;tbody class=&#34;divide-y divide-gray-100 border-t border-gray-100&#34;&gt;&#xD;&#xA;      &lt;tr&gt;&lt;td class=&#34;px-6 py-4&#34;&gt;Calories&lt;/td&gt;&lt;td class=&#34;px-6 py-4&#34;&gt;285 kcal&lt;/td&gt;&lt;/tr&gt;&#xD;&#xA;      &lt;tr&gt;&lt;td class=&#34;px-6 py-4&#34;&gt;Glucides&lt;/td&gt;&lt;td class=&#34;px-6 py-4&#34;&gt;42g&lt;/td&gt;&lt;/tr&gt;&#xD;&#xA;      &lt;tr&gt;&lt;td class=&#34;px-6 py-4&#34;&gt;Protéines&lt;/td&gt;&lt;td class=&#34;px-6 py-4&#34;&gt;4.5g&lt;/td&gt;&lt;/tr&gt;&#xD;&#xA;    &lt;/tbody&gt;&#xD;&#xA;  &lt;/table&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-préparation-étape-par-étape&#34;&gt;👩‍🍳 Préparation étape par étape&lt;/h2&gt;&#xA;&lt;h3 id=&#34;1-préparation-des-bananes&#34;&gt;1. Préparation des bananes&lt;/h3&gt;&#xA;&lt;p&gt;Préchauffez votre four à 180°C. Dans un bol, écrasez les bananes.&lt;/p&gt;</description>
+      <title>Le Banana Bread Ultime : Moelleux et Addictif</title>
+      <link>http://localhost:1313/le-banana-bread-ultime-moelleux-et-addictif/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/le-banana-bread-ultime-moelleux-et-addictif/</guid>
+      <description>&lt;h1 id=&#34;le-banana-bread-ultime--moelleux-et-addictif&#34;&gt;Le Banana Bread Ultime : Moelleux et Addictif&lt;/h1&gt;&#xA;&lt;p&gt;Oubliez tout ce que vous savez sur les cakes secs et étouffants. Ici, nous parlons du &lt;strong&gt;meilleur banana bread&lt;/strong&gt; de votre vie. En tant qu&amp;rsquo;experte, je vois trop souvent des recettes qui gâchent le potentiel incroyable des &lt;strong&gt;bananes trop mûres&lt;/strong&gt;. Cette recette est le fruit de nombreux tests pour atteindre l&amp;rsquo;équilibre parfait : une croûte dorée et un cœur incroyablement humide et parfumé.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Le Banana Bread aux Myrtilles et Beurre Noisette : Le Secret du Moelleux</title>
+      <link>http://localhost:1313/banana-bread-myrtilles-moelleux-recette/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/banana-bread-myrtilles-moelleux-recette/</guid>
+      <description>&lt;h1 id=&#34;le-mariage-parfait-entre-la-banane-et-la-myrtille&#34;&gt;Le mariage parfait entre la Banane et la Myrtille&lt;/h1&gt;&#xA;&lt;p&gt;Il existe des milliers de recettes de &lt;strong&gt;Banana Bread&lt;/strong&gt;, mais celle-ci a quelque chose de spécial. En ajoutant des myrtilles fraîches, on crée des petites poches de &amp;ldquo;jus&amp;rdquo; qui éclatent à la cuisson, contrastant avec la densité sucrée de la banane.&lt;/p&gt;&#xA;&lt;p&gt;C&amp;rsquo;est la recette que je prépare chaque dimanche pour avoir un petit-déjeuner sain et gourmand toute la semaine. Le secret réside dans le &lt;strong&gt;beurre noisette&lt;/strong&gt;, qui apporte une note torréfiée que le beurre fondu classique n&amp;rsquo;offre pas.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

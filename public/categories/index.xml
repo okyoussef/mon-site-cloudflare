@@ -1,95 +1,138 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Banana-Braed : Recettes de Cuisine</title>
-    <link>//localhost:1313/categories/</link>
-    <description>Recent content in Categories on Banana-Braed : Recettes de Cuisine</description>
+    <title>Categories on Banana Bread Recipes</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on Banana Bread Recipes</description>
     <generator>Hugo</generator>
-    <language>fr-fr</language>
-    <lastBuildDate>Mon, 08 Dec 2025 05:04:07 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>© 2002-2025 Sarah Baker - The Banana Bread Authority</copyright>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Desserts Traditionnels</title>
-      <link>//localhost:1313/categories/desserts-traditionnels/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/categories/desserts-traditionnels/</guid>
+      <title>Pastry</title>
+      <link>http://localhost:1313/categories/pastry/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/pastry/</guid>
       <description></description>
     </item>
     <item>
-      <title>Française</title>
-      <link>//localhost:1313/categories/fran%C3%A7aise/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/categories/fran%C3%A7aise/</guid>
+      <title>Goûter</title>
+      <link>http://localhost:1313/categories/gouter/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/gouter/</guid>
       <description></description>
     </item>
     <item>
-      <title>Plats Principaux</title>
-      <link>//localhost:1313/categories/plats-principaux/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/categories/plats-principaux/</guid>
+      <title>Pâtisserie</title>
+      <link>http://localhost:1313/categories/patisserie/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/patisserie/</guid>
       <description></description>
     </item>
     <item>
-      <title>Entrées</title>
-      <link>//localhost:1313/categories/entr%C3%A9es/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/entr%C3%A9es/</guid>
+      <title>American</title>
+      <link>http://localhost:1313/categories/american/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/american/</guid>
       <description></description>
     </item>
     <item>
-      <title>Légumes D&#39;Automne</title>
-      <link>//localhost:1313/categories/l%C3%A9gumes-dautomne/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/categories/l%C3%A9gumes-dautomne/</guid>
+      <title>Breakfast</title>
+      <link>http://localhost:1313/categories/breakfast/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/breakfast/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Classic Loaves</title>
+      <link>http://localhost:1313/categories/classic-loaves/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/classic-loaves/</guid>
       <description></description>
     </item>
     <item>
       <title>Dessert</title>
-      <link>//localhost:1313/categories/dessert/</link>
-      <pubDate>Mon, 24 Nov 2025 11:45:00 +0100</pubDate>
-      <guid>//localhost:1313/categories/dessert/</guid>
+      <link>http://localhost:1313/categories/dessert/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/dessert/</guid>
       <description></description>
     </item>
     <item>
-      <title>Végétarien</title>
-      <link>//localhost:1313/categories/v%C3%A9g%C3%A9tarien/</link>
-      <pubDate>Mon, 24 Nov 2025 11:45:00 +0100</pubDate>
-      <guid>//localhost:1313/categories/v%C3%A9g%C3%A9tarien/</guid>
+      <title>Américaine</title>
+      <link>http://localhost:1313/categories/americaine/</link>
+      <pubDate>Thu, 18 Dec 2025 02:39:41 +0000</pubDate>
+      <guid>http://localhost:1313/categories/americaine/</guid>
       <description></description>
     </item>
     <item>
-      <title>Chocolat</title>
-      <link>//localhost:1313/categories/chocolat/</link>
-      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
-      <guid>//localhost:1313/categories/chocolat/</guid>
+      <title>Plat Principal</title>
+      <link>http://localhost:1313/categories/plat-principal/</link>
+      <pubDate>Thu, 18 Dec 2025 02:39:41 +0000</pubDate>
+      <guid>http://localhost:1313/categories/plat-principal/</guid>
       <description></description>
     </item>
     <item>
-      <title>Facile</title>
-      <link>//localhost:1313/categories/facile/</link>
-      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
-      <guid>//localhost:1313/categories/facile/</guid>
+      <title>Petit-Déjeuner</title>
+      <link>http://localhost:1313/categories/petit-dejeuner/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/petit-dejeuner/</guid>
       <description></description>
     </item>
     <item>
-      <title>Cuisine Du Monde</title>
-      <link>//localhost:1313/categories/cuisine-du-monde/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/categories/cuisine-du-monde/</guid>
+      <title>Ana</title>
+      <link>http://localhost:1313/categories/ana/</link>
+      <pubDate>Sun, 14 Dec 2025 16:52:00 +0100</pubDate>
+      <guid>http://localhost:1313/categories/ana/</guid>
       <description></description>
     </item>
     <item>
-      <title>Gouter</title>
-      <link>//localhost:1313/categories/gouter/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/categories/gouter/</guid>
+      <title>Entrées</title>
+      <link>http://localhost:1313/categories/entrees/</link>
+      <pubDate>Mon, 08 Dec 2025 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/categories/entrees/</guid>
       <description></description>
     </item>
     <item>
-      <title>Marocain</title>
-      <link>//localhost:1313/categories/marocain/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/categories/marocain/</guid>
+      <title>Française</title>
+      <link>http://localhost:1313/categories/francaise/</link>
+      <pubDate>Mon, 08 Dec 2025 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/categories/francaise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Science</title>
+      <link>http://localhost:1313/categories/science/</link>
+      <pubDate>Fri, 01 Dec 2023 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/categories/science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tips</title>
+      <link>http://localhost:1313/categories/tips/</link>
+      <pubDate>Fri, 01 Dec 2023 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/categories/tips/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Flavors</title>
+      <link>http://localhost:1313/categories/flavors/</link>
+      <pubDate>Mon, 20 Nov 2023 09:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/categories/flavors/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Healthy</title>
+      <link>http://localhost:1313/categories/healthy/</link>
+      <pubDate>Wed, 15 Nov 2023 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/categories/healthy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vegan</title>
+      <link>http://localhost:1313/categories/vegan/</link>
+      <pubDate>Wed, 15 Nov 2023 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/categories/vegan/</guid>
       <description></description>
     </item>
   </channel>

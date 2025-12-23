@@ -1,0 +1,32 @@
+<div class="footer-background">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>{{ site.Title }}</h3>
+                <p>{{ site.Params.description }}</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    {{ range site.Menus.footer }}
+                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+
+            <div class="footer-newsletter" id="newsletter">
+                <h4>Stay Inspired</h4>
+                <p>Get our best recipes delivered every week.</p>
+                <form action="#" class="newsletter-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom center">
+        <p>{{ .Site.Data.site.footer_text | default "&copy; 2002-2025 Banana-Bread.com. The Original Resource." }}</p>
+    </div>
+</div>

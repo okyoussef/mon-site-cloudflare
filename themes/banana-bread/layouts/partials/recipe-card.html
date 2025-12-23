@@ -1,0 +1,24 @@
+<article class="recipe-card">
+    <div class="recipe-card-image">
+        <a href="{{ .Permalink }}" class="recipe-card-link">
+            {{/* Placeholder or real image */}}
+            {{ $img := .Params.image | default .Params.featured_image }}
+            {{ if $img }}
+            <img src="{{ $img | relURL }}" alt="{{ .Title }}">
+            {{ else if .Resources.GetMatch "featured*" }}
+            <img src="{{ (.Resources.GetMatch " featured*").RelPermalink }}" alt="{{ .Title }}">
+            {{ else }}
+            <div class="placeholder-image">📷</div>
+            {{ end }}
+        </a>
+    </div>
+    <div class="recipe-card-content">
+        <div class="recipe-meta">
+            {{ with .Params.categories }}
+            {{ range first 1 . }}<span class="recipe-category">{{ . }}</span>{{ end }}
+            {{ end }}
+            <span class="recipe-time">⏱ {{ .Params.prep_time | default "30m" }}</span>
+        </div>
+        <h3 class="recipe-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    </div>
+</article>

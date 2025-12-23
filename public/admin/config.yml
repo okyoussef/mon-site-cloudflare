@@ -1,0 +1,148 @@
+# Backend Configuration
+backend:
+  name: github
+  repo: okyoussef/banana-bread
+  branch: main
+
+  # 🚨 AJOUTS ESSENTIELS POUR CLOUDFLARE PAGES 🚨
+  base_url: https://banana-bread-d4t.pages.dev
+  auth_endpoint: api/auth
+
+# 🔥 LOCAL DEVELOPMENT - Activez ceci pour tester en local
+local_backend: true
+
+# Interface Tweaks for "Pro" feel
+locale: 'fr'
+site_url: "https://banana-bread-d4t.pages.dev"
+display_url: "banana-bread-d4t.pages.dev"
+logo_url: "https://img.freepik.com/free-vector/business-user-shield_78370-7029.jpg"
+show_preview_links: true
+
+# Media Library
+media_folder: "static/images"
+public_folder: "/images"
+
+# Editorial Workflow (Draft -> In Review -> Ready)
+publish_mode: editorial_workflow
+
+# Slug cleaning (SEO friendly)
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# -----------------------------------------------------------------------------
+# COLLECTIONS
+# -----------------------------------------------------------------------------
+collections:
+  # 1. SETTINGS & CONFIGURATION (Global Site Data)
+  - name: "settings"
+    label: "⚙️ Configuration Générale"
+    delete: false # On ne peut pas supprimer le fichier de config
+    editor:
+      preview: false
+    files:
+      - name: "site_settings"
+        label: "Paramètres du Site"
+        file: "data/site.yml"
+        fields:
+          - {label: "Nom du Site", name: "title", widget: "string"}
+          - {label: "Description SEO", name: "description", widget: "text"}
+          - {label: "Logo du Site", name: "logo", widget: "image"}
+          - {label: "Email de Contact", name: "contact_email", widget: "string"}
+          - {label: "Texte Pied de Page", name: "footer_text", widget: "string"}
+          - {label: "Réseaux Sociaux", name: "social", widget: "object", fields: [
+              {label: "Facebook", name: "facebook", widget: "string", required: false},
+              {label: "Instagram", name: "instagram", widget: "string", required: false},
+              {label: "Twitter", name: "twitter", widget: "string", required: false}
+            ]}
+
+  # 2. RECETTES (Main Content)
+  - name: "recipes"
+    label: "🍲 Recettes"
+    label_singular: "Recette"
+    folder: "content/recipes"
+    create: true
+    nested:
+      depth: 2
+    slug: "{{year}}-{{month}}-{{slug}}"
+    summary: "{{title}} — {{date | date('DD/MM/YYYY')}} ({{cuisine}})"
+    sortable_fields: ['title', 'date', 'difficulty', 'prep_time']
+    view_filters:
+      - label: "Cuisine Italienne"
+        field: "cuisine"
+        pattern: "Italienne"
+      - label: "Recettes Faciles"
+        field: "difficulty"
+        pattern: "Facile"
+    view_groups:
+      - label: "Par Catégorie"
+        field: "categories"
+      - label: "Par Année"
+        field: "date"
+        pattern: "\\d{4}"
+    fields:
+      - {label: "Titre de la Recette", name: "title", widget: "string", required: true}
+      - {label: "Date de Publication", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false}
+      
+      - label: "Médias & Visuels"
+        name: "visuals"
+        widget: "object"
+        summary: "{{fields.image}}"
+        fields:
+          - {label: "Image Principale", name: "image", widget: "image", required: true}
+          - {label: "Galerie Photos", name: "gallery", widget: "list", field: {label: "Photo", name: "item", widget: "image"}, required: false}
+      
+      - label: "Détails Techniques"
+        name: "details"
+        widget: "object"
+        collapsed: false
+        fields:
+          - {label: "Difficulté", name: "difficulty", widget: "select", options: ["Facile", "Moyen", "Difficile", "Chef"], default: "Moyen"}
+          - {label: "Cuisine (Type)", name: "cuisine", widget: "string", hint: "ex: Italienne, Indienne..."}
+          - {label: "Temps Préparation", name: "prep_time", widget: "string", hint: "ex: 30 min"}
+          - {label: "Temps Cuisson", name: "cook_time", widget: "string", hint: "ex: 1h"}
+          - {label: "Portions", name: "yield", widget: "string", hint: "ex: 4 personnes"}
+          - {label: "Calories", name: "calories", widget: "number", required: false, value_type: "int"}
+
+      - {label: "Catégories", name: "categories", widget: "list", required: false, hint: "Ex: Plat Principal, Dessert..."}
+      - {label: "Mots-clés (Tags)", name: "tags", widget: "list", required: false}
+
+      - label: "Liste des Ingrédients"
+        name: "ingredients"
+        widget: "list"
+        summary: "{{fields.item}}"
+        field: {label: "Ingrédient", name: "item", widget: "string"}
+          
+      - label: "Instructions (Étapes)"
+        name: "instructions"
+        widget: "list"
+        field: {label: "Description", name: "step", widget: "text"}
+
+      - {label: "Corps de la Recette (Histoire/Intro)", name: "body", widget: "markdown", hint: "Utilisez cet espace pour raconter l'histoire de la recette."}
+
+  # 3. CATÉGORIES
+  - name: "categories"
+    label: "🏷️ Catégories"
+    folder: "content/categories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titre Catégorie", name: "title", widget: "string"}
+      - {label: "Parent (Sous-catégorie de...)", name: "parent", widget: "relation", collection: "categories", search_fields: ["title"], value_field: "title", required: false}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "category"}
+
+  # 4. PAGES STATIQUES
+  - name: "pages"
+    label: "📄 Pages"
+    folder: "content"
+    create: true
+    filter: {field: "layout", value: "page"}
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "URL (Slug)", name: "slug", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+      - {label: "Contenu", name: "body", widget: "markdown"}

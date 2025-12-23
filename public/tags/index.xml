@@ -1,235 +1,383 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Banana-Braed : Recettes de Cuisine</title>
-    <link>//localhost:1313/tags/</link>
-    <description>Recent content in Tags on Banana-Braed : Recettes de Cuisine</description>
+    <title>Tags on Banana Bread Recipes</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Banana Bread Recipes</description>
     <generator>Hugo</generator>
-    <language>fr-fr</language>
-    <lastBuildDate>Mon, 08 Dec 2025 05:04:07 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>© 2002-2025 Sarah Baker - The Banana Bread Authority</copyright>
+    <lastBuildDate>Mon, 22 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Cannelle</title>
-      <link>//localhost:1313/tags/cannelle/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/tags/cannelle/</guid>
+      <title>Chocolate Banana Loaf</title>
+      <link>http://localhost:1313/tags/chocolate-banana-loaf/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/chocolate-banana-loaf/</guid>
       <description></description>
     </item>
     <item>
-      <title>Dessert Français</title>
-      <link>//localhost:1313/tags/dessert-fran%C3%A7ais/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/tags/dessert-fran%C3%A7ais/</guid>
+      <title>Dessert Bread</title>
+      <link>http://localhost:1313/tags/dessert-bread/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dessert-bread/</guid>
       <description></description>
     </item>
     <item>
-      <title>Fait Maison</title>
-      <link>//localhost:1313/tags/fait-maison/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/tags/fait-maison/</guid>
+      <title>Double Chocolate Chip Banana Bread</title>
+      <link>http://localhost:1313/tags/double-chocolate-chip-banana-bread/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/double-chocolate-chip-banana-bread/</guid>
       <description></description>
     </item>
     <item>
-      <title>Pâte Brisée</title>
-      <link>//localhost:1313/tags/p%C3%A2te-bris%C3%A9e/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/tags/p%C3%A2te-bris%C3%A9e/</guid>
+      <title>Moist Banana Bread</title>
+      <link>http://localhost:1313/tags/moist-banana-bread/</link>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/moist-banana-bread/</guid>
       <description></description>
     </item>
     <item>
-      <title>Pommes</title>
-      <link>//localhost:1313/tags/pommes/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/tags/pommes/</guid>
+      <title>Almond Flour</title>
+      <link>http://localhost:1313/tags/almond-flour/</link>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/almond-flour/</guid>
       <description></description>
     </item>
     <item>
-      <title>Recette Familiale</title>
-      <link>//localhost:1313/tags/recette-familiale/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/tags/recette-familiale/</guid>
+      <title>Banana Bread</title>
+      <link>http://localhost:1313/tags/banana-bread/</link>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/banana-bread/</guid>
       <description></description>
     </item>
     <item>
-      <title>Tarte Aux Pommes</title>
-      <link>//localhost:1313/tags/tarte-aux-pommes/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/tags/tarte-aux-pommes/</guid>
+      <title>Gluten-Free</title>
+      <link>http://localhost:1313/tags/gluten-free/</link>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gluten-free/</guid>
       <description></description>
     </item>
     <item>
-      <title>Traditionnel</title>
-      <link>//localhost:1313/tags/traditionnel/</link>
-      <pubDate>Mon, 08 Dec 2025 05:04:07 +0000</pubDate>
-      <guid>//localhost:1313/tags/traditionnel/</guid>
+      <title>Healthy Desserts</title>
+      <link>http://localhost:1313/tags/healthy-desserts/</link>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/healthy-desserts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Paleo Baking</title>
+      <link>http://localhost:1313/tags/paleo-baking/</link>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/paleo-baking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Banana Bread Facile</title>
+      <link>http://localhost:1313/tags/banana-bread-facile/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/banana-bread-facile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cake Banane Moelleux</title>
+      <link>http://localhost:1313/tags/cake-banane-moelleux/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cake-banane-moelleux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gâteau Américain</title>
+      <link>http://localhost:1313/tags/gateau-americain/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gateau-americain/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recette Anti-Gaspillage</title>
+      <link>http://localhost:1313/tags/recette-anti-gaspillage/</link>
+      <pubDate>Sat, 20 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/recette-anti-gaspillage/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Américaine</title>
+      <link>http://localhost:1313/tags/americaine/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/americaine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Best Dessert for Overripe Bananas</title>
+      <link>http://localhost:1313/tags/best-dessert-for-overripe-bananas/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/best-dessert-for-overripe-bananas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Buttermilk</title>
+      <link>http://localhost:1313/tags/buttermilk/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/buttermilk/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Classic American Walnut Banana Loaf</title>
+      <link>http://localhost:1313/tags/classic-american-walnut-banana-loaf/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/classic-american-walnut-banana-loaf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Easy</title>
+      <link>http://localhost:1313/tags/easy/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/easy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Easy One-Bowl Banana Bread Recipe</title>
+      <link>http://localhost:1313/tags/easy-one-bowl-banana-bread-recipe/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/easy-one-bowl-banana-bread-recipe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Facile</title>
+      <link>http://localhost:1313/tags/facile/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/facile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Four</title>
+      <link>http://localhost:1313/tags/four/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/four/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grandma&#39;s Recipe</title>
+      <link>http://localhost:1313/tags/grandmas-recipe/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/grandmas-recipe/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How to Make Banana Bread Moist</title>
+      <link>http://localhost:1313/tags/how-to-make-banana-bread-moist/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/how-to-make-banana-bread-moist/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Moist</title>
+      <link>http://localhost:1313/tags/moist/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/moist/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Moist Banana Bread With Melted Butter</title>
+      <link>http://localhost:1313/tags/moist-banana-bread-with-melted-butter/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/moist-banana-bread-with-melted-butter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>One Bowl</title>
+      <link>http://localhost:1313/tags/one-bowl/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/one-bowl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Quick</title>
+      <link>http://localhost:1313/tags/quick/</link>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/quick/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Baking</title>
+      <link>http://localhost:1313/tags/baking/</link>
+      <pubDate>Thu, 18 Dec 2025 02:39:41 +0000</pubDate>
+      <guid>http://localhost:1313/tags/baking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Comfort Food</title>
+      <link>http://localhost:1313/tags/comfort-food/</link>
+      <pubDate>Thu, 18 Dec 2025 02:39:41 +0000</pubDate>
+      <guid>http://localhost:1313/tags/comfort-food/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dessert</title>
+      <link>http://localhost:1313/tags/dessert/</link>
+      <pubDate>Thu, 18 Dec 2025 02:39:41 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dessert/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>USA</title>
+      <link>http://localhost:1313/tags/usa/</link>
+      <pubDate>Thu, 18 Dec 2025 02:39:41 +0000</pubDate>
+      <guid>http://localhost:1313/tags/usa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Banane</title>
+      <link>http://localhost:1313/tags/banane/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/banane/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Beurre Noisette</title>
+      <link>http://localhost:1313/tags/beurre-noisette/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/beurre-noisette/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Myrtilles</title>
+      <link>http://localhost:1313/tags/myrtilles/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/myrtilles/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sans Base De Données</title>
+      <link>http://localhost:1313/tags/sans-base-de-donnees/</link>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sans-base-de-donnees/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Money Saving</title>
+      <link>http://localhost:1313/tags/money-saving/</link>
+      <pubDate>Tue, 16 Dec 2025 21:45:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/money-saving/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Science</title>
+      <link>http://localhost:1313/tags/science/</link>
+      <pubDate>Tue, 16 Dec 2025 21:45:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/science/</guid>
       <description></description>
     </item>
     <item>
       <title>Butternut</title>
-      <link>//localhost:1313/tags/butternut/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/butternut/</guid>
+      <link>http://localhost:1313/tags/butternut/</link>
+      <pubDate>Mon, 08 Dec 2025 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/butternut/</guid>
       <description></description>
     </item>
     <item>
       <title>Chèvre</title>
-      <link>//localhost:1313/tags/ch%C3%A8vre/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/ch%C3%A8vre/</guid>
+      <link>http://localhost:1313/tags/chevre/</link>
+      <pubDate>Mon, 08 Dec 2025 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/chevre/</guid>
       <description></description>
     </item>
     <item>
       <title>Cuisine Provençale</title>
-      <link>//localhost:1313/tags/cuisine-proven%C3%A7ale/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/cuisine-proven%C3%A7ale/</guid>
+      <link>http://localhost:1313/tags/cuisine-provencale/</link>
+      <pubDate>Mon, 08 Dec 2025 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/cuisine-provencale/</guid>
       <description></description>
     </item>
     <item>
       <title>Entrée Facile</title>
-      <link>//localhost:1313/tags/entr%C3%A9e-facile/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/entr%C3%A9e-facile/</guid>
+      <link>http://localhost:1313/tags/entree-facile/</link>
+      <pubDate>Mon, 08 Dec 2025 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/entree-facile/</guid>
       <description></description>
     </item>
     <item>
       <title>Feuilletage</title>
-      <link>//localhost:1313/tags/feuilletage/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/feuilletage/</guid>
+      <link>http://localhost:1313/tags/feuilletage/</link>
+      <pubDate>Mon, 08 Dec 2025 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/feuilletage/</guid>
       <description></description>
     </item>
     <item>
       <title>Miel</title>
-      <link>//localhost:1313/tags/miel/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/miel/</guid>
+      <link>http://localhost:1313/tags/miel/</link>
+      <pubDate>Mon, 08 Dec 2025 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/miel/</guid>
       <description></description>
     </item>
     <item>
       <title>Tartelette Salée</title>
-      <link>//localhost:1313/tags/tartelette-sal%C3%A9e/</link>
-      <pubDate>Mon, 08 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/tartelette-sal%C3%A9e/</guid>
+      <link>http://localhost:1313/tags/tartelette-salee/</link>
+      <pubDate>Mon, 08 Dec 2025 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/tartelette-salee/</guid>
       <description></description>
     </item>
     <item>
-      <title>Chocolat</title>
-      <link>//localhost:1313/tags/chocolat/</link>
-      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/chocolat/</guid>
+      <title>Baking Hack</title>
+      <link>http://localhost:1313/tags/baking-hack/</link>
+      <pubDate>Fri, 01 Dec 2023 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/baking-hack/</guid>
       <description></description>
     </item>
     <item>
-      <title>Gâteau</title>
-      <link>//localhost:1313/tags/g%C3%A2teau/</link>
-      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/g%C3%A2teau/</guid>
+      <title>Tips</title>
+      <link>http://localhost:1313/tags/tips/</link>
+      <pubDate>Fri, 01 Dec 2023 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/tips/</guid>
       <description></description>
     </item>
     <item>
-      <title>Moelleux</title>
-      <link>//localhost:1313/tags/moelleux/</link>
-      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/moelleux/</guid>
+      <title>Chocolate</title>
+      <link>http://localhost:1313/tags/chocolate/</link>
+      <pubDate>Mon, 20 Nov 2023 09:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/chocolate/</guid>
       <description></description>
     </item>
     <item>
-      <title>Recette Rapide</title>
-      <link>//localhost:1313/tags/recette-rapide/</link>
-      <pubDate>Wed, 01 Jan 2025 10:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/recette-rapide/</guid>
+      <title>Indulgent</title>
+      <link>http://localhost:1313/tags/indulgent/</link>
+      <pubDate>Mon, 20 Nov 2023 09:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/indulgent/</guid>
       <description></description>
     </item>
     <item>
-      <title>Citron Confit</title>
-      <link>//localhost:1313/tags/citron-confit/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/citron-confit/</guid>
+      <title>Kid-Friendly</title>
+      <link>http://localhost:1313/tags/kid-friendly/</link>
+      <pubDate>Mon, 20 Nov 2023 09:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/kid-friendly/</guid>
       <description></description>
     </item>
     <item>
-      <title>Marocain</title>
-      <link>//localhost:1313/tags/marocain/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/marocain/</guid>
+      <title>Breakfast</title>
+      <link>http://localhost:1313/tags/breakfast/</link>
+      <pubDate>Wed, 15 Nov 2023 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/breakfast/</guid>
       <description></description>
     </item>
     <item>
-      <title>Olives</title>
-      <link>//localhost:1313/tags/olives/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/olives/</guid>
+      <title>Egg-Free</title>
+      <link>http://localhost:1313/tags/egg-free/</link>
+      <pubDate>Wed, 15 Nov 2023 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/egg-free/</guid>
       <description></description>
     </item>
     <item>
-      <title>Plat Mijoté</title>
-      <link>//localhost:1313/tags/plat-mijot%C3%A9/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/plat-mijot%C3%A9/</guid>
+      <title>Healthy</title>
+      <link>http://localhost:1313/tags/healthy/</link>
+      <pubDate>Wed, 15 Nov 2023 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/healthy/</guid>
       <description></description>
     </item>
     <item>
-      <title>Poulet</title>
-      <link>//localhost:1313/tags/poulet/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/poulet/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Recette Facile</title>
-      <link>//localhost:1313/tags/recette-facile/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/recette-facile/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tajine</title>
-      <link>//localhost:1313/tags/tajine/</link>
-      <pubDate>Sun, 24 Nov 2024 12:00:00 +0100</pubDate>
-      <guid>//localhost:1313/tags/tajine/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Air Fryer</title>
-      <link>//localhost:1313/tags/air-fryer/</link>
-      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
-      <guid>//localhost:1313/tags/air-fryer/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cuisine Française</title>
-      <link>//localhost:1313/tags/cuisine-fran%C3%A7aise/</link>
-      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
-      <guid>//localhost:1313/tags/cuisine-fran%C3%A7aise/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Protéiné</title>
-      <link>//localhost:1313/tags/prot%C3%A9in%C3%A9/</link>
-      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
-      <guid>//localhost:1313/tags/prot%C3%A9in%C3%A9/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Rapide</title>
-      <link>//localhost:1313/tags/rapide/</link>
-      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
-      <guid>//localhost:1313/tags/rapide/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Soufflé</title>
-      <link>//localhost:1313/tags/souffl%C3%A9/</link>
-      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
-      <guid>//localhost:1313/tags/souffl%C3%A9/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Volaille</title>
-      <link>//localhost:1313/tags/volaille/</link>
-      <pubDate>Sat, 18 May 2024 10:00:00 +0200</pubDate>
-      <guid>//localhost:1313/tags/volaille/</guid>
+      <title>Vegan</title>
+      <link>http://localhost:1313/tags/vegan/</link>
+      <pubDate>Wed, 15 Nov 2023 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/vegan/</guid>
       <description></description>
     </item>
   </channel>

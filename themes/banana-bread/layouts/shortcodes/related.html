@@ -1,0 +1,15 @@
+{{ $current := .Page }}
+{{/* On récupère les pages de la même section, excluant la page actuelle */}}
+{{ $pages := where .Site.RegularPages "Section" .Page.Section }}
+{{ $pages = where $pages "RelPermalink" "ne" $current.RelPermalink }}
+
+{{/* On mélange les pages pour éviter de toujours suggérer le même premier article */}}
+{{ $related := shuffle $pages }}
+
+{{/* On prend le premier article du mélange */}}
+{{ with index $related 0 }}
+<div class="related-link-block">
+    <span class="related-label">You May Also Like:</span>
+    <a href="{{ .RelPermalink }}" class="related-title">{{ .Title }}</a>
+</div>
+{{ end }}

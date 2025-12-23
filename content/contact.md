@@ -1,8 +1,23 @@
 ---
 title: "Contact"
-date: 2025-11-24T20:41:00+01:00
+date: 2023-10-27
 draft: false
+url: "/contact/"
+layout: "page"
 ---
-## Contactez-nous
 
-Vous pouvez nous joindre à l'adresse email : contact@monsite.com
+## Contact Us
+
+We love discussing recipes! If you have a question, a suggestion, or a partnership request, don't hesitate.
+
+### Email
+Send us a message at: `chef@recettes-chef.example.com`
+
+### Social Media
+Find us on:
+*   Instagram
+*   Pinterest
+*   Facebook
+
+### Form
+_The contact form will be available soon._

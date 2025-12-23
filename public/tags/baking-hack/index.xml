@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Baking Hack on Banana Bread Recipes</title>
+    <link>http://localhost:1313/tags/baking-hack/</link>
+    <description>Recent content in Baking Hack on Banana Bread Recipes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© 2002-2025 Sarah Baker - The Banana Bread Authority</copyright>
+    <lastBuildDate>Fri, 01 Dec 2023 10:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/baking-hack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Ripen Bananas Quickly</title>
+      <link>http://localhost:1313/tips/ripen-bananas/</link>
+      <pubDate>Fri, 01 Dec 2023 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tips/ripen-bananas/</guid>
+      <description>&lt;p&gt;We&amp;rsquo;ve all been there: you want to bake, but your bananas are stubbornly yellow (or worse, green!). Don&amp;rsquo;t worry, science has the answer.&lt;/p&gt;&#xA;&lt;h2 id=&#34;method-1-the-oven-fastest&#34;&gt;Method 1: The Oven (Fastest)&lt;/h2&gt;&#xA;&lt;p&gt;Place unpeeled bananas on a baking sheet. Bake at 300°F (150°C) for 15-20 minutes until the skins are completely black. The heat releases the sugars.&lt;/p&gt;&#xA;&lt;h2 id=&#34;method-2-the-paper-bag-overnight&#34;&gt;Method 2: The Paper Bag (Overnight)&lt;/h2&gt;&#xA;&lt;p&gt;Place bananas in a paper bag with an apple. The ethylene gas released by the apple will speed up the ripening process.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

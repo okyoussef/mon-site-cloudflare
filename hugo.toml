@@ -1,45 +1,136 @@
-baseURL = '/'
-languageCode = 'fr-fr'
-title = 'Banana-Braed : Recettes de Cuisine'
-theme = 'recettes'
+# --- Configuration de base ---
+baseURL = "https://banana-bread-d4t.pages.dev/"
+languageCode = "en-us"
+title = "Banana Bread Recipes"
+theme = "banana-bread"
+copyright = "© 2002-2025 Sarah Baker - The Banana Bread Authority"
 
-defaultContentLanguage = "fr"
+# --- SEO & Indexation ---
 enableRobotsTXT = true
+canonifyURLs = false
+relativeURLs = true
+removePathAccents = true
 
-[permalinks]
-  recettes = "/recettes/:slug/"
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "assets"
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+
+[outputs]
+  home = ["HTML", "JSON"]
 
 [pagination]
   pagerSize = 10
 
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+# --- Structure des URLs (SEO Friendly) ---
+[permalinks]
+  posts = "/:title/"
+  recipes = "/:slug/"
+
+# --- Organisation du contenu ---
 [taxonomies]
   category = "categories"
   tag = "tags"
-  plat = "plats"
+  series = "series"
+
+# --- Métadonnées Globales (Params) ---
+[params]
+  description = "Since 2002, the #1 resource for perfect banana bread recipes. From classic moist loaves to healthy vegan options."
+  author = "Sarah The Baker"
+  
+  # Réseaux Sociaux & Partage (Open Graph / Twitter Cards)
+  og_image = "/images/banana-bread-cover.jpg"
+  twitter_site = "@banana_bread"
+  
+  # Favicon
+  favicon = "favicon.ico"
+
+  [params.social]
+    image = "images/og-image.jpg"
 
 [menu]
+
   [[menu.main]]
-    name = "Toutes les Recettes"
-    url = "/recettes/"
+    identifier = "classics"
+    name = "The Classics"
+    url = "/recipes/classic/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "healthy"
+    name = "Dietary & Healthy"
+    url = "/recipes/healthy/"
+    weight = 3
+    
+  [[menu.main]]
+    identifier = "indulgent"
+    name = "Indulgent &Sweet"
+    url = "/recipes/flavors/"
+    weight = 4
+
+  [[menu.main]]
+    identifier = "fruits"
+    name = "Fruits & Nuts"
+    url = "/recipes/fruits-nuts/"
+    weight = 5
+
+  [[menu.main]]
+    identifier = "tips-science"
+    name = "Tips & Science"
+    url = "/tips/"
+    weight = 6
+  
+  [[menu.main]]
+    identifier = "tips"
+    name = "Tips"
+    url = "/tips/"
+    weight = 7
+
+  [[menu.footer]]
+    identifier = "privacy"
+    name = "Privacy"
+    url = "/privacy/"
     weight = 10
-  [[menu.main]]
-    name = "Catégories"
-    url = "/categories/"
-    weight = 11
-  [[menu.main]]
-    name = "À Propos"
-    url = "/about/"
-    weight = 20
-  [[menu.main]]
+  
+  [[menu.footer]]
+    identifier = "contact"
     name = "Contact"
     url = "/contact/"
-    weight = 30
+    weight = 20
 
-[build]
-  writeStats = true
+  [[menu.footer]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
 
-[markup.goldmark.renderer]
-  unsafe = true
-
-[params]
-  author = "Chef Gamino"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

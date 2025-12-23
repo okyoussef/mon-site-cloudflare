@@ -1,0 +1,6 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range where .Site.RegularPages "Type" "not in" (slice "page" "json") -}}
+  {{- $image := .Params.image | default .Params.featured_image | default "/images/default-recipe.png" -}}
+  {{- $.Scratch.Add "index" (dict "title" .Title "permalink" .Permalink "summary" .Summary "image" ($image | relURL) "categories" .Params.categories) -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

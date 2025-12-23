@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kid-Friendly on Banana Bread Recipes</title>
+    <link>http://localhost:1313/tags/kid-friendly/</link>
+    <description>Recent content in Kid-Friendly on Banana Bread Recipes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© 2002-2025 Sarah Baker - The Banana Bread Authority</copyright>
+    <lastBuildDate>Mon, 20 Nov 2023 09:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/kid-friendly/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decadent Double Chocolate Banana Bread</title>
+      <link>http://localhost:1313/decadent-double-chocolate-banana-bread/</link>
+      <pubDate>Mon, 20 Nov 2023 09:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/decadent-double-chocolate-banana-bread/</guid>
+      <description>&lt;p&gt;If you love brownies and banana bread, this is their love child. It&amp;rsquo;s incredibly rich, moist, and chocolaty.&lt;/p&gt;&#xA;&lt;h3 id=&#34;pro-tip&#34;&gt;Pro Tip&lt;/h3&gt;&#xA;&lt;p&gt;Use high-quality cocoa powder (Dutch-processed) for a darker color and smoother flavor.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

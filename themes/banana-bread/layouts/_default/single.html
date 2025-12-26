@@ -1,13 +1,249 @@
 {{ define "main" }}
-<div class="container">
-    <article class="page-content">
-        <header class="page-header">
-            <h1>{{ .Title }}</h1>
-        </header>
+<div class="single-content-wrapper container">
 
-        <div class="content-body">
-            {{ .Content }}
-        </div>
-    </article>
+    <div class="main-content-area">
+        <article class="recipe-post">
+            {{/* Hero Header */}}
+            <header class="recipe-header">
+                <div class="recipe-breadcrumbs">
+                    <a href="/">Home</a>
+                    {{ range .Ancestors.Reverse }}
+                    {{ if ne .Kind "home" }}
+                    &raquo; <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ end }}
+                    {{ end }}
+                    &raquo; <span>{{ .Title }}</span>
+                </div>
+
+                <h1 class="recipe-h1">{{ .Title }}</h1>
+
+                <div class="recipe-hero-actions">
+                    <a href="#recipe-card" class="btn-pill btn-pin"
+                        onclick="window.open('https://www.pinterest.com/pin/create/button/?url={{ .Permalink }}&description={{ .Title }}', '_blank'); return false;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 4.99 3.257 9.255 7.828 10.95-.108-.934-.206-2.365.043-3.387.216-.884 1.397-5.918 1.397-5.918s-.356-.713-.356-1.766c0-1.655.96-2.889 2.155-2.889 1.016 0 1.507.763 1.507 1.678 0 1.024-.652 2.556-.988 3.976-.282 1.19.596 2.159 1.768 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.637 0-5.772 2.723-5.772 5.541 0 1.097.422 2.274.95 2.913.105.127.12.238.089.367-.097.404-.316 1.284-.36 1.464-.056.237-.188.287-.433.173-1.616-.752-2.626-3.116-2.626-5.013 0-4.08 2.971-7.823 8.568-7.823 4.5 0 8.002 3.208 8.002 7.495 0 4.473-2.82 8.074-6.736 8.074-1.314 0-2.548-.683-2.972-1.491 0 0-.651 2.479-.809 3.084-.291 1.118-1.076 2.518-1.603 3.375 1.206.375 2.483.578 3.805.578 6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                        </svg>
+                        Pin This!
+                    </a>
+                    <a href="#recipe-card" class="btn-pill btn-jump">
+                        Jump To Recipe
+                        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="recipe-meta-top">
+                    <span class="author">By {{ .Params.recipe.author | default .Params.author | default "Sarah Baker"
+                        }}</span>
+                    <span class="date">Published on {{ .Date.Format "Jan 2, 2006" }}</span>
+                    {{ with .Params.categories }}
+                    <span class="categories">
+                        in {{ range . }}<a href="/categories/{{ . | urlize }}" class="cat-link">{{ . }}</a> {{ end }}
+                    </span>
+                    {{ end }}
+
+                    {{/* AFFICHAGE VISUEL DES ÉTOILES */}}
+                    <div class="recipe-rating-display" itemprop="aggregateRating" itemscope
+                        itemtype="https://schema.org/AggregateRating" style="display: inline-block; margin-left: 10px;">
+                        <span class="stars" style="color: #f4c150;">
+                            {{ if ge (.Params.rating | default 5.0) 4.5 }}⭐⭐⭐⭐⭐
+                            {{ else }}⭐⭐⭐⭐
+                            {{ end }}
+                        </span>
+                        <span class="rating-text" style="font-weight: bold; margin-left: 5px;">
+                            <span itemprop="ratingValue">{{ .Params.rating | default 5 }}</span>/5
+                        </span>
+                        <span class="vote-count" style="color: #666; font-size: 0.9em;">
+                            (<span itemprop="reviewCount">{{ .Params.votes | default 1 }}</span> votes)
+                        </span>
+                    </div>
+                </div>
+
+                <div class="recipe-hero-image">
+                    {{/* OPTIMISATION: fetchpriority high */}}
+                    {{ $img := .Params.image | default .Params.featured_image }}
+                    {{ if $img }}
+                    <img src="{{ $img | relURL }}" alt="{{ .Title }}" fetchpriority="high">
+                    {{ else if .Resources.GetMatch "featured*" }}
+                    <img src="{{ (.Resources.GetMatch " featured*").RelPermalink }}" alt="{{ .Title }}"
+                        fetchpriority="high">
+                    {{ end }}
+                </div>
+
+            </header>
+
+            <div class="recipe-content-body">
+                <p class="recipe-summary">{{ .Description }}</p>
+
+                {{/* TABLE OF CONTENTS */}}
+                {{ if gt (len .TableOfContents) 50 }}
+                <div class="toc-container" id="toc">
+                    <div class="toc-header" id="toc-toggle">
+                        <div class="toc-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 6h16M4 12h16M4 18h7"></path>
+                            </svg>
+                            Table of Contents
+                            <span class="toc-toggle-action">[{{ T "show" | default "Show" }}]</span>
+                        </div>
+                        <svg class="toc-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="toc-content">
+                        <div class="toc-content-inner">
+                            {{ .TableOfContents }}
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+
+                {{/* --- DÉBUT GESTION DES LIENS --- */}}
+                {{ $content := .Content }}
+
+                {{/* Récupération des articles liés */}}
+                {{ $currentPermalink := .RelPermalink }}
+                {{ $allRelated := where .Site.RegularPages "Section" .Section }}
+                {{ $allRelated = where $allRelated "RelPermalink" "ne" $currentPermalink }}
+                {{ $allRelated = shuffle $allRelated }}
+
+                {{/* Préparation des variables (Vide par défaut) */}}
+                {{ $link1HTML := "" }}
+                {{ $link2HTML := "" }}
+                {{ $link3HTML := "" }}
+
+                {{/* Création Link 1 */}}
+                {{ if gt (len $allRelated) 0 }}
+                {{ $p := index $allRelated 0 }}
+                {{ $link1HTML = printf `<div class="automated-link-injected">
+                    <div class="related-link-block"><span class="related-label">You May Also Like:</span><a href="%s"
+                            class="related-title">%s</a></div>
+                </div>` $p.RelPermalink $p.Title }}
+                {{ end }}
+
+                {{/* Création Link 2 */}}
+                {{ if gt (len $allRelated) 1 }}
+                {{ $p := index $allRelated 1 }}
+                {{ $link2HTML = printf `<div class="automated-link-injected">
+                    <div class="related-link-block"><span class="related-label">You May Also Like:</span><a href="%s"
+                            class="related-title">%s</a></div>
+                </div>` $p.RelPermalink $p.Title }}
+                {{ end }}
+
+                {{/* Création Link 3 */}}
+                {{ if gt (len $allRelated) 2 }}
+                {{ $p := index $allRelated 2 }}
+                {{ $link3HTML = printf `<div class="automated-link-injected">
+                    <div class="related-link-block"><span class="related-label">You May Also Like:</span><a href="%s"
+                            class="related-title">%s</a></div>
+                </div>` $p.RelPermalink $p.Title }}
+                {{ end }}
+
+                {{/* --- AFFICHAGE DU CONTENU --- */}}
+
+                {{/* 1. Afficher Link 1 avant le contenu */}}
+                {{ $link1HTML | safeHTML }}
+
+                {{/* 2. Afficher le contenu avec Link 2 injecté au milieu */}}
+                {{/* CORRECTION BUG: On n'utilise plus l'assignation '=' qui plante */}}
+                {{ if findRE "<h2" $content }} {{/* Si un H2 existe, on remplace le premier H2 par (H2 + Link2) */}} {{
+                    replaceRE "(?i)(.*?</h2>)" (printf "$1%s" $link2HTML) $content 1 | safeHTML }} {{ else }} {{/* Sinon
+                    on affiche le contenu normal */}} {{ $content | safeHTML }} {{ end }} {{/* 3. Afficher Link 3 à la
+                    fin */}} {{ $link3HTML | safeHTML }} {{/* --- FIN GESTION DES LIENS --- */}} </div>
+
+                    {{/* The Structured Recipe Card */}}
+                    {{ if .Params.recipe }}
+                    <div id="recipe-card" class="recipe-card-full">
+                        <div class="recipe-card-header">
+                            <h2>{{ .Title }}</h2>
+                            <div class="recipe-actions">
+                                <button onclick="window.print()" class="btn btn--outline">🖨 Print Recipe</button>
+                            </div>
+                        </div>
+
+                        <div class="recipe-times">
+                            <div class="time-block">
+                                <span class="label">Prep</span>
+                                <span class="value">{{ .Params.recipe.time.prep_human | default .Params.prep_time
+                                    }}</span>
+                            </div>
+                            <div class="time-block">
+                                <span class="label">Cook</span>
+                                <span class="value">{{ .Params.recipe.time.cook_human | default .Params.cook_time
+                                    }}</span>
+                            </div>
+                            <div class="time-block">
+                                <span class="label">Total</span>
+                                <span class="value">{{ .Params.recipe.time.total_human | default .Params.total_time
+                                    }}</span>
+                            </div>
+                            <div class="time-block">
+                                <span class="label">Servings</span>
+                                <span class="value">{{ .Params.recipe.yield }}</span>
+                            </div>
+                        </div>
+
+                        <div class="recipe-columns">
+                            <div class="recipe-ingredients">
+                                <h3>Ingredients</h3>
+                                <ul>
+                                    {{ range .Params.recipe.ingredients }}
+                                    <li>
+                                        <label class="ingredient-checkbox">
+                                            <input type="checkbox"> {{ . }}
+                                        </label>
+                                    </li>
+                                    {{ end }}
+                                </ul>
+                            </div>
+
+                            <div class="recipe-instructions">
+                                <h3>Instructions</h3>
+                                <ol class="recipe-instructions-list">
+                                    {{/* BOUCLE INSTRUCTIONS AVEC ID */}}
+                                    {{ range $index, $element := .Params.recipe.instructions }}
+                                    <li id="step-{{ add $index 1 }}">
+                                        {{ if reflect.IsMap $element }}
+                                        {{ if $element.name }}<strong>{{ $element.name }}:</strong> {{ end }}
+                                        {{ $element.text }}
+                                        {{ else }}
+                                        {{ $element }}
+                                        {{ end }}
+                                    </li>
+                                    {{ end }}
+                                </ol>
+                            </div>
+                        </div>
+
+                        {{ with .Params.recipe.nutrition }}
+                        <div class="recipe-nutrition">
+                            <h3>Nutrition</h3>
+                            <p>
+                                {{ if .calories }}<strong>Calories:</strong> {{ .calories }} | {{ end }}
+                                {{ if .protein }}<strong>Protein:</strong> {{ .protein }} | {{ end }}
+                                {{ if .fat }}<strong>Fat:</strong> {{ .fat }} | {{ end }}
+                                {{ if .sugar }}<strong>Sugar:</strong> {{ .sugar }}{{ end }}
+                            </p>
+                        </div>
+                        {{ end }}
+
+                        <div class="recipe-notes">
+                            {{ .Params.notes | markdownify }}
+                        </div>
+                    </div>
+                    {{ end }}
+
+        </article>
+    </div>
+
+    {{/* SIDEBAR */}}
+    {{ partial "sidebar.html" . }}
+
 </div>
 {{ end }}

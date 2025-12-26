@@ -146,3 +146,47 @@ collections:
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
       - {label: "Contenu", name: "body", widget: "markdown"}
+
+  # 5. IMPORT RAPIDE - Coller un article complet en Markdown
+  - name: "quick_import_classic"
+    label: "⚡ Import → The Classics"
+    folder: "content/recipes/classic"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    editor:
+      preview: false
+    fields:
+      - {label: "Titre (pour le fichier)", name: "title", widget: "string", hint: "Le titre de votre recette"}
+      - {label: "Slug (nom du fichier)", name: "slug", widget: "string", hint: "ex: my-banana-bread-recipe"}
+      - {label: "📝 Contenu Markdown Complet", name: "body", widget: "text", hint: "Collez ici tout votre contenu Markdown (sans le frontmatter, il sera généré automatiquement)"}
+
+  - name: "quick_import_healthy"
+    label: "⚡ Import → Dietary & Healthy"
+    folder: "content/recipes/healthy"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    editor:
+      preview: false
+    fields:
+      - {label: "Titre (pour le fichier)", name: "title", widget: "string", hint: "Le titre de votre recette"}
+      - {label: "Slug (nom du fichier)", name: "slug", widget: "string", hint: "ex: vegan-banana-bread"}
+      - {label: "📝 Contenu Markdown Complet", name: "body", widget: "text", hint: "Collez ici tout votre contenu Markdown"}
+
+  - name: "quick_import_indulgent"
+    label: "⚡ Import → Indulgent & Sweet"
+    folder: "content/recipes/indulgent"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    editor:
+      preview: false
+    fields:
+      - {label: "Titre (pour le fichier)", name: "title", widget: "string", hint: "Le titre de votre recette"}
+      - {label: "Slug (nom du fichier)", name: "slug", widget: "string", hint: "ex: chocolate-banana-bread"}
+      - {label: "📝 Contenu Markdown Complet", name: "body", widget: "text", hint: "Collez ici tout votre contenu Markdown"}
+

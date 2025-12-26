@@ -6,7 +6,8 @@
     </div>
 
     <div class="recipe-grid">
-        {{ range .Paginator.Pages }}
+        {{ $pages := .RegularPagesRecursive }}
+        {{ range (.Paginate $pages).Pages }}
         {{ partial "recipe-card.html" . }}
         {{ end }}
     </div>

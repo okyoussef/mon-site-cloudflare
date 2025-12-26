@@ -1,0 +1,125 @@
+{{ define "main" }}
+<div class="container search-page">
+    <div class="search-header">
+        <h1>{{ .Title }}</h1>
+        <div class="search-box">
+            <input type="text" id="search-query" placeholder="Search for banana bread recipes..." autofocus>
+        </div>
+    </div>
+
+    <div id="search-results" class="recipe-grid"></div>
+</div>
+
+<style>
+    .search-page {
+        padding: 4rem 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .search-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1.2rem;
+        border: 2px solid #eee;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .search-box input:focus {
+        border-color: var(--primary-color, #f4d03f);
+        outline: none;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-result-item {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        background: white;
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .search-result-item:hover {
+        transform: translateY(-2px);
+    }
+
+    .search-result-thumb {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+        background-color: #f0f0f0;
+    }
+
+    .search-result-content h3 {
+        margin: 0 0 0.5rem 0;
+        color: #333;
+    }
+
+    .search-result-content p {
+        color: #666;
+        font-size: 0.95rem;
+        margin: 0;
+    }
+</style>
+
+<script>
+    const searchInput = document.getElementById('search-query');
+    const resultsContainer = document.getElementById('search-results');
+    let recipes = [];
+
+    // Fetch the index
+    fetch('/index.json')
+        .then(response => response.json())
+        .then(data => {
+            recipes = data;
+        })
+        .catch(err => console.error('Error loading search index:', err));
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        resultsContainer.innerHTML = '';
+
+        if (query.length < 2) return;
+
+        const filtered = recipes.filter(recipe => {
+            const title = recipe.title.toLowerCase();
+            const summary = recipe.summary ? recipe.summary.toLowerCase() : '';
+            const categories = recipe.categories ? recipe.categories.join(' ').toLowerCase() : '';
+            return title.includes(query) || summary.includes(query) || categories.includes(query);
+        });
+
+        if (filtered.length === 0) {
+            resultsContainer.innerHTML = '<p style="text-align:center; color:#888;">No recipes found.</p>';
+            return;
+        }
+
+        filtered.forEach(recipe => {
+            const article = document.createElement('a');
+            article.href = recipe.permalink;
+            article.className = 'search-result-item';
+
+            article.innerHTML = `
+                <img src="${recipe.image}" alt="${recipe.title}" class="search-result-thumb">
+                <div class="search-result-content">
+                    <h3>${recipe.title}</h3>
+                    <p>${recipe.summary ? recipe.summary.slice(0, 120) + '...' : ''}</p>
+                </div>
+            `;
+            resultsContainer.appendChild(article);
+        });
+    });
+</script>
+{{ end }}

@@ -11,7 +11,7 @@ layout: "page"
 We love discussing recipes! If you have a question, a suggestion, or a partnership request, don't hesitate.
 
 ### Email
-Send us a message at: `chef@recettes-chef.example.com`
+Send us a message at: `sarah@banana-bread.com`
 
 ### Social Media
 Find us on:

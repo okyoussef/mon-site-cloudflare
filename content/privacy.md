@@ -5,6 +5,10 @@ slug: "privacy"
 layout: "page"
 description: "Learn how The Banana Bread Authority protects your data and privacy while you browse our recipes."
 draft: false
+_build:
+  list: never
+  render: always
+
 ---
 
 

@@ -1,5 +1,6 @@
+
 # --- Configuration de base ---
-baseURL = "https://banana-bread-d4t.pages.dev/"
+baseURL = "https://banana-bread/"
 languageCode = "en-us"
 title = "Banana Bread Recipes"
 theme = "banana-bread"
@@ -10,6 +11,8 @@ enableRobotsTXT = true
 canonifyURLs = false
 relativeURLs = true
 removePathAccents = true
+
+
 
 [module]
   [[module.mounts]]
@@ -41,12 +44,14 @@ removePathAccents = true
   home = ["HTML", "JSON"]
 
 [pagination]
-  pagerSize = 10
+  pagerSize = 12
 
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
+  
+  
 
 # --- Structure des URLs (SEO Friendly) ---
 [permalinks]
@@ -58,6 +63,7 @@ removePathAccents = true
   category = "categories"
   tag = "tags"
   series = "series"
+noindexTags = true
 
 # --- Métadonnées Globales (Params) ---
 [params]
@@ -80,37 +86,37 @@ removePathAccents = true
     identifier = "classics"
     name = "The Classics"
     url = "/recipes/classic/"
-    weight = 2
+    weight = 1
 
   [[menu.main]]
     identifier = "healthy"
     name = "Dietary & Healthy"
     url = "/recipes/healthy/"
-    weight = 3
+    weight = 2
     
   [[menu.main]]
     identifier = "indulgent"
     name = "Indulgent &Sweet"
-    url = "/recipes/flavors/"
-    weight = 4
+    url = "/recipes/indulgent/"
+    weight = 3
 
   [[menu.main]]
     identifier = "fruits"
     name = "Fruits & Nuts"
     url = "/recipes/fruits-nuts/"
-    weight = 5
+    weight = 4
 
   [[menu.main]]
-    identifier = "tips-science"
-    name = "Tips & Science"
-    url = "/tips/"
-    weight = 6
+    identifier = "baking-science"
+    name = "Baking Science"
+    url = "/baking-science/"
+    weight = 5
   
   [[menu.main]]
-    identifier = "tips"
-    name = "Tips"
-    url = "/tips/"
-    weight = 7
+    identifier = "pro-tips"
+    name = "Pro Tips"
+    url = "/pro-tips/"
+    weight = 6
 
   [[menu.footer]]
     identifier = "privacy"

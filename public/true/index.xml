@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>True on Banana Bread Recipes</title>
-    <link>https://banana-bread.com/true/</link>
+    <link>http://localhost:1313/true/</link>
     <description>Recent content in True on Banana Bread Recipes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© 2002-2025 Sarah Baker - The Banana Bread Authority</copyright>
-    <atom:link href="https://banana-bread.com/true/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/true/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

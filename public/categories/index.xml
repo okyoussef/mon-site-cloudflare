@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Banana Bread Recipes</title>
-    <link>https://banana-bread.com/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Banana Bread Recipes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© 2002-2025 Sarah Baker - The Banana Bread Authority</copyright>
     <lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://banana-bread.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dietary &amp; Healthy</title>
-      <link>https://banana-bread.com/categories/dietary--healthy/</link>
+      <link>http://localhost:1313/categories/dietary--healthy/</link>
       <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://banana-bread.com/categories/dietary--healthy/</guid>
+      <guid>http://localhost:1313/categories/dietary--healthy/</guid>
       <description></description>
     </item>
     <item>
       <title>The Classics</title>
-      <link>https://banana-bread.com/categories/the-classics/</link>
+      <link>http://localhost:1313/categories/the-classics/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://banana-bread.com/categories/the-classics/</guid>
+      <guid>http://localhost:1313/categories/the-classics/</guid>
       <description></description>
     </item>
     <item>
       <title>Indulgent &amp; Sweet</title>
-      <link>https://banana-bread.com/categories/indulgent--sweet/</link>
+      <link>http://localhost:1313/categories/indulgent--sweet/</link>
       <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://banana-bread.com/categories/indulgent--sweet/</guid>
+      <guid>http://localhost:1313/categories/indulgent--sweet/</guid>
       <description></description>
     </item>
     <item>
       <title>Fruits &amp; Nuts</title>
-      <link>https://banana-bread.com/categories/fruits--nuts/</link>
+      <link>http://localhost:1313/categories/fruits--nuts/</link>
       <pubDate>Sun, 12 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://banana-bread.com/categories/fruits--nuts/</guid>
+      <guid>http://localhost:1313/categories/fruits--nuts/</guid>
       <description></description>
     </item>
     <item>
       <title>Baking Science</title>
-      <link>https://banana-bread.com/categories/baking-science/</link>
+      <link>http://localhost:1313/categories/baking-science/</link>
       <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://banana-bread.com/categories/baking-science/</guid>
+      <guid>http://localhost:1313/categories/baking-science/</guid>
       <description></description>
     </item>
     <item>
       <title>Pro Tips</title>
-      <link>https://banana-bread.com/categories/pro-tips/</link>
+      <link>http://localhost:1313/categories/pro-tips/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://banana-bread.com/categories/pro-tips/</guid>
+      <guid>http://localhost:1313/categories/pro-tips/</guid>
       <description></description>
     </item>
   </channel>

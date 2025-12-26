@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chocolate Banana Bread on Banana Bread Recipes</title>
-    <link>https://banana-bread.com/tags/chocolate-banana-bread/</link>
+    <link>http://localhost:1313/tags/chocolate-banana-bread/</link>
     <description>Recent content in Chocolate Banana Bread on Banana Bread Recipes</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© 2002-2025 Sarah Baker - The Banana Bread Authority</copyright>
     <lastBuildDate>Tue, 15 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://banana-bread.com/tags/chocolate-banana-bread/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/chocolate-banana-bread/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Death by Chocolate Banana Bread: The Ultimate Fudgy Loaf</title>
-      <link>https://banana-bread.com/double-chocolate-chip-banana-bread-death-by-chocolate/</link>
+      <link>http://localhost:1313/double-chocolate-chip-banana-bread-death-by-chocolate/</link>
       <pubDate>Tue, 15 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://banana-bread.com/double-chocolate-chip-banana-bread-death-by-chocolate/</guid>
+      <guid>http://localhost:1313/double-chocolate-chip-banana-bread-death-by-chocolate/</guid>
       <description>&lt;p&gt;Forget everything you know about standard banana bread. We aren&amp;rsquo;t making a healthy breakfast option here; we are engineering a dessert that masquerades as a snack. This isn&amp;rsquo;t just a recipe; it&amp;rsquo;s a study in chocolate density. Most chocolate banana breads fail because they simply add cocoa powder to a standard recipe, resulting in a dry, chalky crumb.&lt;/p&gt;&#xA;&lt;p&gt;This &amp;ldquo;Death by Chocolate&amp;rdquo; iteration is calibrated to be the fudgiest, most intense loaf you will ever pull from your oven. It sits precisely on the line between a dense pound cake and a brownie, utilizing the enzymatic breakdown of overripe bananas to create a suspension matrix for a double dose of chocolate. If you are looking for light and airy, look elsewhere. If you want a slice that demands a glass of cold milk, you have arrived.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,432 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <style>
+        /* ============================================
+       ADMIN UI - PROFESSIONAL STYLING
+       ============================================ */
+
+        /* Floating Import Button - Always Visible */
+        #floating-import-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99999;
+            background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+            color: white;
+            border: none;
+            padding: 16px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+            transition: all 0.3s ease;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #floating-import-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(220, 38, 38, 0.5);
+        }
+
+        /* Modal Styles */
+        .import-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 100000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .import-modal-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .import-modal {
+            background: white;
+            width: 900px;
+            max-width: 95%;
+            max-height: 90vh;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .import-header {
+            padding: 24px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .import-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .import-close-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.2s;
+        }
+
+        .import-close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .import-body {
+            flex: 1;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            overflow: auto;
+        }
+
+        .import-instructions {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .import-instructions strong {
+            color: #1e40af;
+        }
+
+        .import-textarea {
+            flex: 1;
+            min-height: 300px;
+            width: 100%;
+            padding: 20px;
+            font-family: 'Fira Code', 'SF Mono', Monaco, Consolas, monospace;
+            font-size: 13px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            resize: none;
+            background: #f8fafc;
+            color: #1e293b;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .import-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        .import-footer {
+            padding: 20px 24px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f9fafb;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .import-footer-info {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .import-footer-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-cancel {
+            background: white;
+            color: #64748b;
+            border: 1px solid #d1d5db;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .btn-cancel:hover {
+            background: #f3f4f6;
+        }
+
+        .btn-publish {
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-publish:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
+        }
+
+        .btn-publish:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Load Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Floating Import Button (Always Visible) -->
+    <button id="floating-import-btn" onclick="openImportModal()">
+        ⚡ Import Rapide
+    </button>
+
+    <!-- Import Modal -->
+    <div id="import-modal-overlay" class="import-modal-overlay">
+        <div class="import-modal">
+            <div class="import-header">
+                <h3>⚡ Importation Rapide (Code Source)</h3>
+                <button class="import-close-btn" onclick="closeImportModal()">✕</button>
+            </div>
+            <div class="import-body">
+                <div class="import-instructions">
+                    <strong>Mode Développeur :</strong> Collez ici votre fichier Markdown complet avec le Frontmatter
+                    (les <code>---</code> au début et à la fin des métadonnées).<br>
+                    Le système créera directement le fichier dans votre dépôt GitHub.
+                </div>
+                <textarea id="import-content" class="import-textarea" placeholder="---
+title: &quot;Ma Recette&quot;
+date: 2025-01-01
+image: &quot;/images/ma-recette.jpg&quot;
+categories:
+  - &quot;Plat Principal&quot;
+ingredients:
+  - &quot;200g de farine&quot;
+  - &quot;3 oeufs&quot;
+---
+
+Contenu de l'article ici..."></textarea>
+            </div>
+            <div class="import-footer">
+                <div class="import-footer-info">Le fichier sera créé dans <code>content/recipes/</code></div>
+                <div class="import-footer-buttons">
+                    <button class="btn-cancel" onclick="closeImportModal()">Annuler</button>
+                    <button class="btn-publish" id="publish-btn" onclick="processImport()">
+                        🚀 Publier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================================
+        // IMPORT FUNCTIONALITY
+        // ==================================
+        const REPO = "okyoussef/banana-bread";
+        const BRANCH = "main";
+
+        function slugify(text) {
+            return text.toString().toLowerCase().trim()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .replace(/[\s\W-]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+        }
+
+        function getAuthToken() {
+            try {
+                const user = JSON.parse(localStorage.getItem("netlify-cms-user"));
+                return user && user.token ? user.token : null;
+            } catch (e) { return null; }
+        }
+
+        function openImportModal() {
+            document.getElementById('import-modal-overlay').classList.add('open');
+            document.getElementById('import-content').value = '';
+            document.getElementById('import-content').focus();
+        }
+
+        function closeImportModal() {
+            document.getElementById('import-modal-overlay').classList.remove('open');
+        }
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeImportModal();
+        });
+
+        // Close on overlay click
+        document.getElementById('import-modal-overlay').addEventListener('click', (e) => {
+            if (e.target.id === 'import-modal-overlay') closeImportModal();
+        });
+
+        async function processImport() {
+            const content = document.getElementById('import-content').value;
+            const token = getAuthToken();
+            const btn = document.getElementById('publish-btn');
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+            // Validate content first
+            if (!content.trim().startsWith('---')) {
+                alert("⚠️ Le contenu doit commencer par le Frontmatter (---)");
+                return;
+            }
+
+            // Parse frontmatter for filename
+            let title = "Sans-Titre-" + Date.now();
+            let date = new Date();
+            try {
+                const parts = content.split('---');
+                if (parts.length >= 3) {
+                    const frontmatter = jsyaml.load(parts[1]);
+                    if (frontmatter.title) title = frontmatter.title;
+                    if (frontmatter.date) date = new Date(frontmatter.date);
+                }
+            } catch (e) { }
+
+            const dateStr = date.toISOString().split('T')[0];
+            const slug = dateStr + '-' + slugify(title);
+            const filename = `${slug}.md`;
+
+            // LOCALHOST MODE: Copy to clipboard + instructions
+            if (isLocalhost) {
+                navigator.clipboard.writeText(content).then(() => {
+                    alert(`📋 MODE LOCAL DÉTECTÉ!\n\n✅ Contenu copié dans le presse-papier!\n\n📁 Créez le fichier:\ncontent/recipes/${filename}\n\n📝 Puis collez (Ctrl+V) le contenu.\n\n🔄 Hugo rechargera automatiquement.`);
+                    closeImportModal();
+                }).catch(() => {
+                    alert(`📋 MODE LOCAL\n\nCréez le fichier:\ncontent/recipes/${filename}\n\nEt copiez-y manuellement le contenu.`);
+                });
+                return;
+            }
+
+            // PRODUCTION MODE: Check token
+            if (!token) {
+                alert("⚠️ Erreur: Vous n'êtes pas connecté.\n\nConnectez-vous d'abord via GitHub sur la page principale, puis revenez ici.");
+                return;
+            }
+
+            if (!content.trim().startsWith('---')) {
+                alert("⚠️ Erreur: Le contenu doit commencer par le Frontmatter (---).\n\nExemple:\n---\ntitle: \"Ma Recette\"\n---");
+                return;
+            }
+
+            try {
+                const parts = content.split('---');
+                if (parts.length < 3) throw new Error("Format invalide. Assurez-vous d'avoir --- au début ET après le frontmatter.");
+
+                let title = "Sans-Titre-" + Date.now();
+                let date = new Date();
+
+                try {
+                    const frontmatter = jsyaml.load(parts[1]);
+                    if (frontmatter.title) title = frontmatter.title;
+                    if (frontmatter.date) date = new Date(frontmatter.date);
+                } catch (e) {
+                    console.warn("Erreur parsing YAML:", e);
+                }
+
+                const dateStr = date.toISOString().split('T')[0];
+                const slug = dateStr + '-' + slugify(title);
+                const path = `content/recipes/${slug}.md`;
+
+                btn.disabled = true;
+                btn.innerHTML = '⏳ Création...';
+
+                const apiUrl = `https://api.github.com/repos/${REPO}/contents/${path}`;
+                const b64Content = btoa(unescape(encodeURIComponent(content)));
+
+                const res = await fetch(apiUrl, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `Import via CMS: ${title}`,
+                        content: b64Content,
+                        branch: BRANCH
+                    })
+                });
+
+                if (!res.ok) {
+                    const err = await res.json();
+                    throw new Error(err.message || "Erreur API GitHub");
+                }
+
+                btn.innerHTML = '✅ Succès!';
+
+                setTimeout(() => {
+                    closeImportModal();
+                    alert("✅ Recette créée avec succès!\n\nLe fichier sera visible après le déploiement (1-2 min).");
+                    window.location.reload();
+                }, 1000);
+
+            } catch (e) {
+                alert("❌ Erreur: " + e.message);
+                btn.disabled = false;
+                btn.innerHTML = '🚀 Publier';
+            }
+        }
+    </script>
+</body>
+
+</html>

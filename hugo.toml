@@ -1,6 +1,5 @@
-
 # --- Configuration de base ---
-baseURL = "https://banana-bread/"
+baseURL = "https://banana-bread.com/"
 languageCode = "en-us"
 title = "Banana Bread Recipes"
 theme = "banana-bread"

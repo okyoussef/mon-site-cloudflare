@@ -9,7 +9,7 @@
 {{ $resource := resources.Get $img }}
 {{ if $resource }}
 {{/* On crée la version 1200px WebP identique à celle de l'article */}}
-{{ $optimized := $resource.Fill "1200x675 webp q85" }}
+{{ $optimized := $resource.Fill "1200x675 webp q70" }}
 {{ $og_image = $optimized.Permalink }}
 {{/* PRELOAD : Le navigateur télécharge l'image AVANT de lire le CSS */}}
 <link rel="preload" as="image" href="{{ $optimized.Permalink }}" fetchpriority="high">

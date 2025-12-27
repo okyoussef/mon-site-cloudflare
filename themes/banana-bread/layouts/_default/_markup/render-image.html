@@ -1,17 +1,10 @@
 {{- $img := .Page.Resources.Get .Destination | default (resources.Get .Destination) -}}
-
 {{- if $img -}}
-{{/* On crée une version WebP, max 800px pour le mobile, qualité 70% */}}
 {{- $optimized := $img.Resize "800x webp q70" -}}
-
-<figure class="post-image-container">
+<figure>
     <img src="{{ $optimized.RelPermalink }}" width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"
         alt="{{ .Text }}" loading="lazy" decoding="async" style="width: 100%; height: auto; border-radius: 8px;">
-    {{- with .Title }}
-    <figcaption class="image-caption">{{ . }}</figcaption>
-    {{ end -}}
 </figure>
 {{- else -}}
-{{/* Si Hugo ne trouve pas l'image dans assets, il affiche le lien normal (sécurité) */}}
-<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" decoding="async">
+<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy">
 {{- end -}}

@@ -1,0 +1,111 @@
+{{ define "main" }}
+
+{{ $recipes := where .Site.RegularPages "Section" "recipes" }}
+
+<!-- Hero Section: Featured 3-Recipe Grid (Option B) -->
+<section class="featured-hero">
+    <div class="container">
+        <div class="featured-hero-header">
+            <span class="hero-label">⭐ FEATURED RECIPES</span>
+            <h1 class="hero-tagline">Our Most Popular Banana Bread Picks</h1>
+        </div>
+        <div class="featured-hero-grid">
+            {{ range first 3 $recipes }}
+            <a href="{{ .Permalink }}" class="featured-hero-item">
+                <div class="featured-hero-image">
+                    {{ $img := .Params.image | default .Params.featured_image }}
+                    {{ if $img }}
+                    {{ $resource := resources.Get $img }}
+                    {{ if $resource }}
+                    {{/* On crée une version de 600px pour l'accueil, très légère */}}
+                    {{ $thumb := $resource.Fill "600x400 webp q80" }}
+                    <img src="{{ $thumb.Permalink }}" alt="{{ .Title }}" width="{{ $thumb.Width }}"
+                        height="{{ $thumb.Height }}" loading="lazy">
+                    {{ else }}
+                    <img src="{{ $img | relURL }}" alt="{{ .Title }}" loading="lazy">
+                    {{ end }}
+                    {{ else }}
+                    <img src="/images/default-recipe.png" alt="{{ .Title }}" loading="lazy">
+                    {{ end }}
+                </div>
+                <div class="featured-hero-info">
+                    <h2 class="featured-hero-title">{{ .Title }}</h2>
+                    <div class="featured-hero-meta">
+                        {{ if .Params.prep_time }}
+                        <span>⏱ {{ .Params.prep_time }}</span>
+                        {{ end }}
+                        {{ if .Params.rating }}
+                        <span>⭐ {{ .Params.rating }}</span>
+                        {{ end }}
+                    </div>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="latest-recipes container">
+    <div class="section-header">
+        <h3>Latest Recipes</h3>
+        <a href="/recipes" class="view-all">View All &rarr;</a>
+    </div>
+
+    <div class="recipe-grid">
+        {{ range first 6 $recipes }}
+        {{ partial "recipe-card.html" . }}
+        {{ end }}
+    </div>
+</section>
+
+{{/* Categories Section */}}
+{{ with .Site.GetPage "/categories" }}
+{{ if .Pages }}
+<section class="categories-outer-container">
+    <div class="container">
+        <div class="categories-section">
+            <div class="section-header">
+                <h3>Browse by Category</h3>
+            </div>
+            <div class="categories-grid-staggered">
+                {{ range $index, $page := .Pages }}
+                {{ $name := .Title | lower }}
+                {{ $color := "#FCEBD3" }}
+                {{ if in $name "classic" }}{{ $color = "#E8E2F2" }}{{ end }}
+                {{ if in $name "dietary" }}{{ $color = "#E5F2E1" }}{{ end }}
+                {{ if in $name "indulgent" }}{{ $color = "#F8E1E1" }}{{ end }}
+                {{ if in $name "fruit" }}{{ $color = "#F6E1D8" }}{{ end }}
+                {{ if in $name "science" }}{{ $color = "#E1F0F0" }}{{ end }}
+                {{ if in $name "tips" }}{{ $color = "#EBF1F6" }}{{ end }}
+
+                <a href="{{ .Permalink }}" class="category-circle-item cat-{{ $index }}">
+                    <div class="category-circle-icon" style="background-color: {{ $color }};">
+                        {{ if in $name "bread" }}🍞
+                        {{ else if in $name "breakfast" }}🥐
+                        {{ else if in $name "classic" }}🍰
+                        {{ else if in $name "dietary" }}🥗
+                        {{ else if in $name "indulgent" }}🍩
+                        {{ else if in $name "fruit" }}🍓
+                        {{ else if in $name "science" }}🧪
+                        {{ else if in $name "tips" }}💡
+                        {{ else if in $name "dessert" }}🧁
+                        {{ else if in $name "cake" }}🎂
+                        {{ else if in $name "healthy" }}🥑
+                        {{ else if in $name "sweet" }}🍬
+                        {{ else if in $name "nut" }}🥜
+                        {{ else if in $name "ana" }}🍪
+                        {{ else if in $name "youssef" }}🥯
+                        {{ else }}🍪
+                        {{ end }}
+                    </div>
+                    <span class="category-circle-name">{{ .Title }}</span>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
+
+{{ end }}

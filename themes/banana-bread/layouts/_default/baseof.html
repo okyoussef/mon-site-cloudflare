@@ -4,7 +4,6 @@
 <head>
   {{ partial "head.html" . }}
   {{ partial "seo-schema.html" . }}
-
 </head>
 
 <body>
@@ -22,9 +21,20 @@
     {{ partial "footer.html" . }}
   </footer>
 
+  {{/* ========================================
+  OPTIMISATION : DEFER JAVASCRIPT
+  ======================================== */}}
   {{ $js := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
 
+  {{/* Script pour réafficher le footer une fois le JS chargé */}}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('.main-nav').style.opacity = '1';
+      var footer = document.querySelector('.footer-background');
+      if (footer) footer.style.display = 'block';
+    });
+  </script>
 </body>
 
 </html>

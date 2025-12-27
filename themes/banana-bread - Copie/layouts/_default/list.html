@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="container container-list">
+    <div class="list-header">
+        <h1>{{ .Title }}</h1>
+        {{ with .Content }}<div class="list-description">{{ . }}</div>{{ end }}
+    </div>
+
+    <div class="recipe-grid">
+        {{ $pages := .RegularPagesRecursive }}
+        {{ range (.Paginate $pages).Pages }}
+        {{ partial "recipe-card.html" . }}
+        {{ end }}
+    </div>
+
+    <div class="pagination">
+        {{ template "_internal/pagination.html" . }}
+    </div>
+</div>
+{{ end }}

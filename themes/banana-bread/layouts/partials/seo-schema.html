@@ -11,27 +11,21 @@
   },
   "name": "{{ .Title }}",
   "headline": "{{ .Title }}",
-  
-  {{/* --- CORRECTION 1 : Sécurité Image (Ne s'affiche que si existe) --- */}}
   {{ if .Params.image }}
   "image": [
-      {{ $img := resources.Get .Params.image }}
-      {{ if $img }}
-        {{/* Génération automatique des formats Google */}}
-        "{{ ($img.Fill "1200x1200 center").Permalink }}",
-        "{{ ($img.Fill "1200x900 center").Permalink }}",
-        "{{ ($img.Fill "1200x675 center").Permalink }}"
-      {{ else }}
-        {{/* Fallback si l'image est une URL externe ou pas dans assets */}}
-        "{{ .Params.image | absURL }}"
-      {{ end }}
+    {{ $img := resources.Get .Params.image }}
+    {{ if $img }}
+      "{{ ($img.Fill "1200x1200 center").Permalink }}",
+      "{{ ($img.Fill "1200x900 center").Permalink }}",
+      "{{ ($img.Fill "1200x675 center").Permalink }}"
+    {{ else }}
+      "{{ .Params.image | absURL }}"
+    {{ end }}
   ],
   {{ end }}
-
   "author": {
     "@type": "Person",
-    "name": "{{ .Params.recipe.author | default site.Title }}",
-    "url": "{{ site.BaseURL }}about/" 
+    "name": "{{ .Params.recipe.author | default site.Title }}"
   },
   "publisher": {
     "@type": "Organization",
@@ -44,17 +38,13 @@
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
   "description": "{{ $desc }}",
-  
-  {{/* Temps et Portions */}}
   "prepTime": "{{ .Params.recipe.time.prep_iso }}",
   "cookTime": "{{ .Params.recipe.time.cook_iso }}",
   "totalTime": "{{ .Params.recipe.time.total_iso }}",
   "recipeYield": "{{ .Params.recipe.yield }}",
-  
   {{ if .Params.tags }}"keywords": "{{ delimit .Params.tags ", " }}",{{ end }}
   {{ if .Params.categories }}"recipeCategory": "{{ index .Params.categories 0 }}",{{ end }}
   "recipeCuisine": "{{ .Params.recipe.cuisine | default "American" }}",
-
   "nutrition": {
     "@type": "NutritionInformation",
     "calories": "{{ .Params.recipe.nutrition.calories }}",
@@ -62,11 +52,7 @@
     "sugarContent": "{{ .Params.recipe.nutrition.sugar }}",
     "proteinContent": "{{ .Params.recipe.nutrition.protein }}"
   },
-
-  {{/* --- GESTION DES AVIS SÉCURISÉE --- */}}
-  {{/* Si rating est défini dans le frontmatter, on l'utilise. Sinon, default 5. */}}
   {{ $rating := .Params.rating | default 5.0 }}
-  {{/* Si votes est défini dans le frontmatter, on l'utilise. Sinon, default 1. */}}
   {{ $votes := .Params.votes | default 1 }}
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -75,13 +61,11 @@
     "bestRating": "5",
     "worstRating": "1"
   },
-
   "recipeIngredient": [
     {{ range $index, $element := .Params.recipe.ingredients }}
     {{ if $index }},{{ end }}"{{ $element }}"
     {{ end }}
   ],
-
   "recipeInstructions": [
     {{ range $index, $element := .Params.recipe.instructions }}
     {{ if $index }},{{ end }}
@@ -90,9 +74,10 @@
       "url": "{{ $.Permalink }}#step-{{ add $index 1 }}",
       {{- if reflect.IsMap $element -}}
       "name": "{{ $element.name }}",
-      "text": "{{ $element.text }}"{{ if $element.image }},
-      {{/* CORRECTION 2 : La virgule ci-dessus n'apparait que si l'image existe */}}
-      "image": "{{ $element.image | absURL }}"{{ end }}
+      "text": "{{ $element.text }}"
+      {{- if $element.image -}},
+      "image": "{{ $element.image | absURL }}"
+      {{- end -}}
       {{- else -}}
       "name": "Step {{ add $index 1 }}",
       "text": "{{ $element }}"
@@ -100,20 +85,18 @@
     }
     {{ end }}
   ]
-
   {{ if and .Params.recipe.video .Params.recipe.video.enable }}
   ,"video": {
     "@type": "VideoObject",
     "name": "{{ .Params.recipe.video.name }}",
     "description": "{{ .Params.recipe.video.description | default $desc }}",
     "thumbnailUrl": "{{ .Params.recipe.video.thumbnailUrl | absURL }}",
-    "uploadDate": "{{ .Params.recipe.video.uploadDate | default .Date.Format "2006-01-02" }}",
+    "uploadDate": "{{ .Params.recipe.video.uploadDate | default (.Date.Format "2006-01-02") }}",
     "contentUrl": "{{ .Params.recipe.video.contentUrl }}",
     "embedUrl": "{{ .Params.recipe.video.embedUrl }}"
   }
   {{ end }}
 }
-
 {{ if .Params.faq }}
 ,{
   "@context": "https://schema.org",
@@ -133,31 +116,30 @@
   ]
 }
 {{ end }}
-
 ,{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "{{ site.BaseURL }}"
-    },{
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Recipes",
-      "item": "{{ site.BaseURL }}recipes/"
-    },{
-      "@type": "ListItem",
-      "position": 3,
-      "name": "{{ .Title }}",
-      "item": "{{ .Permalink }}"
-    }]
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "{{ site.BaseURL }}"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Recipes",
+    "item": "{{ site.BaseURL }}recipes/"
+  },{
+    "@type": "ListItem",
+    "position": 3,
+    "name": "{{ .Title }}",
+    "item": "{{ .Permalink }}"
+  }]
 }
 </script>
 {{ end }}
 
-{{/* --- ARTICLE SCHEMA (FOR TIPS & SCIENCE) --- */}}
+{{/* Article Schema for Tips & Science */}}
 {{ if or (eq .Section "tips") (eq .Section "baking-science") (in .Params.categories "Tips") (in .Params.categories
 "Baking Science") }}
 <script type="application/ld+json">
@@ -169,7 +151,7 @@
     "@id": "{{ .Permalink }}"
   },
   "headline": "{{ .Title }}",
-  "description": "{{ .Description | default .Summary | plainify | truncate 160 }}",
+  "description": "{{ .Description | default (.Summary | plainify | truncate 160) }}",
   "image": [
     {{ if .Params.image }}
       {{ $img := resources.Get .Params.image }}
@@ -181,13 +163,12 @@
         "{{ .Params.image | absURL }}"
       {{ end }}
     {{ else }}
-        "{{ site.Params.og_image | absURL }}"
+      "{{ site.Params.og_image | absURL }}"
     {{ end }}
   ],
   "author": {
     "@type": "Person",
-    "name": "{{ .Params.author | default .Params.recipe.author | default site.Params.author }}",
-    "url": "{{ site.BaseURL }}about/"
+    "name": "{{ .Params.author | default (.Params.recipe.author | default site.Params.author) }}"
   },
   "publisher": {
     "@type": "Organization",
@@ -200,8 +181,8 @@
   "datePublished": "{{ .Date.Format "2006-01-02" }}",
   "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
   "wordCount": "{{ .WordCount }}",
-  "articleSection": "{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}Baking Tips{{ end }}",
-  "keywords": "{{ if .Params.tags }}{{ delimit .Params.tags ", " }}{{ end }}"
+  "articleSection": "{{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}Baking Tips{{ end }}"
+  {{ if .Params.tags }},"keywords": "{{ delimit .Params.tags ", " }}"{{ end }}
 }
 </script>
 {{ end }}

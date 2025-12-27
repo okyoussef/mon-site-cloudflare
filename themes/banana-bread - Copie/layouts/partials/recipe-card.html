@@ -1,0 +1,42 @@
+<article class="recipe-card">
+    <div class="recipe-card-image">
+        <a href="{{ .Permalink }}" class="recipe-card-link" aria-label="Voir la recette : {{ .Title }}">
+
+            {{/* 1. INITIALISATION VIA ASSETS (Le nouveau dossier) */}}
+            {{ $img := .Params.image | default .Params.featured_image }}
+
+            {{ if $img }}
+            {{ $resource := resources.Get $img }}
+
+            {{ if $resource }}
+            {{/* ON GÉNÈRE UNE MINIATURE WEB P LÉGÈRE (400px) */}}
+            {{ $thumb := $resource.Fill "400x225 webp q80" }}
+            <img src="{{ $thumb.Permalink }}" alt="Photo de : {{ .Title }}" loading="lazy" width="{{ $thumb.Width }}"
+                height="{{ $thumb.Height }}" style="object-fit: cover; aspect-ratio: 16/9;">
+            {{ else }}
+            {{/* Fallback si Hugo ne trouve pas dans assets */}}
+            <img src="{{ $img | relURL }}" alt="{{ .Title }}" loading="lazy" width="400" height="225">
+            {{ end }}
+            {{ else }}
+            <div class="placeholder-image" aria-hidden="true">
+                <span>🍌</span>
+            </div>
+            {{ end }}
+        </a>
+    </div>
+
+    <div class="recipe-card-content">
+        {{/* Le reste de ton code (méta, titre, excerpt) reste identique */}}
+        <div class="recipe-meta">
+            {{ with .Params.categories }}
+            {{ range first 1 . }}<span class="recipe-category">{{ . }}</span>{{ end }}
+            {{ end }}
+            {{ $time := "30m" }}
+            {{ if .Params.recipe.time.total_human }}{{ $time = .Params.recipe.time.total_human }}
+            {{ else if .Params.prep_time }}{{ $time = .Params.prep_time }}{{ end }}
+            <span class="recipe-time">⏱ {{ $time }}</span>
+        </div>
+        <h3 class="recipe-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <p class="recipe-excerpt">{{ .Params.description | default .Summary | plainify | truncate 90 }}</p>
+    </div>
+</article>

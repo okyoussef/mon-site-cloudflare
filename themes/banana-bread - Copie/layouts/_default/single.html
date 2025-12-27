@@ -1,0 +1,94 @@
+{{ define "main" }}
+<div class="single-content-wrapper container">
+
+    <div class="main-content-area">
+        <article class="recipe-post">
+
+            {{/* Hero Header */}}
+            <header class="recipe-header">
+
+                <div class="recipe-breadcrumbs">
+                    <a href="/">Home</a>
+                    {{ range .Ancestors.Reverse }}
+                    {{ if ne .Kind "home" }}
+                    &raquo; <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{ end }}
+                    {{ end }}
+                    &raquo; <span>{{ .Title }}</span>
+                </div>
+
+                <h1 class="recipe-h1">{{ .Title }}</h1>
+
+                <div class="recipe-hero-actions">
+                    <a href="#recipe-card" class="btn-pill btn-pin"
+                        onclick="window.open('https://www.pinterest.com/pin/create/button/?url={{ .Permalink }}&description={{ .Title }}', '_blank'); return false;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 4.99 3.257 9.255 7.828 10.95-.108-.934-.206-2.365.043-3.387.216-.884 1.397-5.918 1.397-5.918s-.356-.713-.356-1.766c0-1.655.96-2.889 2.155-2.889 1.016 0 1.507.763 1.507 1.678 0 1.024-.652 2.556-.988 3.976-.282 1.19.596 2.159 1.768 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.637 0-5.772 2.723-5.772 5.541 0 1.097.422 2.274.95 2.913.105.127.12.238.089.367-.097.404-.316 1.284-.36 1.464-.056.237-.188.287-.433.173-1.616-.752-2.626-3.116-2.626-5.013 0-4.08 2.971-7.823 8.568-7.823 4.5 0 8.002 3.208 8.002 7.495 0 4.473-2.82 8.074-6.736 8.074-1.314 0-2.548-.683-2.972-1.491 0 0-.651 2.479-.809 3.084-.291 1.118-1.076 2.518-1.603 3.375 1.206.375 2.483.578 3.805.578 6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                        </svg>
+                        Pin This!
+                    </a>
+
+                    <a href="#recipe-card" class="btn-pill btn-jump">
+                        Jump To Recipe
+                    </a>
+                </div>
+
+                <div class="recipe-meta-top">
+                    <span class="author">
+                        By {{ .Params.recipe.author | default .Params.author | default "Sarah Baker" }}
+                    </span>
+                    <span class="date">
+                        Published on {{ .Date.Format "Jan 2, 2006" }}
+                    </span>
+
+                    <div class="recipe-rating-display" itemprop="aggregateRating" itemscope
+                        itemtype="https://schema.org/AggregateRating">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-text">
+                            <span itemprop="ratingValue">{{ .Params.rating | default 5 }}</span>/5
+                        </span>
+                        <span class="vote-count">
+                            (<span itemprop="reviewCount">{{ .Params.votes | default 1 }}</span> votes)
+                        </span>
+                    </div>
+                </div>
+
+                {{/* HERO IMAGE – LCP OPTIMISÉE, HUGO-SAFE */}}
+                <div class="recipe-hero-image">
+                    {{ $img := .Params.image }}
+                    {{ $src := "" }}
+                    {{ $w := "" }}
+                    {{ $h := "" }}
+
+                    {{ if $img }}
+                    {{ $res := resources.Get $img }}
+                    {{ if $res }}
+                    {{ $opt := $res.Fill "1200x675 webp q70" }}
+                    {{ $src = $opt.Permalink }}
+                    {{ $w = $opt.Width }}
+                    {{ $h = $opt.Height }}
+                    {{ else }}
+                    {{ $src = $img | absURL }}
+                    {{ end }}
+                    {{ end }}
+
+                    {{ if $src }}
+                    <img src="{{ $src }}" alt="{{ .Title }}" loading="eager" decoding="async" {{ if $w
+                        }}width="{{ $w }}" {{ end }} {{ if $h }}height="{{ $h }}" {{ end }}>
+                    {{ end }}
+                </div>
+
+            </header>
+
+            <div class="recipe-content-body">
+                {{ .Content }}
+            </div>
+
+        </article>
+    </div>
+
+    {{ partial "sidebar.html" . }}
+
+</div>
+{{ end }}

@@ -16,6 +16,7 @@
 {{ else }}
 {{/* Secours si l'image n'est pas dans le dossier assets */}}
 {{ $og_image = $img | absURL }}
+
 <link rel="preload" as="image" href="{{ $og_image }}" fetchpriority="high">
 {{ end }}
 {{ end }}
@@ -39,16 +40,55 @@
 
 <link rel="canonical" href="{{ .Permalink }}" />
 
-{{/* Google Fonts */}}
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
+{{/* Google Fonts – non bloquant */}}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
+
+<link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap"
-    rel="stylesheet">
+    onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap">
+</noscript>
+
 
 {{/* Styles optimisés */}}
 {{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+
+<style>
+    /* Critical CSS minimal (Hero + layout) */
+    body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+
+    .recipe-header {
+        margin-top: 1rem;
+    }
+
+    .recipe-h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .recipe-hero-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+</style>
+<link rel="preload" href="{{ $style.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+</noscript>
 
 {{/* SEO / Meta Robots (Crucial pour Discover) */}}
 <meta name="description" content="{{ $desc }}">

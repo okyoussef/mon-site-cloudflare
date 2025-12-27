@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",function(){const t=document.getElementById("toc-toggle"),n=document.getElementById("toc"),e=document.querySelector(".toc-toggle-action");t&&n&&(e&&(e.textContent="[Show]"),t.addEventListener("click",function(){const t=n.classList.toggle("is-active");e&&(e.textContent=t?"[Hide]":"[Show]")}))})

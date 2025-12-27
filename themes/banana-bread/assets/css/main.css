@@ -406,14 +406,13 @@ a:hover {
 .btn-jump {
     background-color: var(--color-primary);
     /* High Visibility Ochre */
-    color: #2D1A0A;
-    font-weight: 800;
+    color: white;
+    font-weight: 700;
 }
 
 .btn-jump:hover {
     background-color: #b45309;
-    color: #ffffff;
-    /* On peut repasser en blanc au survol si on veut */
+    /* Darker Ochre */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
 }

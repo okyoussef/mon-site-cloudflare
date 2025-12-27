@@ -6,9 +6,9 @@ theme = "banana-bread"
 copyright = "© 2002-2025 Sarah Baker - The Banana Bread Authority"
 
 # --- SEO & Indexation ---
-enableRobotsTXT = false
-canonifyURLs = false
-relativeURLs = true
+enableRobotsTXT =  true
+canonifyURLs = true
+relativeURLs = false
 removePathAccents = true
 
 

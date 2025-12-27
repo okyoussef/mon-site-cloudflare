@@ -61,13 +61,17 @@
           </div>
         </div>
 
+
+
         <div class="recipe-hero-image">
-          {{/* OPTIMISATION: fetchpriority high */}}
           {{ $img := .Params.image | default .Params.featured_image }}
           {{ if $img }}
-          <img src="{{ $img | relURL }}" alt="{{ .Title }}" fetchpriority="high">
+          <img src="{{ $img | absURL }}" alt="{{ .Title }}" fetchpriority="high" loading="eager" width="1200"
+            height="675" style="width: 100%; height: auto; display: block; border-radius: 8px;">
           {{ else if .Resources.GetMatch "featured*" }}
-          <img src="{{ (.Resources.GetMatch " featured*").RelPermalink }}" alt="{{ .Title }}" fetchpriority="high">
+          {{ $res := .Resources.GetMatch "featured*" }}
+          <img src="{{ $res.RelPermalink }}" alt="{{ .Title }}" fetchpriority="high" loading="eager" width="1200"
+            height="675" style="width: 100%; height: auto; display: block; border-radius: 8px;">
           {{ end }}
         </div>
 

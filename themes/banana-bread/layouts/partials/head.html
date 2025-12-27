@@ -1,5 +1,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ if .Params.image }}
+<link rel="preload" as="image" href="{{ .Params.image | absURL }}" fetchpriority="high">
+{{ end }}
 
 {{/* --- LOGIQUE : Centralisation de la description (Tu as bien fait, je garde !) --- */}}
 {{ $desc := "" }}
@@ -24,8 +27,8 @@
     rel="stylesheet">
 
 {{/* Styles */}}
-{{ $style := resources.Get "css/main.css" | resources.Minify }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
 {{/* SEO / Meta */}}
 <meta name="description" content="{{ $desc }}">

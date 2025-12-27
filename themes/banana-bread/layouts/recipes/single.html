@@ -66,12 +66,16 @@
         <div class="recipe-hero-image">
           {{ $img := .Params.image | default .Params.featured_image }}
           {{ if $img }}
-          <img src="{{ $img | absURL }}" alt="{{ .Title }}" fetchpriority="high" loading="eager" width="1200"
-            height="675" style="width: 100%; height: auto; display: block; border-radius: 8px;">
-          {{ else if .Resources.GetMatch "featured*" }}
-          {{ $res := .Resources.GetMatch "featured*" }}
-          <img src="{{ $res.RelPermalink }}" alt="{{ .Title }}" fetchpriority="high" loading="eager" width="1200"
-            height="675" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+          {{ $resource := resources.Get $img }}
+          {{ if $resource }}
+          {{/* On passe à 1200px pour Google Discover, format WebP pour la légèreté */}}
+          {{ $optimized := $resource.Fill "1200x675 webp q85" }}
+          <img src="{{ $optimized.Permalink }}" alt="{{ .Title }}" fetchpriority="high" loading="eager" width="1200"
+            height="675" style="width: 100%; height: auto; border-radius: 8px;">
+          {{ else }}
+          {{/* Secours si l'image n'est pas dans le dossier assets */}}
+          <img src="{{ $img | absURL }}" alt="{{ .Title }}" fetchpriority="high" width="1200" height="675">
+          {{ end }}
           {{ end }}
         </div>
 

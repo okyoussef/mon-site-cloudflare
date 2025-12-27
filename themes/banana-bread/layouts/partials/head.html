@@ -1,10 +1,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ if .Params.image }}
-<link rel="preload" as="image" href="{{ .Params.image | absURL }}" fetchpriority="high">
+
+{{/* --- LOGIQUE D'IMAGE OPTIMISÉE (1200px pour Discover & Preload) --- */}}
+{{ $og_image := "" }}
+{{ if .IsPage }}
+{{ $img := .Params.image | default .Params.featured_image }}
+{{ if $img }}
+{{ $resource := resources.Get $img }}
+{{ if $resource }}
+{{/* On crée la version 1200px WebP identique à celle de l'article */}}
+{{ $optimized := $resource.Fill "1200x675 webp q85" }}
+{{ $og_image = $optimized.Permalink }}
+{{/* PRELOAD : Le navigateur télécharge l'image AVANT de lire le CSS */}}
+<link rel="preload" as="image" href="{{ $optimized.Permalink }}" fetchpriority="high">
+{{ else }}
+{{/* Secours si l'image n'est pas dans le dossier assets */}}
+{{ $og_image = $img | absURL }}
+<link rel="preload" as="image" href="{{ $og_image }}" fetchpriority="high">
+{{ end }}
+{{ end }}
+{{ else }}
+{{/* Image par défaut pour la page d'accueil */}}
+{{ with site.Params.social.image }}{{ $og_image = . | absURL }}{{ end }}
 {{ end }}
 
-{{/* --- LOGIQUE : Centralisation de la description (Tu as bien fait, je garde !) --- */}}
+{{/* --- LOGIQUE : Description --- */}}
 {{ $desc := "" }}
 {{ if .IsHome }}
 {{ $desc = site.Params.description }}
@@ -26,32 +46,21 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap"
     rel="stylesheet">
 
-{{/* Styles */}}
+{{/* Styles optimisés */}}
 {{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
-{{/* SEO / Meta */}}
+{{/* SEO / Meta Robots (Crucial pour Discover) */}}
 <meta name="description" content="{{ $desc }}">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
 
-{{/* --- LOGIQUE : Image unique (Excellent, je garde) --- */}}
-{{ $og_image := "" }}
-{{ with .Params.image }}
-{{ $og_image = . | absURL }}
-{{ else }}
-{{ with site.Params.social.image }}
-{{ $og_image = . | absURL }}
-{{ end }}
-{{ end }}
-
-{{/*Open Graph */}}
+{{/* Open Graph / Facebook */}}
 <meta property="og:title" content="{{ .Title }}" />
 <meta property="og:description" content="{{ $desc }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ site.Title }}" />
 
-<!-- AJOUT SEO : Les dates (Google et Facebook adorent le contenu frais) -->
 {{ if .IsPage }}
 <meta property="article:published_time" content="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}" />
 <meta property="article:modified_time" content="{{ .Lastmod.Format " 2006-01-02T15:04:05Z07:00" }}" />
@@ -61,16 +70,17 @@
 {{ end }}
 
 {{ with $og_image }}
-<meta property="og:image" content="{{ . }}" />{{ end }}
+<meta property="og:image" content="{{ . }}" />
+{{ end }}
 
 {{/* Twitter Card */}}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ .Title }}">
 <meta name="twitter:description" content="{{ $desc }}">
 {{ with $og_image }}
-<meta name="twitter:image" content="{{ . }}">{{ end }}
+<meta name="twitter:image" content="{{ . }}">
+{{ end }}
 
-<!-- AJOUT SEO : Crédibilité Twitter (Indique à Twitter qui est le patron) -->
 {{ with site.Params.social.twitter }}
 <meta name="twitter:site" content="{{ . }}">
 {{ end }}
@@ -80,8 +90,7 @@
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍌</text></svg>">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-<!-- AJOUT CRITIQUE : Le Schema.org (JSON-LD) -->
-<!-- Tu l'avais dans ta première version, il ne faut PAS le perdre sinon plus de fiche recette Google ! -->
+{{/* Schema.org (JSON-LD) */}}
 {{ if .IsPage }}
 {{ partial "schema.html" . }}
 {{ end }}

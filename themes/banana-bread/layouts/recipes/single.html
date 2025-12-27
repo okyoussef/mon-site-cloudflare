@@ -72,7 +72,8 @@
 
           {{ if $resource }}
           {{/* ON GÉNÈRE LA VERSION OPTIMISÉE (1200px pour Discover) */}}
-          {{ $optimized := $resource.Fill "1200x675 webp q85" }}
+          {{ $optimized := $resource.Fill "1200x675 webp q70" }}
+
 
           <img src="{{ $optimized.Permalink }}" alt="{{ .Title }}" fetchpriority="high" loading="eager"
             width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"

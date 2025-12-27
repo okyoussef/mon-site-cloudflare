@@ -299,9 +299,10 @@ a:hover {
 
 .btn-jump {
     background-color: var(--color-primary);
-    /* High Visibility Ochre */
-    color: white;
-    /* White text */
+    color: #2d1a0a;
+    /* Un marron très foncé presque noir au lieu de white */
+    font-weight: 700;
+    /* On épaissit un peu pour la lisibilité */
 }
 
 .btn-jump:hover {
@@ -459,11 +460,13 @@ a:hover {
     font-family: var(--font-family-sans);
     font-size: clamp(0.7rem, 1.2vw, 0.9rem);
     font-weight: 800;
-    color: #8D6E63;
+    /* On passe d'un marron clair à un marron plus soutenu */
+    color: #5D4037;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     margin-top: 6px;
-    opacity: 0.9;
+    /* On retire l'opacité pour un contraste maximal */
+    opacity: 1;
     text-align: right;
 }
 

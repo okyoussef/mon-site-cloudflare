@@ -2,28 +2,22 @@
     <div class="recipe-card-image">
         <a href="{{ .Permalink }}" class="recipe-card-link" aria-label="Voir la recette : {{ .Title }}">
 
-            {{/* 1. INITIALISATION DES VARIABLES IMAGE */}}
-            {{ $imgURL := "" }}
+            {{/* 1. INITIALISATION VIA ASSETS (Le nouveau dossier) */}}
+            {{ $img := .Params.image | default .Params.featured_image }}
 
-            {{ if .Params.image }}
-            {{/* Cas 1 : Image définie dans le Frontmatter (dossier static) */}}
-            {{ $imgURL = .Params.image | relURL }}
-            {{ else if .Params.featured_image }}
-            {{/* Cas 2 : Autre nom de variable */}}
-            {{ $imgURL = .Params.featured_image | relURL }}
-            {{ else if .Resources.GetMatch "featured*" }}
-            {{/* Cas 3 : Image dans le dossier de la page (Page Bundle) */}}
-            {{ $res := .Resources.GetMatch "featured*" }}
-            {{ $imgURL = $res.RelPermalink }}
-            {{ end }}
+            {{ if $img }}
+            {{ $resource := resources.Get $img }}
 
-            {{/* 2. AFFICHAGE DE L'IMAGE OPTIMISÉE */}}
-            {{ if $imgURL }}
-            <img src="{{ $imgURL }}" alt="Photo de : {{ .Title }}" loading="lazy" width="400" height="225"
-                style="object-fit: cover; aspect-ratio: 16/9;">
-            {{/* 'object-fit' empêche l'image d'être déformée si elle n'est pas 16:9 à la base */}}
+            {{ if $resource }}
+            {{/* ON GÉNÈRE UNE MINIATURE WEB P LÉGÈRE (400px) */}}
+            {{ $thumb := $resource.Fill "400x225 webp q80" }}
+            <img src="{{ $thumb.Permalink }}" alt="Photo de : {{ .Title }}" loading="lazy" width="{{ $thumb.Width }}"
+                height="{{ $thumb.Height }}" style="object-fit: cover; aspect-ratio: 16/9;">
             {{ else }}
-            {{/* Fallback si aucune image */}}
+            {{/* Fallback si Hugo ne trouve pas dans assets */}}
+            <img src="{{ $img | relURL }}" alt="{{ .Title }}" loading="lazy" width="400" height="225">
+            {{ end }}
+            {{ else }}
             <div class="placeholder-image" aria-hidden="true">
                 <span>🍌</span>
             </div>
@@ -32,32 +26,17 @@
     </div>
 
     <div class="recipe-card-content">
+        {{/* Le reste de ton code (méta, titre, excerpt) reste identique */}}
         <div class="recipe-meta">
-            {{/* Catégorie */}}
             {{ with .Params.categories }}
-            {{ range first 1 . }}
-            <span class="recipe-category">{{ . }}</span>
+            {{ range first 1 . }}<span class="recipe-category">{{ . }}</span>{{ end }}
             {{ end }}
-            {{ end }}
-
-            {{/* Temps de cuisson (Logique robuste) */}}
-            {{ $time := "30m" }} {{/* Valeur par défaut */}}
-            {{ if .Params.recipe.time.total_human }}
-            {{ $time = .Params.recipe.time.total_human }}
-            {{ else if .Params.prep_time }}
-            {{ $time = .Params.prep_time }}
-            {{ end }}
-
-            <span class="recipe-time" aria-label="Temps total : {{ $time }}">⏱ {{ $time }}</span>
+            {{ $time := "30m" }}
+            {{ if .Params.recipe.time.total_human }}{{ $time = .Params.recipe.time.total_human }}
+            {{ else if .Params.prep_time }}{{ $time = .Params.prep_time }}{{ end }}
+            <span class="recipe-time">⏱ {{ $time }}</span>
         </div>
-
-        <h3 class="recipe-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h3>
-
-        {{/* Résumé SEO (Limité à 90 caractères pour ne pas casser le design de la carte) */}}
-        <p class="recipe-excerpt">
-            {{ .Params.description | default .Summary | plainify | truncate 90 }}
-        </p>
+        <h3 class="recipe-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <p class="recipe-excerpt">{{ .Params.description | default .Summary | plainify | truncate 90 }}</p>
     </div>
 </article>

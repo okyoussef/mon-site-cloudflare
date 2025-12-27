@@ -36,7 +36,8 @@
         </div>
 
         <div class="recipe-meta-top">
-          <span class="author">By {{ .Params.recipe.author | default .Params.author | default "Sarah Baker" }}</span>
+          <span class="author">By {{ .Params.recipe.author | default .Params.author | default "Sarah Baker"
+            }}</span>
           <span class="date">Published on {{ .Date.Format "Jan 2, 2006" }}</span>
           {{ with .Params.categories }}
           <span class="categories">
@@ -64,17 +65,21 @@
 
 
         <div class="recipe-hero-image">
-          {{ $img := .Params.image | default .Params.featured_image }}
+          {{ $img := .Params.image }}
           {{ if $img }}
+          {{/* On demande à Hugo d'aller chercher l'image dans /assets/ */}}
           {{ $resource := resources.Get $img }}
+
           {{ if $resource }}
-          {{/* On génère la version 1200px (La même que le head) */}}
+          {{/* ON GÉNÈRE LA VERSION OPTIMISÉE (1200px pour Discover) */}}
           {{ $optimized := $resource.Fill "1200x675 webp q85" }}
-          <img src="{{ $optimized.Permalink }}" alt="{{ .Title }}" fetchpriority="high" loading="eager" width="1200"
-            height="675" style="width: 100%; height: auto; border-radius: 8px;">
+
+          <img src="{{ $optimized.Permalink }}" alt="{{ .Title }}" fetchpriority="high" loading="eager"
+            width="{{ $optimized.Width }}" height="{{ $optimized.Height }}"
+            style="width: 100%; height: auto; border-radius: 8px;">
           {{ else }}
-          {{/* Secours si image non trouvée dans assets */}}
-          <img src="{{ $img | absURL }}" alt="{{ .Title }}" fetchpriority="high" width="1200" height="675">
+          {{/* Code de secours si l'image est introuvable */}}
+          <img src="{{ $img | absURL }}" alt="{{ .Title }}" fetchpriority="high">
           {{ end }}
           {{ end }}
         </div>
@@ -174,15 +179,18 @@
             <div class="recipe-times">
               <div class="time-block">
                 <span class="label">Prep</span>
-                <span class="value">{{ .Params.recipe.time.prep_human | default .Params.prep_time }}</span>
+                <span class="value">{{ .Params.recipe.time.prep_human | default .Params.prep_time
+                  }}</span>
               </div>
               <div class="time-block">
                 <span class="label">Cook</span>
-                <span class="value">{{ .Params.recipe.time.cook_human | default .Params.cook_time }}</span>
+                <span class="value">{{ .Params.recipe.time.cook_human | default .Params.cook_time
+                  }}</span>
               </div>
               <div class="time-block">
                 <span class="label">Total</span>
-                <span class="value">{{ .Params.recipe.time.total_human | default .Params.total_time }}</span>
+                <span class="value">{{ .Params.recipe.time.total_human | default .Params.total_time
+                  }}</span>
               </div>
               <div class="time-block">
                 <span class="label">Servings</span>
